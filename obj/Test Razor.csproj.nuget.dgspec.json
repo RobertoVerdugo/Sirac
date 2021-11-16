@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\R_B_G\\Documents\\Web dev\\C#\\Test Razor\\Test Razor.csproj": {}
+    "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj": {}
   },
   "projects": {
-    "D:\\R_B_G\\Documents\\Web dev\\C#\\Test Razor\\Test Razor.csproj": {
+    "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\R_B_G\\Documents\\Web dev\\C#\\Test Razor\\Test Razor.csproj",
+        "projectUniqueName": "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj",
         "projectName": "Test Razor",
-        "projectPath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Test Razor\\Test Razor.csproj",
+        "projectPath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj",
         "packagesPath": "C:\\Users\\R_B_G\\.nuget\\packages\\",
-        "outputPath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Test Razor\\obj\\",
+        "outputPath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\R_B_G\\AppData\\Roaming\\NuGet\\NuGet.Config",

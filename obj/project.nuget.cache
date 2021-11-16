@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JayHu7Rm6JQDDGw4e3fV3oHI6bvpo52WeHPS1LesVR9e4c4kO7KqAYEkwGzgfces39yFGkXZjrhiJ6MGlM2HXw==",
+  "dgSpecHash": "IU6U7HGeOSDTtERR3g0FEMvdjZnpUpqHgEStqpzavx9Ic5kwGDsAr7UNAopGIx9biV8Twr94Rmi2dOO7ZZyO4A==",
   "success": true,
-  "projectFilePath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Test Razor\\Test Razor.csproj",
+  "projectFilePath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
