@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Test_Razor</RootNamespace>
+    <UserSecretsId>8ddce90e-c488-44b7-ba3f-d757fe50c5b4</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +13,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="MySql.Data" Version="8.0.27" />
+    <PackageReference Include="MySqlConnector" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Programas\Microsoft Visual Studio\2019\Community\Common7\IDE\MySql.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

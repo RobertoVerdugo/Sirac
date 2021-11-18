@@ -1,0 +1,137 @@
+﻿@page
+@model Test_Razor.Pages.RegistroModel
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="blogs">
+                <div class="text-center">
+                    <h2>Regístrate</h2>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="border">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="container" style="padding:30px">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Usuario.nombre"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Usuario.nombre" class="form-control" placeholder="Pedro" />
+                                </div>
+                                <span asp-validation-for="Usuario.nombre" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Usuario.apellidos"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Usuario.apellidos" class="form-control" placeholder="López Rodríguez" />
+                                </div>
+                                <span asp-validation-for="Usuario.apellidos" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Usuario.rut"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Usuario.rut" class="form-control" placeholder="12.345.689-0" />
+                                </div>
+                                <span asp-validation-for="Usuario.rut" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Usuario.password"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Usuario.password" class="form-control" type="password" placeholder="Contraseña" />
+                                </div>
+                                <span asp-validation-for="Usuario.password" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Usuario.fecha"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Usuario.fecha" class="form-control" type="date" />
+                                </div>
+                                <span asp-validation-for="Usuario.fecha" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Usuario.email"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Usuario.email" class="form-control" type="email" placeholder="micorreo@proveedor.com" />
+                                </div>
+                                <span asp-validation-for="Usuario.email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Usuario.direccion"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Usuario.direccion" class="form-control" placeholder="Calle falsa 123" />
+                                </div>
+                                <span asp-validation-for="Usuario.direccion" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Usuario.telefono"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Usuario.telefono" class="form-control" placeholder="912345678" />
+                                </div>
+                                <span asp-validation-for="Usuario.telefono" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!--Botones-->
+                        <div class="form-group">
+                            <div class="row aling-items-center">
+                                <div class="col-aling-self-center col-sm-6">
+                                    <input type="submit" value="Registrarse" class="btn btn-primary form-control" />
+                                    <a asp-page="Index" class="btn btn-secondary form-control">Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
