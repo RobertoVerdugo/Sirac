@@ -309,3 +309,4 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.pdb
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.genruntimeconfig.cache
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Registro.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\CrearPubl.cshtml.g.cs

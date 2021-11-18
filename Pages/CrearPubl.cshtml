@@ -1,0 +1,228 @@
+﻿@page
+@model Test_Razor.Pages.CrearPublModel
+@{
+    ViewData["Title"] = "Publicar";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="blogs">
+                <div class="text-center">
+                    <h2>Publicar</h2>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="border">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="container" style="padding:30px">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.titulo"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Publicacion.titulo" class="form-control" placeholder="Animalito lindo" />
+                                </div>
+                                <span asp-validation-for="Publicacion.titulo" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.nombre"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Publicacion.nombre" class="form-control" placeholder="Pelusa" />
+                                </div>
+                                <span asp-validation-for="Publicacion.nombre" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.especie"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.especie" class="form-control" id="especie">
+                                        <option>Perro</option>
+                                        <option>Gato</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.especie" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.pelaje"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.pelaje" class="form-control">
+                                        <option>Duro</option>
+                                        <option>Rizado</option>
+                                        <option>Corto</option>
+                                        <option>Largo</option>
+                                        <option>Lampiño</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.pelaje" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.color"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.color" class="form-control">
+                                        <option>Negro</option>
+                                        <option>Blanco</option>
+                                        <option>Beige</option>
+                                        <option>Gris</option>
+                                        <option>Café</option>
+                                        <option>Café claro</option>
+                                        <option>Café oscuro</option>
+                                        <option>Anaranjado</option>
+                                        <option>Rubio</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.color" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Agregar un if para tener razas de perro y de gato-->
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.raza"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.raza" class="form-control">
+                                        <option>Pastor Alemán</option>
+                                        <option>Poodle</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Agregar las razas de gato-->
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.tamano"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.tamano" class="form-control">
+                                        <option>Pequeño</option>
+                                        <option>Mediano</option>
+                                        <option>Grande</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.tamano" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.edad"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.edad" class="form-control">
+                                        <option>Cachorro</option>
+                                        <option>Adulto</option>
+                                        <option>Senior</option>
+                                        <option>Desconocido</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.edad" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.genero"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.genero" class="form-control">
+                                        <option>Macho</option>
+                                        <option>Hembra</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.genero" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.estado"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.estado" class="form-control">
+                                        <option>Situación de calle</option>
+                                        <option>Tenencia Temporal</option>
+                                        <option>En Adopción</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.estado" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.ubicacion"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Publicacion.ubicacion" class="form-control" placeholder="Calle falsa 123 cerca del supermercado" />
+                                </div>
+                                <span asp-validation-for="Publicacion.ubicacion" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.rutaimg"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="Publicacion.rutaimg" class="form-control" type="file" accept="image/png, image/jpeg"/>
+                                </div>
+                                <span asp-validation-for="Publicacion.rutaimg" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Agregar el Rut del usuario y la fecha automáticamente-->
+
+                        <!--Botones-->
+                        <div class="form-group">
+                            <div class="row aling-items-center">
+                                <div class="col-aling-self-center col-sm-6">
+                                    <input type="submit" value="Publicar" class="btn btn-primary form-control" />
+                                    <a asp-page="Index" class="btn btn-secondary form-control">Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
