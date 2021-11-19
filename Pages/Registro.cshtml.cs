@@ -23,11 +23,10 @@ namespace Test_Razor.Pages
         }
         public async Task<IActionResult> OnPost()
         {
-            if (!ModelState.IsValid/*|| yaexiste || otra comprobacion*/)
+            if (!ModelState.IsValid || _db.Usuario.Find(Usuario.rut)!=null)
             {
                 return Page();
             }
-
             _db.Add(Usuario);
             await _db.SaveChangesAsync();
             return RedirectToPage("Index");
