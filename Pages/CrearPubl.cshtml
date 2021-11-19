@@ -23,6 +23,7 @@
                 <form method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="container" style="padding:30px">
+                        <input type="hidden" asp-for="Publicacion.fecha" value=@DateTime.UtcNow />
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-2">
@@ -53,7 +54,7 @@
                                     <label asp-for="Publicacion.especie"></label>
                                 </div>
                                 <div class="col-sm-4">
-                                    <select asp-for="Publicacion.especie" class="form-control" id="especie">
+                                    <select asp-for="Publicacion.especie" class="form-control" name="especie"> 
                                         <option>Perro</option>
                                         <option>Gato</option>
                                     </select>
@@ -101,22 +102,26 @@
                                 <span asp-validation-for="Publicacion.color" class="text-danger"></span>
                             </div>
                         </div>
-
-                        <!-- Agregar un if para tener razas de perro y de gato-->
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.raza"></label>
+                        @if(Model.raza)
+                            {
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.raza"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.raza" class="form-control">
+                                            <option>Pastor Alemán</option>
+                                            <option>Poodle</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
                                 </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.raza" class="form-control">
-                                        <option>Pastor Alemán</option>
-                                        <option>Poodle</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
                             </div>
-                        </div>
+                            }
+                        <!-- Agregar un if para tener razas de perro y de gato-->
+                        
+
                         <!-- Agregar las razas de gato-->
 
                         <div class="form-group">
@@ -201,14 +206,13 @@
                                     <label asp-for="Publicacion.rutaimg"></label>
                                 </div>
                                 <div class="col-sm-4">
-                                    <input asp-for="Publicacion.rutaimg" class="form-control" type="file" accept="image/png, image/jpeg"/>
+                                    <input asp-for="Publicacion.rutaimg" class="form-control" type="file" accept="image/png, image/jpeg" />
                                 </div>
                                 <span asp-validation-for="Publicacion.rutaimg" class="text-danger"></span>
                             </div>
                         </div>
 
                         <!-- Agregar el Rut del usuario y la fecha automáticamente-->
-
                         <!--Botones-->
                         <div class="form-group">
                             <div class="row aling-items-center">

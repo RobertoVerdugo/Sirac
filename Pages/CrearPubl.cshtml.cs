@@ -14,11 +14,15 @@ namespace Test_Razor.Pages
         {
             _db = db;
         }
-
+        public bool raza = true;
         [BindProperty]
         public Publicacion Publicacion{ get; set; }
         public void OnGet()
         {
+        }
+        protected void cambiaraza(object Source, EventArgs e)
+        {
+            raza = false;
         }
         public async Task<IActionResult> OnPost()
         {

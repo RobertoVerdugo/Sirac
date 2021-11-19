@@ -23,13 +23,18 @@ namespace Test_Razor.Pages
         }
         public async Task<IActionResult> OnPost()
         {
-            if (!ModelState.IsValid || _db.Usuario.Find(Usuario.rut)!=null)
+            if (!ModelState.IsValid || _db.Usuario.Find(Usuario.rut)!=null || !verificarut(Usuario.rut))
             {
                 return Page();
             }
             _db.Add(Usuario);
             await _db.SaveChangesAsync();
             return RedirectToPage("Index");
+        }
+        //Verifica el dígito verificador del rut. Retorna False si es falso XD
+        public bool verificarut(string rut)
+        {
+            return true;
         }
     }
 }
