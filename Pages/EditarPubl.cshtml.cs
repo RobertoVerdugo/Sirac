@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Test_Razor.Models;
+
+namespace Test_Razor.Pages
+{
+    public class EditarPublModel : PageModel
+    {
+        private readonly ApplicationDbContext db;
+
+        public EditarPublModel(ApplicationDbContext db)
+        {
+            this.db = db;
+        }
+        [BindProperty]
+        public Publicacion Publicacion { get; set; }
+        public async Task OnGet(int id)
+        {
+            Publicacion = await db.Publicacion.FindAsync(id);
+
+        }
+        public async Task<IActionResult> OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+                db.Publicacion.Update(Publicacion);
+                await db.SaveChangesAsync();
+                return RedirectToPage("Dashboard");
+            }
+            return RedirectToPage();
+        }
+    }
+}

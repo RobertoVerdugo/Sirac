@@ -13,6 +13,6 @@ namespace Test_Razor.Models
         {
 
         }
-        //public DbSet<Publicacion> Publicacion { get; set; }
+        public DbSet<Publicacion> Publicacion { get; set; }
     }
 }

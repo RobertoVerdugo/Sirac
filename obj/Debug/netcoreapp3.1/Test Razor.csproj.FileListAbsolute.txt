@@ -294,9 +294,7 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\scopedcss\bundle\Tes
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.TagHelpers.input.cache
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.TagHelpers.output.cache
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.RazorCoreGenerate.cache
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Blog.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Services.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
@@ -317,3 +315,6 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Logout.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\VerPubl.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\EditarPubl.cshtml.g.cs

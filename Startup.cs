@@ -30,6 +30,9 @@ namespace Test_Razor
             services.AddRazorPages(options => 
             {
                 options.Conventions.AuthorizePage("/CrearPubl");
+                options.Conventions.AuthorizePage("/VerPubl");
+                options.Conventions.AuthorizePage("/EditarPubl");
+                options.Conventions.AuthorizePage("/Dashboard");
             });
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(120);

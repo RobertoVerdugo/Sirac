@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Test_Razor.Models
 {
     public class Publicacion
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
         [Display(Name = "Título de la publicación")]
         [Required]
         public string titulo { get; set; }
@@ -39,7 +43,6 @@ namespace Test_Razor.Models
         [Required]
         public string genero { get; set; }
         [Display(Name = "Imagen del Animal")]
-        [Required]
         public string rutaimg { get; set; }
         [Display(Name = "Estado del Animal")]
         [Required]

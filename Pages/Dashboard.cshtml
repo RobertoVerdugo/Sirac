@@ -1,0 +1,69 @@
+﻿@page
+@model Test_Razor.Pages.DashboardModel
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> userManager
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="blogs">
+                <div class="text-center">
+                    <h2>Dashboard</h2>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+<form method="post">
+    @if (Model.Publicaciones.Count() > 0)
+    {
+        <table class="table table-responsive-md">
+            <tr class="table-secondary">
+                <th>
+                    @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().titulo)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().nombre)
+                </th>
+
+                <th>
+                    Publicación
+                </th>
+
+                <th>
+                    Acciones
+                </th>
+            </tr>
+            @foreach (var pub in Model.Publicaciones)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => pub.titulo)</td>
+                    <td>@Html.DisplayFor(m => pub.nombre)</td>
+                    <td><a asp-route-id=@pub.id asp-page="VerPubl">Ver</a></td>
+                    <td>
+                        <button asp-page-handler="Delete" asp-route-id="@pub.id" class="btn btn-secondary btn-sm" onclick="return confirm('Desea eliminar esta publicación?')">Eliminar</button>
+                        <a asp-route-id=@pub.id asp-page="EditarPubl" class="btn btn-secondary btn-sm">Editar</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="text-center">
+                        <p>No hay publicacones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</form>
