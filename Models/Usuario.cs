@@ -16,7 +16,7 @@ namespace Test_Razor.Models
         [Required]
         public string password { get; set; }
         [Required]
-        [Display(Name ="Nombre")]
+        [Display(Name = "Nombre")]
         public string nombre { get; set; }
 
         [Required]
@@ -36,5 +36,6 @@ namespace Test_Razor.Models
 
         [Display(Name = "Número Telefónico")]
         public string telefono { get; set; }
+
     }
 }

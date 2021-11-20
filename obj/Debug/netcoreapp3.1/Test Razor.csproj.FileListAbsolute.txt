@@ -310,3 +310,10 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.pdb
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.genruntimeconfig.cache
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Registro.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\CrearPubl.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Login.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Logout.cshtml.g.cs

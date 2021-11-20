@@ -2,6 +2,7 @@
 @model Test_Razor.Pages.CrearPublModel
 @{
     ViewData["Title"] = "Publicar";
+    
 }
 
 <div class="container">
@@ -102,23 +103,21 @@
                                 <span asp-validation-for="Publicacion.color" class="text-danger"></span>
                             </div>
                         </div>
-                        @if(Model.raza)
-                            {
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <label asp-for="Publicacion.raza"></label>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <select asp-for="Publicacion.raza" class="form-control">
-                                            <option>Pastor Alemán</option>
-                                            <option>Poodle</option>
-                                        </select>
-                                    </div>
-                                    <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.raza"></label>
                                 </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.raza" class="form-control">
+                                        <option>Pastor Alemán</option>
+                                        <option>Poodle</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
                             </div>
-                            }
+                        </div>
                         <!-- Agregar un if para tener razas de perro y de gato-->
                         
 
@@ -212,7 +211,6 @@
                             </div>
                         </div>
 
-                        <!-- Agregar el Rut del usuario y la fecha automáticamente-->
                         <!--Botones-->
                         <div class="form-group">
                             <div class="row aling-items-center">
