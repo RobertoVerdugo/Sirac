@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Test_Razor.Models;
+using Test_Razor.Pages;
 
 namespace Test_Razor
 {
@@ -51,6 +52,7 @@ namespace Test_Razor
             });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<ICategoryService, CascadaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

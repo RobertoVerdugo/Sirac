@@ -60,9 +60,8 @@
                                     <label asp-for="Publicacion.especie"></label>
                                 </div>
                                 <div class="col-sm-4">
-                                    <select asp-for="Publicacion.especie" class="form-control">
-                                        <option>Perro</option>
-                                        <option>Gato</option>
+                                    <select asp-for="Publicacion.especie" class="form-control" name="especie">
+                                        <option value="">Seleccione una especie</option>
                                     </select>
                                 </div>
                                 <span asp-validation-for="Publicacion.especie" class="text-danger"></span>
@@ -115,9 +114,8 @@
                                     <label asp-for="Publicacion.raza"></label>
                                 </div>
                                 <div class="col-sm-4">
-                                    <select asp-for="Publicacion.raza" class="form-control">
-                                        <option>Pastor Alemán</option>
-                                        <option>Poodle</option>
+                                    <select asp-for="Publicacion.raza" class="form-control" name="raza">
+                                        <option value="">Seleccione una raza</option>
                                     </select>
                                 </div>
                                 <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
@@ -230,4 +228,22 @@
         </div>
     </div>
 </div>
+
+@section scripts{
+    <script>
+    document.getElementsByName('especie').addEventListener('change', (e) => {
+        document.getElementByName('raza').innerHTML = "<option value=''>Seleccione una Raza</option>";
+        fetch(`?handler=SubCategories&categoryId=${e.target.value}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                Array.prototype.forEach.call(data, function (item, i) {
+                    document.getElementByName('raza').innerHTML += `<option value="${item.subCategoryId}">${item.subCategoryName}</option>`
+                });
+            });
+    });
+    </script>
+}
+
 

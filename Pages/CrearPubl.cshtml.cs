@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Test_Razor.Models;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Test_Razor.Pages
 {
@@ -22,13 +23,18 @@ namespace Test_Razor.Pages
         private readonly UserManager<IdentityUser> userManager;
         private readonly IWebHostEnvironment environment;
 
-        public CrearPublModel(ApplicationDbContext db, UserManager<IdentityUser> userManager, IWebHostEnvironment environment)
+        public CrearPublModel(ApplicationDbContext db, UserManager<IdentityUser> userManager, IWebHostEnvironment environment, ICategoryService categoryService)
         {
             _db = db;
             this.userManager = userManager;
             this.environment = environment;
+            this.categoryService = categoryService;
         }
-        
+        private ICategoryService categoryService;
+        [BindProperty(SupportsGet = true)]
+        public int CategoryId { get; set; }
+        public int SubCategoryId { get; set; }
+        public SelectList Categories { get; set; }
         [BindProperty]
         public Publicacion Publicacion{ get; set; }
         [BindProperty]
@@ -36,7 +42,7 @@ namespace Test_Razor.Pages
         public IFormFile Photo { get; set; }
         public void OnGet()
         {
-            
+            Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
         public async Task<IActionResult> OnPost()
         {
@@ -55,6 +61,10 @@ namespace Test_Razor.Pages
             _db.Add(Publicacion);
             await _db.SaveChangesAsync();
             return RedirectToPage("Index");
+        }
+        public JsonResult OnGetSubCategories()
+        {
+            return new JsonResult(categoryService.GetSubCategories(CategoryId));
         }
     }
 }
