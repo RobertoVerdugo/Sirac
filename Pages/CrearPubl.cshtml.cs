@@ -47,8 +47,9 @@ namespace Test_Razor.Pages
         public async Task<IActionResult> OnPost()
         {
             
-            if (!ModelState.IsValid/*|| yaexiste || otra comprobacion*/)
+            if (!ModelState.IsValid)
             {
+                Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
                 return Page();
             }
             var file = Path.Combine(environment.WebRootPath, "img", Photo.FileName);

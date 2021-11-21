@@ -25,11 +25,11 @@
         <table class="table table-responsive-md">
             <tr class="table-secondary">
                 <th>
-                    @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().titulo)
+                    @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().nombre)
                 </th>
 
                 <th>
-                    @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().nombre)
+                    @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().fecha)
                 </th>
 
                 <th>
@@ -43,8 +43,8 @@
             @foreach (var pub in Model.Publicaciones)
             {
                 <tr>
-                    <td>@Html.DisplayFor(m => pub.titulo)</td>
                     <td>@Html.DisplayFor(m => pub.nombre)</td>
+                    <td>@Html.DisplayFor(m => pub.fecha)</td>
                     <td><a asp-route-id=@pub.id asp-page="VerPubl">Ver</a></td>
                     <td>
                         <button asp-page-handler="Delete" asp-route-id="@pub.id" class="btn btn-secondary btn-sm" onclick="return confirm('Desea eliminar esta publicación?')">Eliminar</button>

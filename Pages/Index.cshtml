@@ -3,7 +3,7 @@
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> signInManager
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Inicio";
 }
 
     <div class="container">
@@ -30,8 +30,8 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="text-center">
-                <h2>Multi Purpose Theme</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br> lorem sit amet scelerisque justo</p>
+                <h2>Sistema de identificación y registro de animales callejeros</h2>
+                <p>Sistema de identificación y registro de animales callejeros.<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br> lorem sit amet scelerisque justo</p>
             </div>
             <hr>
         </div>
@@ -108,7 +108,7 @@
                 <figure class="effect-zoe">
                     <a asp-route-id=@pub.id asp-page="VerPubl"><img src="img/@pub.rutaimg" /></a>
                     <figcaption>
-                        <h3>@pub.titulo </h3><span>@pub.nombre</span>
+                        <h3>@pub.nombre </h3><span>@pub.fecha</span>
                         <p class="icon-links">
                             <a href="#"><span>Report</span></a>
                         </p>

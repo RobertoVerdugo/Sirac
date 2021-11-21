@@ -29,24 +29,25 @@ namespace Test_Razor.Pages
         {
             Publicaciones = db.Publicacion.ToList();
             var rut = userManager.GetUserName(User);
-            Publicaciones = Publicaciones.Where(u => u.rut == rut).ToList();
+            Publicaciones = Publicaciones.Where(u => u.rut == rut);
         }
         public async Task<IActionResult> OnPostDelete(int id)
         {
             var pub = await db.Publicacion.FindAsync(id);
             if(pub == null)
             {
-                return RedirectToPage("Index");
+                return RedirectToPage("Dashboard");
             }
-            string path = Path.Combine(environment.WebRootPath, "img", pub.rut);
+            /*string path = Path.Combine(environment.WebRootPath, "img", pub.rutaimg);
             FileInfo file = new FileInfo(path);
             if (file.Exists)
             {
+                //System.IO.File.Delete(path);
                 file.Delete();
-            }
+            }*/
             db.Publicacion.Remove(pub);
             await db.SaveChangesAsync();
-            return Page();
+            return RedirectToPage("Dashboard");
 
         }
     }

@@ -11,16 +11,17 @@ namespace Test_Razor.Models
         [Key]
         [Display(Name = "Rut")]
         [Required]
+        [MaxLength(12)]
         public string rut { get; set; }
-        [Display(Name = "Contraseña")]
-        [Required]
-        public string password { get; set; }
+        
         [Required]
         [Display(Name = "Nombre")]
+        [MaxLength(16)]
         public string nombre { get; set; }
 
         [Required]
         [Display(Name = "Apellidos")]
+        [MaxLength(25)]
         public string apellidos { get; set; }
 
         [Required]
@@ -29,12 +30,15 @@ namespace Test_Razor.Models
 
         [Required]
         [Display(Name = "Correo electrónico")]
+        [MaxLength(30)]
         public string email { get; set; }
 
         [Display(Name = "Dirección")]
+        [MaxLength(60)]
         public string direccion { get; set; }
 
         [Display(Name = "Número Telefónico")]
+        [MaxLength(11)]
         public string telefono { get; set; }
 
     }

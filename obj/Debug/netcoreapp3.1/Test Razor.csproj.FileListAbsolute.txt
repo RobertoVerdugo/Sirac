@@ -148,6 +148,13 @@ D:\R_B_G\Documents\Web dev\C#\Test Razor\bin\Debug\netcoreapp3.1\runtimes\win\li
 D:\R_B_G\Documents\Web dev\C#\Test Razor\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\R_B_G\Documents\Web dev\C#\Test Razor\obj\Debug\netcoreapp3.1\Razor\Pages\Blog.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Test Razor\obj\Debug\netcoreapp3.1\Razor\Pages\Services.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.GeneratedMSBuildEditorConfig.editorconfig
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.AssemblyInfoInputs.cache
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.AssemblyInfo.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.csproj.CoreCompileInputs.cache
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.MvcApplicationPartsAssemblyInfo.cache
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.RazorAssemblyInfo.cache
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.RazorAssemblyInfo.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\appsettings.json
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Test Razor.exe
@@ -163,6 +170,9 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
@@ -184,6 +194,8 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
@@ -280,23 +292,22 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\win-x86\nat
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.csproj.AssemblyReference.cache
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.GeneratedMSBuildEditorConfig.editorconfig
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.AssemblyInfoInputs.cache
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.AssemblyInfo.cs
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.csproj.CoreCompileInputs.cache
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.MvcApplicationPartsAssemblyInfo.cache
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.RazorAssemblyInfo.cache
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.RazorAssemblyInfo.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\staticwebassets\Test Razor.StaticWebAssets.Manifest.cache
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\staticwebassets\Test Razor.StaticWebAssets.xml
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\scopedcss\bundle\Test Razor.styles.css
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.TagHelpers.input.cache
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.TagHelpers.output.cache
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.RazorCoreGenerate.cache
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\CrearPubl.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\EditarPubl.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Login.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Logout.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Registro.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\VerPubl.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.RazorTargetAssemblyInfo.cache
@@ -306,15 +317,4 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.csproj.Co
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.pdb
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.genruntimeconfig.cache
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Registro.cshtml.g.cs
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\CrearPubl.cshtml.g.cs
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Login.cshtml.g.cs
-D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
-D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Logout.cshtml.g.cs
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\VerPubl.cshtml.g.cs
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard.cshtml.g.cs
-D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\EditarPubl.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Test Razor.csproj.AssemblyReference.cache

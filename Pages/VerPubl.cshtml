@@ -1,16 +1,16 @@
 ﻿@page
 @model Test_Razor.Pages.VerPublModel
 @{
-    ViewData["Title"] = Model.Publicacion.titulo;
+    ViewData["Title"] = Model.Publicacion.nombre;
 }
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="blogs">
                 <div class="text-center">
-                    <h2>@Model.Publicacion.titulo</h2>
+                    <!--<h2>Model.Publicacion.nombre</h2>-->
                 </div>
-                <hr>
+                <!--<hr>-->
             </div>
         </div>
     </div>
@@ -22,30 +22,64 @@
                 <div class="blog">
                     <h5>@Model.Publicacion.fecha.ToString("dd MMMM, yyyy")</h5>
                     <img src="img/@Model.Publicacion.rutaimg" class="img-responsive" />
-                    <h3>@Model.Publicacion.nombre</h3>
-                    <h4>&ensp; @Model.Publicacion.especie</h4>
+                    <h2 class="text-center">@Model.Publicacion.nombre</h2>
+
+                    <hr />
                     <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                        aliquip ex ea commodo consequat.
+                        @Model.Publicacion.descripcion
                     </p>
 
+                    <h3>Detalles físicos</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p><b>Especie: </b></p>
+                            <p><b>Género: </b></p>
+                            <p><b>Tipo de pelaje: </b></p>
+                            <p><b>Tamaño: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Publicacion.especie</p>
+                            <p>@Model.Publicacion.genero</p>
+                            <p>@Model.Publicacion.pelaje</p>
+                            <p>@Model.Publicacion.tamano</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>Raza: </b></p>
+                            <p><b>Edad: </b></p>
+                            <p><b>Color de pelaje: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Publicacion.raza</p>
+                            <p>@Model.Publicacion.edad</p>
+                            <p>@Model.Publicacion.color</p>
+                        </div>
+                    </div>
+
+                    <h3>Detalles de situación</h3>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p><b>Ubicación: </b></p>
+                            <p><b>Estado: </b></p>
+                        </div>
+                        <div class="col-md-10">
+                            <p>@Model.Publicacion.ubicacion</p>
+                            <p>@Model.Publicacion.estado</p>
+                        </div>
+                    </div>
 
 
-                    <p>
-                        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore
-                        te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
-                    </p>
-
-                    <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum.</p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                        aliquip ex ea commodo consequat.
-                    </p>
-                    <p><a href="#">Reportar</a></p>
-
+                    <div class="row" style="padding-top:20px; margin: 0px; border: 0px;">
+                        <div class="col-md-6">
+                            <p><small>Por:<br /> @Model.Usuario.nombre @Model.Usuario.apellidos<br /> @Model.Usuario.email <br /> @Model.Usuario.telefono</small></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-right"><small>Actualizado</small></p>
+                        </div> 
+                    </div>
+                    
                 </div>
             </div>
+            <p class="text-right"><a href="#">Reportar</a></p>
         </div>
     </div>
 </div>

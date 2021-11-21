@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -24,26 +25,33 @@ namespace Test_Razor.Pages
         }
 
         [BindProperty]
-        public Usuario Usuario {get; set;}
+        public Usuario Usuario { get; set; }
+        [BindProperty]
+        [Display(Name = "Contraseña")]
+        [Required]
+        [MaxLength(16)]
+        public string password { get; set; }
         public void OnGet()
         {
         }
         public async Task<IActionResult> OnPost()
         {
-            if (ModelState.IsValid  && verificarut(Usuario.rut))
+            if (ModelState.IsValid && verificarut(Usuario.rut) && verificarEdad(Usuario.fecha))
             {
                 IdentityUser user = new IdentityUser()
                 {
                     UserName = Usuario.rut,
                 };
 
-                var result = await userManager.CreateAsync(user, Usuario.password);
+                var result = await userManager.CreateAsync(user, password);
                 if (result.Succeeded)
                 {
                     await signInManager.SignInAsync(user, false);
+                    _db.Add(Usuario);
+                    await _db.SaveChangesAsync();
                     return RedirectToPage("Index");
                 }
-                foreach(var error in result.Errors)
+                foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }
@@ -51,12 +59,43 @@ namespace Test_Razor.Pages
             return Page();
         }
 
-        public bool verificarut(string rut)
+        private bool verificarEdad(DateTime fecha)
         {
-            if (verificarExistenciaRut(rut) && verificarFormatoRut(rut))
+            if (verificarEdadPosible(fecha) && verificarMayorDeEdad(fecha))
             {
                 return true;
             }
+            return false;
+        }
+
+        private bool verificarMayorDeEdad(DateTime fecha)
+        {
+            fecha = fecha.AddYears(18);
+            if (fecha <= DateTime.Now)
+            {
+                return true;
+            }
+            ModelState.AddModelError("", "Debe ser mayor de edad");
+            return false;
+        }
+
+        private bool verificarEdadPosible(DateTime fecha)
+        {
+            if (fecha <= DateTime.Now)
+            {
+                return true;
+            }
+            ModelState.AddModelError("", "Edad invalida");
+            return false;
+        }
+
+        public bool verificarut(string rut)
+        {
+            if (verificarFormatoRut(rut) && verificarExistenciaRut(rut))
+            {
+                return true;
+            }
+            
             return false;
         }
 
@@ -70,6 +109,7 @@ namespace Test_Razor.Pages
                     return true;
                 }
             }
+            ModelState.AddModelError("", "Formato de rut inválido");
             return false;
         }
 
@@ -106,6 +146,7 @@ namespace Test_Razor.Pages
             }
             else
             {
+                ModelState.AddModelError("", "El rut no existe");
                 return false;
             }
         }

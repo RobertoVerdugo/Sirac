@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Test_Razor.Models;
 
 namespace Test_Razor.Pages
@@ -12,15 +13,23 @@ namespace Test_Razor.Pages
     {
         private readonly ApplicationDbContext db;
 
-        public EditarPublModel(ApplicationDbContext db)
+        public EditarPublModel(ApplicationDbContext db, ICategoryService categoryService)
         {
             this.db = db;
+            this.categoryService = categoryService;
         }
+        private ICategoryService categoryService;
+        [BindProperty(SupportsGet = true)]
+        public int CategoryId { get; set; }
+        public int SubCategoryId { get; set; }
+        public SelectList Categories { get; set; }
+
         [BindProperty]
         public Publicacion Publicacion { get; set; }
         public async Task OnGet(int id)
         {
             Publicacion = await db.Publicacion.FindAsync(id);
+            Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
 
         }
         public async Task<IActionResult> OnPost()
@@ -31,6 +40,7 @@ namespace Test_Razor.Pages
                 await db.SaveChangesAsync();
                 return RedirectToPage("Dashboard");
             }
+            Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
             return RedirectToPage();
         }
     }
