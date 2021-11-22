@@ -6,6 +6,10 @@
     ViewData["Title"] = "Inicio";
 }
 
+<style>
+    #col {padding-bottom: 10px;}
+</style>
+
 <div class="container">
     <div class="row">
         <div class="slider">
@@ -23,7 +27,6 @@
         </div>
     </div>
 </div>
-
 
 
 <div class="container">
@@ -52,27 +55,27 @@
         </div>
     </div>
 </div>0
-<div class="container">
+<div class="container" >
     <form method="post">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.especie" class="form-control" asp-items="Model.Categories">
                     <option value="">Seleccione una especie</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.raza" class="form-control">
                     <option value="">Seleccione una raza</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.genero" class="form-control">
                     <option value="">Seleccione genero</option>
                     <option>Macho</option>
                     <option>Hembra</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="col"> 
                 <select asp-for="Filtro.edad" class="form-control">
                     <option value="">Seleccione edad</option>
                     <option>Cachorro</option>
@@ -82,8 +85,8 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
+        <div class="row" >
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.pelaje" class="form-control">
                     <option value="">Seleccione tipo de pelaje</option>
                     <option>Duro</option>
@@ -93,7 +96,7 @@
                     <option>Lampiño</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="col" >
                 <select asp-for="Filtro.color" class="form-control">
                     <option value="">Seleccione un color</option>
                     <option>Negro</option>
@@ -107,7 +110,7 @@
                     <option>Rubio</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.tamano" class="form-control">
                     <option value="">Seleccione tamaño</option>
                     <option>Pequeño</option>
@@ -115,7 +118,7 @@
                     <option>Grande</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.estado" class="form-control">
                     <option value="">Seleccione estado</option>
                     <option>Situación de calle</option>
@@ -125,7 +128,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.orden" class="form-control">
                     <option value="">Ordenar por</option>
                     <option>Nombre (A-Z)</option>
@@ -135,7 +138,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <input type="submit" value="Filtrar" class="btn btn-primary form-control" />
+                <input type="submit" value="Filtrar" class="btn btn-primary form-control" style="margin: 0px; border: 0px;"/>
             </div>
         </div>
     </form>
