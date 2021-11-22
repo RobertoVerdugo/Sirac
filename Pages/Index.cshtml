@@ -6,23 +6,23 @@
     ViewData["Title"] = "Inicio";
 }
 
-    <div class="container">
-        <div class="row">
-            <div class="slider">
-                <div class="img-responsive">
-                    @if (signInManager.IsSignedIn(User))
-                    {
-                        <!-- Aqui puede ir un slider con las publicaciones recomendadas por el algoritmo-->
-                        <ul class="bxslider">
-                            <li><img src="~/img/01.jpg" alt="" /></li>
-                            <li><img src="~/img/01.jpg" alt="" /></li>
-                            <li><img src="~/img/01.jpg" alt="" /></li>
-                        </ul>
-                    }
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="slider">
+            <div class="img-responsive">
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <!-- Aqui puede ir un slider con las publicaciones recomendadas por el algoritmo-->
+                    <ul class="bxslider">
+                        <li><img src="~/img/01.jpg" alt="" /></li>
+                        <li><img src="~/img/01.jpg" alt="" /></li>
+                        <li><img src="~/img/01.jpg" alt="" /></li>
+                    </ul>
+                }
             </div>
         </div>
     </div>
+</div>
 
 
 
@@ -38,52 +38,6 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="box">
-            <div class="col-md-4">
-                <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                    <h4>Responsive</h4>
-                    <div class="icon">
-                        <i class="fa fa-heart-o fa-3x"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p>
-                    <div class="ficon">
-                        <a href="#" class="btn btn-default" role="button">Read more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
-                    <h4>Multi Purpose</h4>
-                    <div class="icon">
-                        <i class="fa fa-desktop fa-3x"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p>
-                    <div class="ficon">
-                        <a href="#" class="btn btn-default" role="button">Read more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s">
-                    <h4>Easy Customize</h4>
-                    <div class="icon">
-                        <i class="fa fa-location-arrow fa-3x"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p>
-                    <div class="ficon">
-                        <a href="#" class="btn btn-default" role="button">Read more</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <div class="container">
     <div class="row">
@@ -97,9 +51,88 @@
             <hr>
         </div>
     </div>
+</div>0
+
+<div class="container">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-3">
+                <select asp-for="Filtro.especie" class="form-control" asp-items="Model.Categories">
+                    <option value="">Seleccione una especie</option>
+                </select>
+
+                <select asp-for="Filtro.pelaje" class="form-control">
+                    <option value="">Seleccione tipo de pelaje</option>
+                    <option>Duro</option>
+                    <option>Rizado</option>
+                    <option>Corto</option>
+                    <option>Largo</option>
+                    <option>Lampiño</option>
+                </select>
+
+                <select asp-for="Filtro.orden" class="form-control">
+                    <option value="">Ordenar por</option>
+                    <option>Nombre (A-Z)</option>
+                    <option>Nombre (Z-A)</option>
+                    <option>Fecha (Nuevo-Antiguo)</option>
+                    <option>Fecha (Antiguo-Nuevo)</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select asp-for="Filtro.raza" class="form-control">
+                    <option value="">Seleccione una raza</option>
+                </select>
+
+                <select asp-for="Filtro.color" class="form-control">
+                    <option value="">Seleccione un color</option>
+                    <option>Negro</option>
+                    <option>Blanco</option>
+                    <option>Beige</option>
+                    <option>Gris</option>
+                    <option>Café</option>
+                    <option>Café claro</option>
+                    <option>Café oscuro</option>
+                    <option>Anaranjado</option>
+                    <option>Rubio</option>
+                </select>
+
+                <input type="submit" value="Filtrar" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-md-3">
+                <select asp-for="Filtro.genero" class="form-control">
+                    <option value="">Seleccione genero</option>
+                    <option>Macho</option>
+                    <option>Hembra</option>
+                </select>
+
+                <select asp-for="Filtro.tamano" class="form-control">
+                    <option value="">Seleccione tamaño</option>
+                    <option>Pequeño</option>
+                    <option>Mediano</option>
+                    <option>Grande</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select asp-for="Filtro.edad" class="form-control">
+                    <option value="">Seleccione edad</option>
+                    <option>Cachorro</option>
+                    <option>Adulto</option>
+                    <option>Senior</option>
+                    <option>Desconocido</option>
+                </select>
+
+                <select asp-for="Filtro.estado" class="form-control">
+                    <option value="">Seleccione estado</option>
+                    <option>Situación de calle</option>
+                    <option>Tenencia Temporal</option>
+                    <option>En Adopción</option>
+                </select>
+            </div>
+        </div>
+    </form>
 </div>
 
-<div class="content">
+<div class="container">
     <div class="grid">
         @if (Model.Publicaciones.Count() > 0)
         {
@@ -117,6 +150,21 @@
                 </figure>
             }
         }
-
     </div>
 </div>
+@section scripts{
+    <script>
+        document.getElementsByName('Filtro.especie')[0].addEventListener('change', (e) => {
+            document.getElementsByName('Filtro.raza')[0].innerHTML = "<option value=''>Seleccione una raza</option>";
+            fetch(`?handler=SubCategories&categoryId=${e.target.value}`)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    Array.prototype.forEach.call(data, function (item, i) {
+                        document.getElementsByName('Filtro.raza')[0].innerHTML += `<option value="${item.subCategoryId}">${item.subCategoryName}</option>`
+                    });
+                });
+        });
+    </script>
+}

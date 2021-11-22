@@ -59,10 +59,59 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-2">
+                                    <label asp-for="Publicacion.raza"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.raza" name="Publicacion.raza" class="form-control">
+                                        <option value="">Seleccione una raza</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.genero"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.genero" class="form-control">
+                                        <option value="">Seleccione genero</option>
+                                        <option>Macho</option>
+                                        <option>Hembra</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.genero" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label asp-for="Publicacion.edad"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select asp-for="Publicacion.edad" class="form-control">
+                                        <option value="">Seleccione edad</option>
+                                        <option>Cachorro</option>
+                                        <option>Adulto</option>
+                                        <option>Senior</option>
+                                        <option>Desconocido</option>
+                                    </select>
+                                </div>
+                                <span asp-validation-for="Publicacion.edad" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2">
                                     <label asp-for="Publicacion.pelaje"></label>
                                 </div>
                                 <div class="col-sm-4">
                                     <select asp-for="Publicacion.pelaje" class="form-control">
+                                        <option value="">Seleccione tipo de pelaje</option>
                                         <option>Duro</option>
                                         <option>Rizado</option>
                                         <option>Corto</option>
@@ -81,6 +130,7 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <select asp-for="Publicacion.color" class="form-control">
+                                        <option value="">Seleccione un color</option>
                                         <option>Negro</option>
                                         <option>Blanco</option>
                                         <option>Beige</option>
@@ -96,19 +146,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.raza"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.raza" name="Publicacion.raza" class="form-control" >
-                                        <option value="">Seleccione una raza</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
-                            </div>
-                        </div>
 
                         <div class="form-group">
                             <div class="row">
@@ -117,6 +154,7 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <select asp-for="Publicacion.tamano" class="form-control">
+                                        <option value="">Seleccione tamaño</option>
                                         <option>Pequeño</option>
                                         <option>Mediano</option>
                                         <option>Grande</option>
@@ -129,42 +167,11 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-2">
-                                    <label asp-for="Publicacion.edad"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.edad" class="form-control">
-                                        <option>Cachorro</option>
-                                        <option>Adulto</option>
-                                        <option>Senior</option>
-                                        <option>Desconocido</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.edad" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.genero"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.genero" class="form-control">
-                                        <option>Macho</option>
-                                        <option>Hembra</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.genero" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
                                     <label asp-for="Publicacion.estado"></label>
                                 </div>
                                 <div class="col-sm-4">
                                     <select asp-for="Publicacion.estado" class="form-control">
+                                        <option value="">Seleccione estado</option>
                                         <option>Situación de calle</option>
                                         <option>Tenencia Temporal</option>
                                         <option>En Adopción</option>

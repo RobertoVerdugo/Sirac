@@ -20,13 +20,11 @@ namespace Test_Razor.Pages
     {
 
         private readonly ApplicationDbContext _db;
-        private readonly UserManager<IdentityUser> userManager;
         private readonly IWebHostEnvironment environment;
 
-        public CrearPublModel(ApplicationDbContext db, UserManager<IdentityUser> userManager, IWebHostEnvironment environment, ICategoryService categoryService)
+        public CrearPublModel(ApplicationDbContext db, IWebHostEnvironment environment, ICategoryService categoryService)
         {
             _db = db;
-            this.userManager = userManager;
             this.environment = environment;
             this.categoryService = categoryService;
         }
@@ -35,6 +33,7 @@ namespace Test_Razor.Pages
         public int CategoryId { get; set; }
         public int SubCategoryId { get; set; }
         public SelectList Categories { get; set; }
+
         [BindProperty]
         public Publicacion Publicacion{ get; set; }
         [BindProperty]
