@@ -6,12 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <div class="blogs">
-                <div class="text-center">
-                    <!--<h2>Model.Publicacion.nombre</h2>-->
-                </div>
-                <!--<hr>-->
-            </div>
+            <hr />
         </div>
     </div>
 </div>
@@ -33,25 +28,53 @@
                     <div class="row">
                         <div class="col-md-3">
                             <p><b>Especie: </b></p>
-                            <p><b>Género: </b></p>
-                            <p><b>Tipo de pelaje: </b></p>
-                            <p><b>Tamaño: </b></p>
                         </div>
                         <div class="col-md-3">
                             <p>@Model.Publicacion.especie</p>
-                            <p>@Model.Publicacion.genero</p>
-                            <p>@Model.Publicacion.pelaje</p>
-                            <p>@Model.Publicacion.tamano</p>
                         </div>
                         <div class="col-md-3">
                             <p><b>Raza: </b></p>
-                            <p><b>Edad: </b></p>
-                            <p><b>Color de pelaje: </b></p>
                         </div>
                         <div class="col-md-3">
                             <p>@Model.Publicacion.raza</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p><b>Género: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Publicacion.genero</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>Edad: </b></p>
+                        </div>
+                        <div class="col-md-3">
                             <p>@Model.Publicacion.edad</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p><b>Tipo de pelaje: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Publicacion.pelaje</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>Color de pelaje: </b></p>
+                        </div>
+                        <div class="col-md-3">
                             <p>@Model.Publicacion.color</p>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <p><b>Tamaño: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Publicacion.tamano</p>
                         </div>
                     </div>
 
@@ -59,10 +82,16 @@
                     <div class="row">
                         <div class="col-md-2">
                             <p><b>Ubicación: </b></p>
-                            <p><b>Estado: </b></p>
                         </div>
                         <div class="col-md-10">
                             <p>@Model.Publicacion.ubicacion</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p><b>Estado: </b></p>
+                        </div>
+                        <div class="col-md-10">
                             <p>@Model.Publicacion.estado</p>
                         </div>
                     </div>
@@ -74,9 +103,9 @@
                         </div>
                         <div class="col-md-6">
                             <p class="text-right"><small>Actualizado</small></p>
-                        </div> 
+                        </div>
                     </div>
-                    
+
                 </div>
             </div>
             <p class="text-right"><a href="#">Reportar</a></p>

@@ -52,7 +52,6 @@
         </div>
     </div>
 </div>0
-
 <div class="container">
     <form method="post">
         <div class="row">
@@ -60,7 +59,31 @@
                 <select asp-for="Filtro.especie" class="form-control" asp-items="Model.Categories">
                     <option value="">Seleccione una especie</option>
                 </select>
-
+            </div>
+            <div class="col-md-3">
+                <select asp-for="Filtro.raza" class="form-control">
+                    <option value="">Seleccione una raza</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select asp-for="Filtro.genero" class="form-control">
+                    <option value="">Seleccione genero</option>
+                    <option>Macho</option>
+                    <option>Hembra</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select asp-for="Filtro.edad" class="form-control">
+                    <option value="">Seleccione edad</option>
+                    <option>Cachorro</option>
+                    <option>Adulto</option>
+                    <option>Senior</option>
+                    <option>Desconocido</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
                 <select asp-for="Filtro.pelaje" class="form-control">
                     <option value="">Seleccione tipo de pelaje</option>
                     <option>Duro</option>
@@ -69,20 +92,8 @@
                     <option>Largo</option>
                     <option>Lampiño</option>
                 </select>
-
-                <select asp-for="Filtro.orden" class="form-control">
-                    <option value="">Ordenar por</option>
-                    <option>Nombre (A-Z)</option>
-                    <option>Nombre (Z-A)</option>
-                    <option>Fecha (Nuevo-Antiguo)</option>
-                    <option>Fecha (Antiguo-Nuevo)</option>
-                </select>
             </div>
             <div class="col-md-3">
-                <select asp-for="Filtro.raza" class="form-control">
-                    <option value="">Seleccione una raza</option>
-                </select>
-
                 <select asp-for="Filtro.color" class="form-control">
                     <option value="">Seleccione un color</option>
                     <option>Negro</option>
@@ -95,16 +106,8 @@
                     <option>Anaranjado</option>
                     <option>Rubio</option>
                 </select>
-
-                <input type="submit" value="Filtrar" class="btn btn-primary form-control" />
             </div>
             <div class="col-md-3">
-                <select asp-for="Filtro.genero" class="form-control">
-                    <option value="">Seleccione genero</option>
-                    <option>Macho</option>
-                    <option>Hembra</option>
-                </select>
-
                 <select asp-for="Filtro.tamano" class="form-control">
                     <option value="">Seleccione tamaño</option>
                     <option>Pequeño</option>
@@ -113,20 +116,26 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <select asp-for="Filtro.edad" class="form-control">
-                    <option value="">Seleccione edad</option>
-                    <option>Cachorro</option>
-                    <option>Adulto</option>
-                    <option>Senior</option>
-                    <option>Desconocido</option>
-                </select>
-
                 <select asp-for="Filtro.estado" class="form-control">
                     <option value="">Seleccione estado</option>
                     <option>Situación de calle</option>
                     <option>Tenencia Temporal</option>
                     <option>En Adopción</option>
                 </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <select asp-for="Filtro.orden" class="form-control">
+                    <option value="">Ordenar por</option>
+                    <option>Nombre (A-Z)</option>
+                    <option>Nombre (Z-A)</option>
+                    <option>Fecha (Nuevo-Antiguo)</option>
+                    <option>Fecha (Antiguo-Nuevo)</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="submit" value="Filtrar" class="btn btn-primary form-control" />
             </div>
         </div>
     </form>
