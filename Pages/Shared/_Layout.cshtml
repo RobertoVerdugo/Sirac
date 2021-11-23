@@ -1,6 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> signInManager 
-
+@inject SignInManager<IdentityUser> signInManager
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +22,7 @@
 
 </head>
 
-<body >
+<body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,12 +39,12 @@
                 <div class="menu">
                     @if (signInManager.IsSignedIn(User))
                     {
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation"> <!--class="active"--> <a asp-area="" asp-page="/index">Inicio</a></li>
-                        <li role="presentation"><a asp-area="" asp-page="/CrearPubl">Publicar</a></li>
-                        <li role="presentation"><a asp-area="" asp-page="/Dashboard">Perfil</a></li>
-                        <li role="presentation"><a asp-area="" asp-page="/Logout">Cerrar Sesión</a></li>
-                    </ul>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"> <!--class="active"--> <a asp-area="" asp-page="/index">Inicio</a></li>
+                            <li role="presentation"><a asp-area="" asp-page="/CrearPubl">Publicar</a></li>
+                            <li role="presentation"><a asp-area="" asp-page="/Dashboard">Perfil</a></li>
+                            <li role="presentation"><a asp-area="" asp-page="/Logout">Cerrar Sesión</a></li>
+                        </ul>
                     }
                     else
                     {
@@ -59,8 +58,8 @@
         </div>
     </nav>
 
-    <div >
-        <main role="main" class="pb-3" >
+    <div>
+        <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
@@ -69,7 +68,7 @@
         <div class="inner-footer">
             <div class="container">
                 <div class="row">
-                    
+
                 </div>
             </div>
         </div>

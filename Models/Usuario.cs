@@ -33,10 +33,6 @@ namespace Test_Razor.Models
         [MaxLength(30)]
         public string email { get; set; }
 
-        [Display(Name = "Dirección")]
-        [MaxLength(60)]
-        public string direccion { get; set; }
-
         [Display(Name = "Número Telefónico")]
         [MaxLength(11)]
         public string telefono { get; set; }

@@ -17,6 +17,9 @@ namespace Test_Razor.Models
         [Required]
         public DateTime fecha { get; set; }
 
+        [Display(Name = "Fecha de Actualización")]
+        public DateTime actualizacion { get; set; }
+
         [Display(Name = "Nombre del Animal")]
         [Required]
         [MaxLength(30)]

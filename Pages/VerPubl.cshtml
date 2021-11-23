@@ -99,10 +99,10 @@
 
                     <div class="row" style="padding-top:20px; margin: 0px; border: 0px;">
                         <div class="col-md-6">
-                            <p><small>Por:<br /> @Model.Usuario.nombre @Model.Usuario.apellidos<br /> @Model.Usuario.email <br /> @Model.Usuario.telefono</small></p>
+                            <p><small>Por:<br /> @Model.Usuario.nombre @Model.Usuario.apellidos<br /> @Model.Usuario.email @if (Model.Usuario.telefono != null) {<br /> @Model.Usuario.telefono}</small></p>
                         </div>
                         <div class="col-md-6">
-                            <p class="text-right"><small>Actualizado</small></p>
+                            @if(@Model.Publicacion.actualizacion!=null){<p class="text-right"><small>Actualizado el @Model.Publicacion.actualizacion.ToString("dd MMMM, yyyy")</small></p>}
                         </div>
                     </div>
 

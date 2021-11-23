@@ -7,9 +7,10 @@
 }
 
 <style>
-    #col {padding-bottom: 10px;}
-</style>
-
+    #col {
+        padding-bottom: 10px;
+    }
+</style>    
 <div class="container">
     <div class="row">
         <div class="slider">
@@ -55,7 +56,7 @@
         </div>
     </div>
 </div>0
-<div class="container" >
+<div class="container">
     <form method="post">
         <div class="row">
             <div class="col-md-3" id="col">
@@ -75,7 +76,7 @@
                     <option>Hembra</option>
                 </select>
             </div>
-            <div class="col-md-3" id="col"> 
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.edad" class="form-control">
                     <option value="">Seleccione edad</option>
                     <option>Cachorro</option>
@@ -85,7 +86,7 @@
                 </select>
             </div>
         </div>
-        <div class="row" >
+        <div class="row">
             <div class="col-md-3" id="col">
                 <select asp-for="Filtro.pelaje" class="form-control">
                     <option value="">Seleccione tipo de pelaje</option>
@@ -96,7 +97,7 @@
                     <option>Lampiño</option>
                 </select>
             </div>
-            <div class="col-md-3" id="col" >
+            <div class="col-md-3" id="col">
                 <select asp-for="Filtro.color" class="form-control">
                     <option value="">Seleccione un color</option>
                     <option>Negro</option>
@@ -108,6 +109,7 @@
                     <option>Café oscuro</option>
                     <option>Anaranjado</option>
                     <option>Rubio</option>
+                    <option>Otro</option>
                 </select>
             </div>
             <div class="col-md-3" id="col">
@@ -138,7 +140,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <input type="submit" value="Filtrar" class="btn btn-primary form-control" style="margin: 0px; border: 0px;"/>
+                <input type="submit" value="Filtrar" class="btn btn-primary form-control" style="margin: 0px; border: 0px;" />
             </div>
         </div>
     </form>
