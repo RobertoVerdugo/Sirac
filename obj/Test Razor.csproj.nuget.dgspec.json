@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj": {}
+    "C:\\Users\\PIPEX\\source\\repos\\RobertoVerdugo\\Sirac\\Test Razor.csproj": {}
   },
   "projects": {
-    "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj": {
+    "C:\\Users\\PIPEX\\source\\repos\\RobertoVerdugo\\Sirac\\Test Razor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj",
+        "projectUniqueName": "C:\\Users\\PIPEX\\source\\repos\\RobertoVerdugo\\Sirac\\Test Razor.csproj",
         "projectName": "Test Razor",
-        "projectPath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj",
-        "packagesPath": "C:\\Users\\R_B_G\\.nuget\\packages\\",
-        "outputPath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\obj\\",
+        "projectPath": "C:\\Users\\PIPEX\\source\\repos\\RobertoVerdugo\\Sirac\\Test Razor.csproj",
+        "packagesPath": "C:\\Users\\PIPEX\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PIPEX\\source\\repos\\RobertoVerdugo\\Sirac\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Visual Studio\\Componentes herramientas y SDK\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\R_B_G\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\PIPEX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -89,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -58,6 +58,14 @@ namespace Test_Razor.Pages
                 
             }
             Publicacion.rutaimg = Photo.FileName;
+            if(Publicacion.especie == "1")
+            {
+                Publicacion.especie = "Perro";
+            }
+            else
+            {
+                Publicacion.especie = "Gato";
+            }
             _db.Add(Publicacion);
             await _db.SaveChangesAsync();
             return RedirectToPage("Index");
