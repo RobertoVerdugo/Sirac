@@ -176,7 +176,7 @@
                 })
                 .then((data) => {
                     Array.prototype.forEach.call(data, function (item, i) {
-                        document.getElementsByName('Filtro.raza')[0].innerHTML += `<option value="${item.subCategoryId}">${item.subCategoryName}</option>`
+                        document.getElementsByName('Filtro.raza')[0].innerHTML += `<option value="${item.subCategoryName}">${item.subCategoryName}</option>`
                     });
                 });
         });

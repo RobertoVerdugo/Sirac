@@ -41,6 +41,7 @@ namespace Test_Razor.Pages
             Publicaciones = db.Publicacion.ToList();
             if (Filtro.especie != null)
             {
+                Filtro.especie = Filtro.especie == "1" ? ("Perro") : ("Gato");
                 Publicaciones = Publicaciones.Where(u => u.especie == Filtro.especie);
             }
             if (Filtro.raza != null)

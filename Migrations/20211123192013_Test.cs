@@ -2,7 +2,7 @@
 
 namespace Test_Razor.Migrations
 {
-    public partial class Usuario2 : Migration
+    public partial class Test : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

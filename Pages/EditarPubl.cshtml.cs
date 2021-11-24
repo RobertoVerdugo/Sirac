@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,12 +14,15 @@ namespace Test_Razor.Pages
     {
         private readonly ApplicationDbContext db;
 
-        public EditarPublModel(ApplicationDbContext db, ICategoryService categoryService)
+        public EditarPublModel(ApplicationDbContext db, ICategoryService categoryService, UserManager<IdentityUser> userManager)
         {
             this.db = db;
             this.categoryService = categoryService;
+            this.userManager = userManager;
         }
         private ICategoryService categoryService;
+        private readonly UserManager<IdentityUser> userManager;
+
         [BindProperty(SupportsGet = true)]
         public int CategoryId { get; set; }
         public int SubCategoryId { get; set; }
@@ -26,11 +30,15 @@ namespace Test_Razor.Pages
 
         [BindProperty]
         public Publicacion Publicacion { get; set; }
-        public async Task OnGet(int id)
+        public async Task<IActionResult> OnGet(int id)
         {
             Publicacion = await db.Publicacion.FindAsync(id);
+            if(Publicacion.rut != userManager.GetUserName(User)) 
+            {
+                return RedirectToPage("Index");
+            }
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
-
+            return Page();
         }
         public async Task<IActionResult> OnPost()
         {
