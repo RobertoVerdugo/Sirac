@@ -56,9 +56,5 @@ namespace Test_Razor.Pages
         {
             return new JsonResult(categoryService.GetSubCategories(CategoryId));
         }
-        public JsonResult OnGetSubCategories()
-        {
-            return new JsonResult(categoryService.GetSubCategories(CategoryId));
-        }
     }
 }
