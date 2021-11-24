@@ -51,5 +51,9 @@ namespace Test_Razor.Pages
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
             return RedirectToPage();
         }
+        public JsonResult OnGetSubCategories()
+        {
+            return new JsonResult(categoryService.GetSubCategories(CategoryId));
+        }
     }
 }
