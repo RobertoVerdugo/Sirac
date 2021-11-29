@@ -12,7 +12,7 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="blogs">
                 <div class="text-center">
-                    <h2>Dashboard</h2>
+                    <h2>Mis Publicaciones</h2>
                 </div>
                 <br />
             </div>
@@ -69,3 +69,136 @@
         }
     </form>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="blogs">
+                <div class="text-center">
+                    <h2>Mi Perfil</h2>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="page-header">
+                <div class="blog">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p><b>Nombre: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Usuario.nombre</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>Apellidos: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Usuario.apellidos</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p><b>Email: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Usuario.email</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>Teléfono: </b></p>
+                        </div>
+                        @if (Model.Usuario.telefono != null)
+                        {
+                            <div class="col-md-3">
+                                <p>@Model.Usuario.telefono</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-3">
+                                <p>Sin registrar</p>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p><b>Rut: </b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@Model.Usuario.rut</p>
+                        </div>
+                    </div>
+                    <p class="text-right"><a asp-route-id=@Model.Usuario.rut asp-page="EditarUsr" class="btn btn-primary btn-sm">Editar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (await userManager.IsInRoleAsync(Model.admin, "Admin"))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+                        <h2>Reportes</h2>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form method="post">
+            @if (Model.Reportes.Count() > 0)
+            {
+                <table class="table table-responsive-md">
+                    <tr class="table-secondary">
+                        <th>
+                            @Html.DisplayNameFor(m => m.Reportes.FirstOrDefault().causal)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(m => m.Reportes.FirstOrDefault().descripcion)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(m => m.Reportes.FirstOrDefault().idPublicacion)
+                        </th>
+                        <th>
+                            Ver
+                        </th>
+                    </tr>
+                    @foreach (var rep in Model.Reportes)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => rep.causal)</td>
+                            <td>@Html.DisplayFor(m => rep.descripcion)</td>
+                            <td>@Html.DisplayFor(m => rep.idPublicacion)</td>
+                            <td><a asp-route-id=@rep.idPublicacion asp-page="VerPubl">Ver</a></td>
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="text-center">
+                                <p>No hay Reportes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </form>
+    </div>
+}

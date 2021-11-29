@@ -95,7 +95,7 @@ namespace Test_Razor.Pages
             {
                 return true;
             }
-            
+
             return false;
         }
 
@@ -136,7 +136,7 @@ namespace Test_Razor.Pages
             {
                 return true;
             }
-            else if (digitoVerificador == 'K' && Math.Abs((11 - resta)) == 10)
+            else if ((digitoVerificador == 'K' || digitoVerificador == 'k') && Math.Abs((11 - resta)) == 10)
             {
                 return true;
             }

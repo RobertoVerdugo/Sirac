@@ -1,10 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\PIPEX\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\PIPEX\\.nuget\\packages",
-      "E:\\Visual Studio\\Componentes herramientas y SDK\\NuGetPackages",
-      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+      "C:\\Users\\R_B_G\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\R_B_G\\.nuget\\packages"
     ]
   }
 }

@@ -28,11 +28,13 @@ namespace Test_Razor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages(options => 
+            services.AddRazorPages(options =>
             {
                 options.Conventions.AuthorizePage("/CrearPubl");
                 options.Conventions.AuthorizePage("/VerPubl");
                 options.Conventions.AuthorizePage("/EditarPubl");
+                options.Conventions.AuthorizePage("/EditarUsr");
+                options.Conventions.AuthorizePage("/Reportar");
                 options.Conventions.AuthorizePage("/Dashboard");
             });
             services.AddSession(options => {
@@ -40,7 +42,7 @@ namespace Test_Razor
             });
             services.AddMemoryCache();
             services.AddMvc();
-            services.AddIdentity <IdentityUser, IdentityRole>(options => {
+            services.AddIdentity<IdentityUser, IdentityRole>(options => {
                 options.SignIn.RequireConfirmedAccount = false;
                 options.SignIn.RequireConfirmedEmail = false;
                 options.SignIn.RequireConfirmedPhoneNumber = false;

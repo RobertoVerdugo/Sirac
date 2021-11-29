@@ -488,3 +488,5 @@ C:\Users\PIPEX\Source\Repos\RobertoVerdugo\Sirac\obj\Debug\netcoreapp3.1\Test Ra
 C:\Users\PIPEX\Source\Repos\RobertoVerdugo\Sirac\obj\Debug\netcoreapp3.1\Test Razor.Views.pdb
 C:\Users\PIPEX\Source\Repos\RobertoVerdugo\Sirac\obj\Debug\netcoreapp3.1\Test Razor.csproj.CopyComplete
 C:\Users\PIPEX\Source\Repos\RobertoVerdugo\Sirac\obj\Debug\netcoreapp3.1\Test Razor.genruntimeconfig.cache
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\EditarUsr.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Reportar.cshtml.g.cs
