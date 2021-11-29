@@ -33,7 +33,7 @@ namespace Test_Razor.Pages
         public async Task<IActionResult> OnGet(int id)
         {
             Publicacion = await db.Publicacion.FindAsync(id);
-            if (Publicacion.rut != userManager.GetUserName(User)) 
+            if(Publicacion.rut != userManager.GetUserName(User)) 
             {
                 return RedirectToPage("Index");
             }
@@ -44,13 +44,12 @@ namespace Test_Razor.Pages
         {
             if (ModelState.IsValid)
             {
-                Publicacion.especie = Publicacion.especie == "1" ? ("Perro") : ("Gato");
                 db.Publicacion.Update(Publicacion);
                 await db.SaveChangesAsync();
                 return RedirectToPage("Dashboard");
             }
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
-            return Page();
+            return RedirectToPage();
         }
         public JsonResult OnGetSubCategories()
         {

@@ -27,11 +27,8 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="container" style="padding:30px">
 
-                        <input type="hidden" asp-for="Publicacion.fecha" value=@Model.Publicacion.fecha />
-                        <input type="hidden" asp-for="Publicacion.rutaimg" value=@Model.Publicacion.rutaimg />
+                        <input type="hidden" asp-for="Publicacion.fecha" value=@DateTime.Now />
                         <input type="hidden" asp-for="Publicacion.rut" value=@userManager.GetUserName(User) />
-                        <input type="hidden" asp-for="Publicacion.actualizacion" value=@DateTime.Now />
-                        <input type="hidden" asp-for="Publicacion.id" value=@Model.Publicacion.id />
 
                         <div class="form-group">
                             <div class="row">
@@ -213,7 +210,7 @@
                         <div class="form-group">
                             <div class="row aling-items-center">
                                 <div class="col-aling-self-center col-sm-6">
-                                    <input type="submit" value="Editar" class="btn btn-primary form-control" />
+                                    <input type="submit" value="Publicar" class="btn btn-primary form-control" />
                                     <a asp-page="Dashboard" class="btn btn-secondary form-control">Cancelar</a>
                                 </div>
                             </div>
