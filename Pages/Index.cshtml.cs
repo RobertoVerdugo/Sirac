@@ -25,21 +25,48 @@ namespace Test_Razor.Pages
         [BindProperty]
         public  Filtro Filtro { get; set; }
 
-        public IEnumerable<Publicacion> Publicaciones;
+        public IEnumerable<Publicacion> ListaGlobal;
+        public IEnumerable<Publicacion> ListaLocal;
+        public IEnumerable<Publicacion> ListaActual;
         public void OnGet()
         {
-            Publicaciones = db.Publicacion.ToList();
+            ListaGlobal = db.Publicacion.ToList();
+            ListaLocal = ListaGlobal;
+            ListaActual = PaginarPublicaciones(ListaLocal, 1);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
         public void OnPost()
         {
-            Publicaciones = db.Publicacion.ToList();
-            Publicaciones = FiltrarPublicaciones(Publicaciones,Filtro);
+            ListaGlobal = db.Publicacion.ToList();
+            ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
+            ListaActual = PaginarPublicaciones(ListaLocal, 1);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
 
-        public IEnumerable<Publicacion> FiltrarPublicaciones(IEnumerable<Publicacion> Lista, Filtro filtro)
+        public void OnPaginar(int i)
         {
+            ListaActual = PaginarPublicaciones(ListaLocal, i);
+        }
+
+        public IEnumerable<Publicacion> PaginarPublicaciones(IEnumerable<Publicacion> Local, int indice)
+        {
+            if (indice<1 || indice > Local.Count() + 1)
+            {
+                indice = 1;
+            }
+            List<Publicacion> Lista = new List<Publicacion>();
+            int i = ((10 * indice) - 10);
+            while (i< ((10 * indice) - 1) && i < Local.Count())
+            {
+                Lista.Add(Local.ElementAt(i));
+                i++;
+            }
+            return Lista;
+        }
+
+        public IEnumerable<Publicacion> FiltrarPublicaciones(IEnumerable<Publicacion> Global, Filtro filtro)
+        {
+            IEnumerable<Publicacion> Lista = Global;
             if (filtro.especie != null)
             {
                 if (filtro.especie=="1")

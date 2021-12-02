@@ -148,9 +148,9 @@
 
 <div class="container">
     <div class="grid">
-        @if (Model.Publicaciones.Count() > 0)
+        @if (Model.ListaActual.Count() > 0)
         {
-            @foreach (var pub in Model.Publicaciones)
+            @foreach (var pub in Model.ListaActual)
             {
                 <figure class="effect-zoe">
                     <a asp-route-id=@pub.id asp-page="VerPubl"><img src="img/@pub.rutaimg" alt="img26" /></a>
@@ -160,15 +160,27 @@
                     </figcaption>
                 </figure>
             }
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="text-center">
+                        <nav>
+                            <ul class="pagination">
+                                @for (int i = 1; i < (Model.ListaActual.Count() / 10) + 2; i++)
+                                {
+                                    <li><a asp-page-handler="Paginar" asp-route-id="@i">@i</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         }
         else
         {
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="text-center">
-                            <p>No se encontraron publicaciones</p>
-                        </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="text-center">
+                        <p>No se encontraron publicaciones</p>
                     </div>
                 </div>
             </div>
