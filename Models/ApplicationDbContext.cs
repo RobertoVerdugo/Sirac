@@ -29,18 +29,28 @@ namespace Test_Razor.Models
                 return false;
             }
         }
-        public bool VerificarPropiedadUsuario(string rut, string logued)
+
+        public bool ExisteUsuario(string rut)
         {
             Usuario user = Usuario.Find(rut);
             if (user != null)
             {
+                return true;
+            }
+            return false;
+
+        }
+        public bool VerificarPropiedadUsuario(string rut, string logued)
+        {
+            if (ExisteUsuario(rut))
+            {
+                Usuario user = Usuario.Find(rut);
                 if (rut == logued)
                 {
                     return true;
                 }
             }
             return false;
-
         }
 
         public bool EliminarPublicacion(int id)

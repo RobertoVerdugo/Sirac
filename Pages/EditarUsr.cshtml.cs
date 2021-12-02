@@ -29,6 +29,10 @@ namespace Test_Razor.Pages
                 Usuario = await db.Usuario.FindAsync(id);
                 return Page();
             }
+            if (db.ExisteUsuario(id))
+            {
+                return RedirectToPage("403");
+            }
             return RedirectToPage("404Usuario");
         }
 

@@ -40,6 +40,7 @@ namespace Test_Razor.Pages
                     Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
                     return Page();
                 }
+                return RedirectToPage("403");
             }
             return RedirectToPage("404Publicacion"); 
         }
