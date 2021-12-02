@@ -36,7 +36,7 @@ namespace Test_Razor.Pages
         }
         public async Task<IActionResult> OnPost()
         {
-            if (ModelState.IsValid && verificarut(Usuario.rut) && verificarEdad(Usuario.fecha))
+            if (ModelState.IsValid && verificarExistenciaRut(Usuario.rut) && verificarMayorDeEdad(Usuario.fecha))
             {
                 IdentityUser user = new IdentityUser()
                 {
@@ -59,27 +59,21 @@ namespace Test_Razor.Pages
             return Page();
         }
 
-        private bool verificarEdad(DateTime fecha)
+        public bool verificarMayorDeEdad(DateTime fecha)
         {
-            if (verificarEdadPosible(fecha) && verificarMayorDeEdad(fecha))
+            if (verificarEdadPosible(fecha))
             {
-                return true;
+                fecha = fecha.AddYears(18);
+                if (fecha <= DateTime.Now)
+                {
+                    return true;
+                }
+                ModelState.AddModelError("", "Debe ser mayor de edad");
             }
             return false;
         }
 
-        private bool verificarMayorDeEdad(DateTime fecha)
-        {
-            fecha = fecha.AddYears(18);
-            if (fecha <= DateTime.Now)
-            {
-                return true;
-            }
-            ModelState.AddModelError("", "Debe ser mayor de edad");
-            return false;
-        }
-
-        private bool verificarEdadPosible(DateTime fecha)
+        public bool verificarEdadPosible(DateTime fecha)
         {
             if (fecha <= DateTime.Now)
             {
@@ -89,19 +83,9 @@ namespace Test_Razor.Pages
             return false;
         }
 
-        public bool verificarut(string rut)
+        public bool verificarFormatoRut(string rut)
         {
-            if (verificarFormatoRut(rut) && verificarExistenciaRut(rut))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        private bool verificarFormatoRut(string rut)
-        {
-            if (rut.Length <= 12 && rut[0] != '0')
+            if (rut != null && rut.Length <= 12 && rut.Length > 0 && rut[0] != '0' )
             {
                 Match m = Regex.Match(rut, "[0-9]{1,2}[.][1-9][0-9]{2}[.][1-9][0-9]{2}[-]([0-9]|(k|K))");
                 if (m.Success)
@@ -115,38 +99,45 @@ namespace Test_Razor.Pages
 
         public bool verificarExistenciaRut(string rut)
         {
-            rut = rut.Replace(".", "");
-            char digitoVerificador = rut[rut.Length - 1];
-            rut = rut.Substring(0, rut.Length - 2);
-            int multiplicador = 2;
-            int suma = 0;
-            for (int i = rut.Length - 1; i >= 0; i--)
+            if (verificarFormatoRut(rut))
             {
-                suma += (int)Char.GetNumericValue(rut[i]) * multiplicador;
-                multiplicador += 1;
-                if (multiplicador == 8)
+                rut = rut.Replace(".", "");
+                char digitoVerificador = rut[rut.Length - 1];
+                rut = rut.Substring(0, rut.Length - 2);
+                int multiplicador = 2;
+                int suma = 0;
+                for (int i = rut.Length - 1; i >= 0; i--)
                 {
-                    multiplicador = 2;
+                    suma += (int)Char.GetNumericValue(rut[i]) * multiplicador;
+                    multiplicador += 1;
+                    if (multiplicador == 8)
+                    {
+                        multiplicador = 2;
+                    }
                 }
-            }
-            int division = suma / 11;
-            int multiplicado = division * 11;
-            int resta = Math.Abs(suma - multiplicado);
-            if (Math.Abs((11 - resta)) == (int)Char.GetNumericValue(digitoVerificador))
-            {
-                return true;
-            }
-            else if ((digitoVerificador == 'K' || digitoVerificador == 'k') && Math.Abs((11 - resta)) == 10)
-            {
-                return true;
-            }
-            else if (digitoVerificador == '0' && Math.Abs((11 - resta)) == 11)
-            {
-                return true;
+                int division = suma / 11;
+                int multiplicado = division * 11;
+                int resta = Math.Abs(suma - multiplicado);
+                if (Math.Abs((11 - resta)) == (int)Char.GetNumericValue(digitoVerificador))
+                {
+                    return true;
+                }
+                else if ((digitoVerificador == 'K' || digitoVerificador == 'k') && Math.Abs((11 - resta)) == 10)
+                {
+                    return true;
+                }
+                else if (digitoVerificador == '0' && Math.Abs((11 - resta)) == 11)
+                {
+                    return true;
+                }
+                else
+                {
+                    ModelState.AddModelError("", "El rut no existe");
+                    return false;
+                }
             }
             else
             {
-                ModelState.AddModelError("", "El rut no existe");
                 return false;
             }
         }

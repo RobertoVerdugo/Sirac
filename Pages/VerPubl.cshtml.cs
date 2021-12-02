@@ -26,29 +26,37 @@ namespace Test_Razor.Pages
         public IdentityUser admin { get; set; }
         public async Task<IActionResult> OnGet(int id)
         {
-            Publicacion = await db.Publicacion.FindAsync(id);
-            var rut = userManager.GetUserName(User);
-            Usuario = await db.Usuario.FindAsync(rut);
-            admin = await userManager.FindByNameAsync(rut);
-            if (admin != null && Usuario != null && Publicacion != null)
+            if (db.VerificarPublicacion(id))
             {
-                return Page();
+                Publicacion = await db.Publicacion.FindAsync(id);
+                var rut = userManager.GetUserName(User);
+                Usuario = await db.Usuario.FindAsync(rut);
+                admin = await userManager.FindByNameAsync(rut);
+                if (admin != null && Usuario != null && Publicacion != null)
+                {
+                    return Page();
+                }
+                else
+                {
+                    return RedirectToPage("Dashboard");
+                }
             }
             else
             {
-                return RedirectToPage("Dashboard");
+                return RedirectToPage("404Publicacion");
             }
+            
         }
-        public async Task<IActionResult> OnPostDelete(int id)
+        public IActionResult OnPostDelete(int id)
         {
-            var pub = await db.Publicacion.FindAsync(id);
-            if (pub == null)
+            if (db.EliminarPublicacion(id))
             {
                 return RedirectToPage("Index");
             }
-            db.Publicacion.Remove(pub);
-            await db.SaveChangesAsync();
-            return RedirectToPage("Index");
+            else
+            {
+                return RedirectToPage("404Publicacion");
+            }
 
         }
     }

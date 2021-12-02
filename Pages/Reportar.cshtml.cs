@@ -12,19 +12,26 @@ namespace Test_Razor.Pages
     public class ReportarModel : PageModel
     {
         private readonly ApplicationDbContext db;
-        private readonly UserManager<IdentityUser> userManager;
 
-        public ReportarModel(ApplicationDbContext db, UserManager<IdentityUser> userManager)
+        public ReportarModel(ApplicationDbContext db)
         {
             this.db = db;
-            this.userManager = userManager;
         }
         public int idPub { get; set; }
         [BindProperty]
         public Reporte Reporte { get; set; }
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
-            idPub = id;
+            if (db.VerificarPublicacion(id))
+            {
+                idPub = id;
+                return Page();
+            }
+            else
+            {
+                return RedirectToPage("404Publicacion");
+            }
+            
         }
         public async Task<IActionResult> OnPost()
         {

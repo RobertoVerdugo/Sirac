@@ -24,12 +24,12 @@ namespace Test_Razor.Pages
 
         public async Task<IActionResult> OnGet(string id)
         {
-            Usuario = await db.Usuario.FindAsync(id);
-            if (Usuario.rut != userManager.GetUserName(User))
+            if(db.VerificarPropiedadUsuario(id, userManager.GetUserName(User)))
             {
-                return RedirectToPage("Index");
+                Usuario = await db.Usuario.FindAsync(id);
+                return Page();
             }
-            return Page();
+            return RedirectToPage("404Usuario");
         }
 
         public async Task<IActionResult> OnPost()

@@ -32,13 +32,16 @@ namespace Test_Razor.Pages
         public Publicacion Publicacion { get; set; }
         public async Task<IActionResult> OnGet(int id)
         {
-            Publicacion = await db.Publicacion.FindAsync(id);
-            if(Publicacion.rut != userManager.GetUserName(User)) 
+            if (db.VerificarPublicacion(id))
             {
-                return RedirectToPage("Index");
+                Publicacion = await db.Publicacion.FindAsync(id);
+                if (db.VerificarPropiedadUsuario(Publicacion.rut, userManager.GetUserName(User)))
+                {
+                    Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
+                    return Page();
+                }
             }
-            Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
-            return Page();
+            return RedirectToPage("404Publicacion"); 
         }
         public async Task<IActionResult> OnPost()
         {

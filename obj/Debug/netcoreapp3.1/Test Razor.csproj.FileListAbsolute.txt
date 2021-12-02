@@ -490,3 +490,5 @@ C:\Users\PIPEX\Source\Repos\RobertoVerdugo\Sirac\obj\Debug\netcoreapp3.1\Test Ra
 C:\Users\PIPEX\Source\Repos\RobertoVerdugo\Sirac\obj\Debug\netcoreapp3.1\Test Razor.genruntimeconfig.cache
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\EditarUsr.cshtml.g.cs
 D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\Reportar.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\404Publicacion.cshtml.g.cs
+D:\R_B_G\Documents\Web dev\C#\Sirac\obj\Debug\netcoreapp3.1\Razor\Pages\404Usuario.cshtml.g.cs

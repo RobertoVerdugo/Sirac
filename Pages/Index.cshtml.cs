@@ -1,24 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Test_Razor.Models;
 
 namespace Test_Razor.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
         private readonly ApplicationDbContext db;
         private readonly ICategoryService categoryService;
 
-        public IndexModel(ILogger<IndexModel> logger, ApplicationDbContext db, ICategoryService categoryService)
+        public IndexModel(ApplicationDbContext db, ICategoryService categoryService)
         {
-            _logger = logger;
             this.db = db;
             this.categoryService = categoryService;
         }
@@ -39,60 +34,74 @@ namespace Test_Razor.Pages
         public void OnPost()
         {
             Publicaciones = db.Publicacion.ToList();
-            if (Filtro.especie != null)
-            {
-                Filtro.especie = Filtro.especie == "1" ? ("Perro") : ("Gato");
-                Publicaciones = Publicaciones.Where(u => u.especie == Filtro.especie);
-            }
-            if (Filtro.raza != null)
-            {
-                Publicaciones = Publicaciones.Where(u => u.raza == Filtro.raza);
-            }
-            if (Filtro.genero != null)
-            {
-                Publicaciones = Publicaciones.Where(u => u.genero == Filtro.genero);
-            }
-            if (Filtro.edad != null)
-            {
-                Publicaciones = Publicaciones.Where(u => u.edad == Filtro.edad);
-            }
-            if (Filtro.pelaje != null)
-            {
-                Publicaciones = Publicaciones.Where(u => u.pelaje == Filtro.pelaje);
-            }
-            if (Filtro.color != null)
-            {
-                Publicaciones = Publicaciones.Where(u => u.color == Filtro.color);
-            }
-            if (Filtro.tamano != null)
-            {
-                Publicaciones = Publicaciones.Where(u => u.tamano == Filtro.tamano);
-            }
-            if (Filtro.estado != null)
-            {
-                Publicaciones = Publicaciones.Where(u => u.estado == Filtro.estado);
-            }
-            if (Filtro.orden!= null)
-            {
-                if (Filtro.orden== "Nombre (A-Z)")
-                {
-                    Publicaciones = Publicaciones.OrderBy(u => u.nombre);
-                }
-                if (Filtro.orden == "Nombre (Z-A)")
-                {
-                    Publicaciones = Publicaciones.OrderByDescending(u => u.nombre);
-                }
-                if (Filtro.orden == "Fecha (Nuevo-Antiguo)")
-                {
-                    Publicaciones = Publicaciones.OrderByDescending(u => u.fecha);
-                }
-                if (Filtro.orden == "Fecha (Antiguo-Nuevo)")
-                {
-                    Publicaciones = Publicaciones.OrderBy(u => u.fecha);
-                }
-            }
+            Publicaciones = FiltrarPublicaciones(Publicaciones,Filtro);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
+
+        public IEnumerable<Publicacion> FiltrarPublicaciones(IEnumerable<Publicacion> Lista, Filtro filtro)
+        {
+            if (filtro.especie != null)
+            {
+                if (filtro.especie=="1")
+                {
+                    filtro.especie = "Perro";
+                }
+                else if (filtro.especie == "2")
+                {
+                    filtro.especie = "Gato";
+                }
+                Lista = Lista.Where(u => u.especie == filtro.especie);
+            }
+            if (filtro.raza != null)
+            {
+                Lista = Lista.Where(u => u.raza == filtro.raza);
+            }
+            if (filtro.genero != null)
+            {
+                Lista = Lista.Where(u => u.genero == filtro.genero);
+            }
+            if (filtro.edad != null)
+            {
+                Lista = Lista.Where(u => u.edad == filtro.edad);
+            }
+            if (filtro.pelaje != null)
+            {
+                Lista = Lista.Where(u => u.pelaje == filtro.pelaje);
+            }
+            if (filtro.color != null)
+            {
+                Lista = Lista.Where(u => u.color == filtro.color);
+            }
+            if (filtro.tamano != null)
+            {
+                Lista = Lista.Where(u => u.tamano == filtro.tamano);
+            }
+            if (filtro.estado != null)
+            {
+                Lista = Lista.Where(u => u.estado == filtro.estado);
+            }
+            if (filtro.orden != null)
+            {
+                if (filtro.orden == "Nombre (A-Z)")
+                {
+                    Lista = Lista.OrderBy(u => u.nombre);
+                }
+                if (filtro.orden == "Nombre (Z-A)")
+                {
+                    Lista = Lista.OrderByDescending(u => u.nombre);
+                }
+                if (filtro.orden == "Fecha (Nuevo-Antiguo)")
+                {
+                    Lista = Lista.OrderByDescending(u => u.fecha);
+                }
+                if (filtro.orden == "Fecha (Antiguo-Nuevo)")
+                {
+                    Lista = Lista.OrderBy(u => u.fecha);
+                }
+            }
+            return Lista;
+        }
+
         public JsonResult OnGetSubCategories()
         {
             return new JsonResult(categoryService.GetSubCategories(CategoryId));

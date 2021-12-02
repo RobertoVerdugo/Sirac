@@ -44,23 +44,16 @@ namespace Test_Razor.Pages
             }
         }
 
-        public async Task<IActionResult> OnPostDelete(int id)
+        public IActionResult OnPostDelete(int id)
         {
-            var pub = await db.Publicacion.FindAsync(id);
-            if (pub == null)
+            if (db.EliminarPublicacion(id))
             {
-                return RedirectToPage("Dashboard");
+                return RedirectToPage("Index");
             }
-            /*string path = Path.Combine(environment.WebRootPath, "img", pub.rutaimg);
-            FileInfo file = new FileInfo(path);
-            if (file.Exists)
+            else
             {
-                //System.IO.File.Delete(path);
-                file.Delete();
-            }*/
-            db.Publicacion.Remove(pub);
-            await db.SaveChangesAsync();
-            return RedirectToPage("Dashboard");
+                return RedirectToPage("404Publicacion");
+            }
 
         }
     }

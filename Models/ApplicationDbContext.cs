@@ -16,5 +16,43 @@ namespace Test_Razor.Models
         public DbSet<Publicacion> Publicacion { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Reporte> Reporte { get; set; }
+
+        public bool VerificarPublicacion(int id)
+        {
+            Publicacion pub =  Publicacion.Find(id);
+            if (pub != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool VerificarPropiedadUsuario(string rut, string logued)
+        {
+            Usuario user = Usuario.Find(rut);
+            if (user != null)
+            {
+                if (rut == logued)
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+        public bool EliminarPublicacion(int id)
+        {
+            if (VerificarPublicacion(id))
+            {
+                var pub = Publicacion.Find(id);
+                Publicacion.Remove(pub);
+                SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }
