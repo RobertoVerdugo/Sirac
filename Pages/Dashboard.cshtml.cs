@@ -13,7 +13,7 @@ namespace Test_Razor.Pages
 {
     public class DashboardModel : PageModel
     {
-        private readonly ApplicationDbContext db;
+        public readonly ApplicationDbContext db;
         private readonly UserManager<IdentityUser> userManager;
 
         public DashboardModel(ApplicationDbContext db, UserManager<IdentityUser> userManager)
@@ -30,10 +30,13 @@ namespace Test_Razor.Pages
         {
             Publicaciones = db.Publicacion.ToList();
             Reportes = db.Reporte.ToList();
+            Reportes = Reportes.Where(u=> db.VerificarPublicacion(u.idPublicacion)==true);
+
             var rut = userManager.GetUserName(User);
             Publicaciones = Publicaciones.Where(u => u.rut == rut);
             Usuario = await db.Usuario.FindAsync(rut);
             admin = await userManager.FindByNameAsync(rut);
+
             if (admin != null && Usuario != null)
             {
                 return Page();
