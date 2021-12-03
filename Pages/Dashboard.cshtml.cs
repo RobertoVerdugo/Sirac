@@ -24,7 +24,7 @@ namespace Test_Razor.Pages
 
         public IEnumerable<Publicacion> Publicaciones;
         public IEnumerable<Reporte> Reportes;
-        public IdentityUser admin { get; set; }
+        public IdentityUser Admin { get; set; }
         public Usuario Usuario { get; set; }
         public async Task<IActionResult> OnGet()
         {
@@ -35,9 +35,9 @@ namespace Test_Razor.Pages
             var rut = userManager.GetUserName(User);
             Publicaciones = Publicaciones.Where(u => u.rut == rut);
             Usuario = await db.Usuario.FindAsync(rut);
-            admin = await userManager.FindByNameAsync(rut);
+            Admin = await userManager.FindByNameAsync(rut);
 
-            if (admin != null && Usuario != null)
+            if (Admin != null && Usuario != null)
             {
                 return Page();
             }

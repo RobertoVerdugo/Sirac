@@ -141,7 +141,7 @@
     </div>
 </div>
 
-@if (await userManager.IsInRoleAsync(Model.admin, "Admin"))
+@if (await userManager.IsInRoleAsync(Model.Admin, "Admin"))
 {
     <div class="container">
         <div class="row">
@@ -173,7 +173,7 @@
                             @Html.DisplayNameFor(m => m.Reportes.FirstOrDefault().idPublicacion)
                         </th>
                         <th>
-                            Ver
+                            Publicación
                         </th>
                     </tr>
                     @foreach (var rep in Model.Reportes)

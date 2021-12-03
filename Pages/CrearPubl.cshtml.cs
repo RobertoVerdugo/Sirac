@@ -45,7 +45,6 @@ namespace Test_Razor.Pages
         }
         public async Task<IActionResult> OnPost()
         {
-            
             if (!ModelState.IsValid)
             {
                 Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
@@ -55,11 +54,31 @@ namespace Test_Razor.Pages
             using (var fileStream = new FileStream(file, FileMode.Create))
             {
                 await Photo.CopyToAsync(fileStream);
-                
             }
             Publicacion.rutaimg = Photo.FileName;
             Publicacion.especie = Publicacion.especie == "1" ? ("Perro") : ("Gato");
             _db.Add(Publicacion);
+           /* for(int i = 0; i < 10; i++)
+            {
+                _db.Add(new Publicacion() { 
+                    fecha= Publicacion.fecha,
+                    actualizacion = Publicacion.fecha,
+                    especie = Publicacion.especie,
+                    raza = Publicacion.raza,
+                    color = Publicacion.color,
+                    pelaje = Publicacion.pelaje,
+                    genero = Publicacion.genero,
+                    tamano = Publicacion.tamano,
+                    edad = Publicacion.edad,
+                    rut = Publicacion.rut,
+                    ubicacion = Publicacion.ubicacion,
+                    estado = Publicacion.estado,
+                    descripcion = Publicacion.descripcion,
+                    rutaimg =Photo.FileName, 
+                    nombre= "TestAbusoInducido" 
+                
+                });
+            }*/
             await _db.SaveChangesAsync();
             return RedirectToPage("Index");
         }

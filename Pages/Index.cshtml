@@ -160,20 +160,22 @@
                     </figcaption>
                 </figure>
             }
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="text-center">
-                        <nav>
-                            <ul class="pagination">
-                                @for (int i = 1; i < (Model.ListaActual.Count() / 10) + 2; i++)
-                                {
-                                    <li><a asp-page-handler="Paginar" asp-route-id="@i">@i</a></li>
-                                }
-                            </ul>
-                        </nav>
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="text-center">
+                            <nav>
+                                <ul class="pagination">
+                                    @for (int i = 1; i < ((Model.ListaLocal.Count() - 1) / 10) + 2; i++)
+                                    {
+                                        <li><button asp-page-handler="Paginar" asp-route-id="@i">@i</button></li>
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         }
         else
         {

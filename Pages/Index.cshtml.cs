@@ -23,8 +23,7 @@ namespace Test_Razor.Pages
         public SelectList Categories { get; set; }
 
         [BindProperty]
-        public  Filtro Filtro { get; set; }
-
+        public Filtro Filtro { get; set; }
         public IEnumerable<Publicacion> ListaGlobal;
         public IEnumerable<Publicacion> ListaLocal;
         public IEnumerable<Publicacion> ListaActual;
@@ -43,20 +42,23 @@ namespace Test_Razor.Pages
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
 
-        public void OnPaginar(int i)
+        public void OnPostPaginar(int id)
         {
-            ListaActual = PaginarPublicaciones(ListaLocal, i);
+            ListaGlobal = db.Publicacion.ToList();
+            ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
+            ListaActual = PaginarPublicaciones(ListaLocal, id);
+            Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
 
         public IEnumerable<Publicacion> PaginarPublicaciones(IEnumerable<Publicacion> Local, int indice)
         {
-            if (indice<1 || indice > Local.Count() + 1)
+            if (indice<1 || indice > ((Local.Count()-1)/10) + 1)// 20 = 1(10) - 2(10) - 4(0)
             {
                 indice = 1;
             }
             List<Publicacion> Lista = new List<Publicacion>();
             int i = ((10 * indice) - 10);
-            while (i< ((10 * indice) - 1) && i < Local.Count())
+            while (i< ((10 * indice)) && i < Local.Count())
             {
                 Lista.Add(Local.ElementAt(i));
                 i++;
