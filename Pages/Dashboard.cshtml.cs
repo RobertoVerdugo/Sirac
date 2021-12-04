@@ -23,21 +23,17 @@ namespace Test_Razor.Pages
         }
 
         public IEnumerable<Publicacion> Publicaciones;
-        public IEnumerable<Reporte> Reportes;
-        public IdentityUser Admin { get; set; }
+        public IEnumerable<Publicacion> PublicacionesActual;
         public Usuario Usuario { get; set; }
+
         public async Task<IActionResult> OnGet()
         {
-            Publicaciones = db.Publicacion.ToList();
-            Reportes = db.Reporte.ToList();
-            Reportes = Reportes.Where(u=> db.VerificarPublicacion(u.idPublicacion)==true);
-
             var rut = userManager.GetUserName(User);
-            Publicaciones = Publicaciones.Where(u => u.rut == rut);
+            Publicaciones = db.Publicacion.ToList();
             Usuario = await db.Usuario.FindAsync(rut);
-            Admin = await userManager.FindByNameAsync(rut);
-
-            if (Admin != null && Usuario != null)
+            Publicaciones = Publicaciones.Where(u => u.rut == rut);
+            PublicacionesActual = PaginarPublicaciones(Publicaciones, 1);
+            if (Usuario != null)
             {
                 return Page();
             }
@@ -51,13 +47,44 @@ namespace Test_Razor.Pages
         {
             if (db.EliminarPublicacion(id))
             {
-                return RedirectToPage("Index");
+                return RedirectToPage("Dashboard");
             }
             else
             {
                 return RedirectToPage("404Publicacion");
             }
+        }
+        public async Task<IActionResult> OnPostPaginar(int id)
+        {
+            var rut = userManager.GetUserName(User);
+            Publicaciones = db.Publicacion.ToList();
+            Usuario = await db.Usuario.FindAsync(rut);
+            Publicaciones = Publicaciones.Where(u => u.rut == rut);
+            PublicacionesActual = PaginarPublicaciones(Publicaciones, id);
+            if (Usuario != null)
+            {
+                return Page();
+            }
+            else
+            {
+                return RedirectToPage("Dashboard");
+            }
+        }
 
+        public IEnumerable<Publicacion> PaginarPublicaciones(IEnumerable<Publicacion> Local, int indice)
+        {
+            if (indice < 1 || indice > ((Local.Count() - 1) / 10) + 1)
+            {
+                indice = 1;
+            }
+            List<Publicacion> Lista = new List<Publicacion>();
+            int i = ((10 * indice) - 10);
+            while (i < ((10 * indice)) && i < Local.Count())
+            {
+                Lista.Add(Local.ElementAt(i));
+                i++;
+            }
+            return Lista;
         }
     }
 }

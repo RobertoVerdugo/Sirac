@@ -52,7 +52,7 @@ namespace Test_Razor.Pages
 
         public IEnumerable<Publicacion> PaginarPublicaciones(IEnumerable<Publicacion> Local, int indice)
         {
-            if (indice<1 || indice > ((Local.Count()-1)/10) + 1)// 20 = 1(10) - 2(10) - 4(0)
+            if (indice<1 || indice > ((Local.Count()-1)/10) + 1)
             {
                 indice = 1;
             }

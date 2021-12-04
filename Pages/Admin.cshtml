@@ -1,0 +1,77 @@
+﻿@page
+@model Test_Razor.Pages.AdminModel
+@{
+    ViewData["Title"] = "Reportes";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="blogs">
+                <div class="text-center">
+                    <h2>Reportes</h2>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form method="post">
+        @if (Model.ReportesActual.Count() > 0)
+        {
+            <table class="table table-responsive-md">
+                <tr class="table-secondary">
+                    <th>
+                        @Html.DisplayNameFor(m => m.ReportesActual.FirstOrDefault().causal)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(m => m.ReportesActual.FirstOrDefault().descripcion)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(m => m.ReportesActual.FirstOrDefault().idPublicacion)
+                    </th>
+                    <th>
+                        Publicación
+                    </th>
+                </tr>
+                @foreach (var rep in Model.ReportesActual)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => rep.causal)</td>
+                        <td>@Html.DisplayFor(m => rep.descripcion)</td>
+                        <td>@Html.DisplayFor(m => rep.idPublicacion)</td>
+                        <td><a asp-route-id=@rep.idPublicacion asp-page="VerPubl">Ver</a></td>
+                    </tr>
+                }
+            </table>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="text-center">
+                            <nav>
+                                <ul class="pagination">
+                                    @for (int i = 1; i < ((Model.ReportesLocal.Count() - 1) / 10) + 2; i++)
+                                    {
+                                        <li><button asp-page-handler="Paginar" asp-route-id="@i">@i</button></li>
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+        }
+        else
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="text-center">
+                            <p>No hay Reportes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </form>
+</div>

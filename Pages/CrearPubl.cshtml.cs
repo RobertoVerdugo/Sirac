@@ -55,6 +55,7 @@ namespace Test_Razor.Pages
             {
                 await Photo.CopyToAsync(fileStream);
             }
+            Publicacion.actualizacion = Publicacion.fecha;
             Publicacion.rutaimg = Photo.FileName;
             Publicacion.especie = Publicacion.especie == "1" ? ("Perro") : ("Gato");
             _db.Add(Publicacion);

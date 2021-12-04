@@ -12,69 +12,6 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="blogs">
                 <div class="text-center">
-                    <h2>Mis Publicaciones</h2>
-                </div>
-                <br />
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <form method="post">
-        @if (Model.Publicaciones.Count() > 0)
-        {
-            <table class="table table-responsive-md">
-                <tr class="table-secondary">
-                    <th>
-                        @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().nombre)
-                    </th>
-
-                    <th>
-                        @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().fecha)
-                    </th>
-
-                    <th>
-                        Publicación
-                    </th>
-
-                    <th>
-                        Acciones
-                    </th>
-                </tr>
-                @foreach (var pub in Model.Publicaciones)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(m => pub.nombre)</td>
-                        <td>@Html.DisplayFor(m => pub.fecha)</td>
-                        <td><a asp-route-id=@pub.id asp-page="VerPubl">Ver</a></td>
-                        <td>
-                            <button asp-page-handler="Delete" asp-route-id="@pub.id" class="btn btn-secondary btn-sm" onclick="return confirm('Desea eliminar esta publicación?')">Eliminar</button>
-                            <a asp-route-id=@pub.id asp-page="EditarPubl" class="btn btn-secondary btn-sm">Editar</a>
-                        </td>
-                    </tr>
-                }
-            </table>
-        }
-        else
-        {
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="text-center">
-                            <p>No hay publicacones</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
-    </form>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="blogs">
-                <div class="text-center">
                     <h2>Mi Perfil</h2>
                 </div>
                 <br />
@@ -141,64 +78,82 @@
     </div>
 </div>
 
-@if (await userManager.IsInRoleAsync(Model.Admin, "Admin"))
-{
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="blogs">
-                    <div class="text-center">
-                        <h2>Reportes</h2>
-                    </div>
-                    <br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="blogs">
+                <div class="text-center">
+                    <h2>Mis Publicaciones</h2>
                 </div>
+                <br />
             </div>
         </div>
     </div>
-    <div class="container">
-        <form method="post">
-            @if (Model.Reportes.Count() > 0)
-            {
-                <table class="table table-responsive-md">
-                    <tr class="table-secondary">
-                        <th>
-                            @Html.DisplayNameFor(m => m.Reportes.FirstOrDefault().causal)
-                        </th>
+</div>
+<div class="container">
+    <form method="post">
+        @if (Model.Publicaciones.Count() > 0)
+        {
+            <table class="table table-responsive-md">
+                <tr class="table-secondary">
+                    <th>
+                        @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().nombre)
+                    </th>
 
-                        <th>
-                            @Html.DisplayNameFor(m => m.Reportes.FirstOrDefault().descripcion)
-                        </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().fecha)
+                    </th>
 
-                        <th>
-                            @Html.DisplayNameFor(m => m.Reportes.FirstOrDefault().idPublicacion)
-                        </th>
-                        <th>
-                            Publicación
-                        </th>
+                    <th>
+                        Publicación
+                    </th>
+
+                    <th>
+                        Acciones
+                    </th>
+                </tr>
+                @foreach (var pub in Model.PublicacionesActual)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => pub.nombre)</td>
+                        <td>@Html.DisplayFor(m => pub.fecha)</td>
+                        <td><a asp-route-id=@pub.id asp-page="VerPubl">Ver</a></td>
+                        <td>
+                            <button asp-page-handler="Delete" asp-route-id="@pub.id" class="btn btn-secondary btn-sm" onclick="return confirm('Desea eliminar esta publicación?')">Eliminar</button>
+                            <a asp-route-id=@pub.id asp-page="EditarPubl" class="btn btn-secondary btn-sm">Editar</a>
+                        </td>
                     </tr>
-                    @foreach (var rep in Model.Reportes)
-                    {
-                        <tr>
-                            <td>@Html.DisplayFor(m => rep.causal)</td>
-                            <td>@Html.DisplayFor(m => rep.descripcion)</td>
-                            <td>@Html.DisplayFor(m => rep.idPublicacion)</td>
-                            <td><a asp-route-id=@rep.idPublicacion asp-page="VerPubl">Ver</a></td>
-                        </tr>
-                    }
-                </table>
-            }
-            else
-            {
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="text-center">
-                                <p>No hay Reportes</p>
-                            </div>
+                }
+            </table>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="text-center">
+                        <nav>
+                            <ul class="pagination">
+                                @for (int i = 1; i < ((Model.Publicaciones.Count() - 1) / 10) + 2; i++)
+                                {
+                                    <li><button asp-page-handler="Paginar" asp-route-id="@i">@i</button></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="text-center">
+                            <p>No hay publicacones</p>
                         </div>
                     </div>
                 </div>
-            }
-        </form>
-    </div>
-}
+            </div>
+        }
+    </form>
+</div>
+
+
+

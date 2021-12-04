@@ -51,6 +51,7 @@ namespace Test_Razor
             services.ConfigureApplicationCookie(configure =>
             {
                 configure.LoginPath = "/Login";
+                configure.AccessDeniedPath = "/403";
             });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -63,6 +64,7 @@ namespace Test_Razor
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseStatusCodePagesWithRedirects("404");
             }
             else
             {
@@ -82,5 +84,7 @@ namespace Test_Razor
                 endpoints.MapRazorPages();
             });
         }
+
+
     }
 }
