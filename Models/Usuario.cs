@@ -10,25 +10,25 @@ namespace Test_Razor.Models
     {
         [Key]
         [Display(Name = "Rut")]
-        [Required]
+        [Required(ErrorMessage ="Este campo de obligatorio")]
         [MaxLength(12)]
         public string rut { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [Display(Name = "Nombre")]
         [MaxLength(16)]
         public string nombre { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [Display(Name = "Apellidos")]
         [MaxLength(25)]
         public string apellidos { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [Display(Name = "Fecha de nacimiento")]
         public DateTime fecha { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [Display(Name = "Correo electrónico")]
         [MaxLength(30)]
         public string email { get; set; }

@@ -7,11 +7,11 @@ namespace Test_Razor.Models
 {
     public class Auth
     {
-        [Required]
+        [Required(ErrorMessage = "Ingrese su Rut")]
         [Display(Name = "Rut")]
         public string rut { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ingrese su Contraseña")]
         [Display(Name = "Contraseña")]
         public string password { get; set; }
 

@@ -14,59 +14,59 @@ namespace Test_Razor.Models
         public int id { get; set; }
 
         [Display(Name = "Fecha de publicación")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public DateTime fecha { get; set; }
 
         [Display(Name = "Fecha de Actualización")]
         public DateTime actualizacion { get; set; }
 
         [Display(Name = "Nombre del Animal")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [MaxLength(30)]
         public string nombre { get; set; }
 
         [Display(Name = "Especie del Animal")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string especie { get; set; }
 
         [Display(Name = "Tipo de pelaje")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string pelaje { get; set; }
 
         [Display(Name = "Color de pelaje")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string color { get; set; }
 
         [Display(Name = "Raza del animal")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string raza { get; set; }
 
         [Display(Name = "Tamaño del Animal")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string tamano { get; set; }
 
         [Display(Name = "Edad del Animal")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string edad { get; set; }
 
         [Display(Name = "Género del Animal")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string genero { get; set; }
 
         [Display(Name = "Imagen del Animal")]
         public string rutaimg { get; set; }
 
         [Display(Name = "Estado del Animal")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string estado { get; set; }
 
         [Display(Name = "Ubicación del Animal")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [MaxLength(100)]
         public string ubicacion { get; set; }
 
         [Display(Name = "Descripción")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [MaxLength(500)]
         public string descripcion { get; set; }
 

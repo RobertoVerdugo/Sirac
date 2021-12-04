@@ -14,11 +14,11 @@ namespace Test_Razor.Models
         public int id { get; set; }
 
         [Display(Name = "Causal de reporte")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         public string causal { get; set; }
 
         [Display(Name = "Descripción")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [MaxLength(500)]
         public string descripcion { get; set; }
         [Display(Name = "ID")]

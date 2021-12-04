@@ -37,7 +37,7 @@ namespace Test_Razor.Pages
         [BindProperty]
         public Publicacion Publicacion{ get; set; }
         [BindProperty]
-        [Required]
+        [Required(ErrorMessage = "Ingrese una imagen del animal")]
         public IFormFile Photo { get; set; }
         public void OnGet()
         {
