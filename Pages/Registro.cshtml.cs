@@ -93,7 +93,7 @@ namespace Test_Razor.Pages
                     return true;
                 }
             }
-            ModelState.AddModelError("", "Formato de rut inválido");
+            ModelState.AddModelError("", "Escriba su rut con puntos y guión");
             return false;
         }
 
