@@ -287,6 +287,30 @@ namespace Test_Razor.Migrations
                     b.ToTable("Publicacion");
                 });
 
+            modelBuilder.Entity("Test_Razor.Models.Reporte", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("causal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<int>("idPublicacion")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Reporte");
+                });
+
             modelBuilder.Entity("Test_Razor.Models.Usuario", b =>
                 {
                     b.Property<string>("rut")

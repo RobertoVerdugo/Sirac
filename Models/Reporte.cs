@@ -19,6 +19,8 @@ namespace Test_Razor.Models
 
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "Este campo de obligatorio")]
+        [RegularExpression(@"[a-zA-Z0-9]",
+         ErrorMessage = "Caracteres no permitidos")]
         [MaxLength(500)]
         public string descripcion { get; set; }
         [Display(Name = "ID")]

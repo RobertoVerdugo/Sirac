@@ -28,7 +28,7 @@ namespace Test_Razor.Pages
         public Usuario Usuario { get; set; }
         [BindProperty]
         [Display(Name = "Contraseña")]
-        [Required]
+        [Required(ErrorMessage = "Este campo de obligatorio")]
         [MaxLength(16)]
         public string password { get; set; }
         public void OnGet()

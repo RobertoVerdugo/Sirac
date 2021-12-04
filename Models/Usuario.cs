@@ -16,16 +16,20 @@ namespace Test_Razor.Models
         
         [Required(ErrorMessage = "Este campo de obligatorio")]
         [Display(Name = "Nombre")]
+        [RegularExpression(@"[a-zA-Z]", 
+         ErrorMessage = "Caracteres no permitidos")]
         [MaxLength(16)]
         public string nombre { get; set; }
 
         [Required(ErrorMessage = "Este campo de obligatorio")]
         [Display(Name = "Apellidos")]
+        [RegularExpression(@"[a-zA-Z]",
+         ErrorMessage = "Caracteres no permitidos")]
         [MaxLength(25)]
         public string apellidos { get; set; }
 
         [Required(ErrorMessage = "Este campo de obligatorio")]
-        [Display(Name = "Fecha de nacimiento")]
+        [Display(Name = "Fecha de nacimiento"), DataType(DataType.Date)]
         public DateTime fecha { get; set; }
 
         [Required(ErrorMessage = "Este campo de obligatorio")]
@@ -35,6 +39,8 @@ namespace Test_Razor.Models
 
         [Display(Name = "Número Telefónico")]
         [MaxLength(11)]
+        [RegularExpression(@"[0-9]",
+         ErrorMessage = "Caracteres no permitidos")]
         public string telefono { get; set; }
 
     }

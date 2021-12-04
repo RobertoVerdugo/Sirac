@@ -22,6 +22,8 @@ namespace Test_Razor.Models
 
         [Display(Name = "Nombre del Animal")]
         [Required(ErrorMessage = "Este campo de obligatorio")]
+        [RegularExpression(@"[a-zA-Z]",
+         ErrorMessage = "Caracteres no permitidos")]
         [MaxLength(30)]
         public string nombre { get; set; }
 
@@ -62,11 +64,15 @@ namespace Test_Razor.Models
 
         [Display(Name = "Ubicación del Animal")]
         [Required(ErrorMessage = "Este campo de obligatorio")]
+        [RegularExpression(@"[a-zA-Z0-9]",
+         ErrorMessage = "Caracteres no permitidos")]
         [MaxLength(100)]
         public string ubicacion { get; set; }
 
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "Este campo de obligatorio")]
+        [RegularExpression(@"[a-zA-Z0-9]",
+         ErrorMessage = "Caracteres no permitidos")]
         [MaxLength(500)]
         public string descripcion { get; set; }
 
