@@ -24,6 +24,5 @@ namespace Test_Razor.Models
 
         public string estado { get; set; }
 
-        public string orden { get; set; }
     }
 }

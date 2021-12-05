@@ -79,5 +79,7 @@ namespace Test_Razor.Models
         [Display(Name = "Rut del Usuario")]
         [Required]
         public string rut { get; set; }
+
+        public double score { get; set; }
     }
 }

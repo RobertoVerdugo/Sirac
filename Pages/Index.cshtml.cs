@@ -24,6 +24,8 @@ namespace Test_Razor.Pages
 
         [BindProperty]
         public Filtro Filtro { get; set; }
+        [BindProperty]
+        public string Orden { get; set; }
         public IEnumerable<Publicacion> ListaGlobal;
         public IEnumerable<Publicacion> ListaLocal;
         public IEnumerable<Publicacion> ListaActual;
@@ -38,6 +40,7 @@ namespace Test_Razor.Pages
         {
             ListaGlobal = db.Publicacion.ToList();
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
+            ListaLocal = OrdenarPublicaciones(ListaLocal, Orden);
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
@@ -46,6 +49,7 @@ namespace Test_Razor.Pages
         {
             ListaGlobal = db.Publicacion.ToList();
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
+            ListaLocal = OrdenarPublicaciones(ListaLocal, Orden);
             ListaActual = PaginarPublicaciones(ListaLocal, id);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
@@ -109,23 +113,32 @@ namespace Test_Razor.Pages
             {
                 Lista = Lista.Where(u => u.estado == filtro.estado);
             }
-            if (filtro.orden != null)
+            return Lista;
+        }
+        public IEnumerable<Publicacion> OrdenarPublicaciones(IEnumerable<Publicacion> Filtrada, string orden)
+        {
+            IEnumerable<Publicacion> Lista = Filtrada;
+            if (orden != null)
             {
-                if (filtro.orden == "Nombre (A-Z)")
+                if (orden == "Nombre (A-Z)")
                 {
                     Lista = Lista.OrderBy(u => u.nombre);
                 }
-                if (filtro.orden == "Nombre (Z-A)")
+                if (orden == "Nombre (Z-A)")
                 {
                     Lista = Lista.OrderByDescending(u => u.nombre);
                 }
-                if (filtro.orden == "Fecha (Nuevo-Antiguo)")
+                if (orden == "Fecha (Nuevo-Antiguo)")
                 {
-                    Lista = Lista.OrderByDescending(u => u.fecha);
+                    Lista = Lista.OrderByDescending(u => u.actualizacion);
                 }
-                if (filtro.orden == "Fecha (Antiguo-Nuevo)")
+                if (orden == "Fecha (Antiguo-Nuevo)")
                 {
-                    Lista = Lista.OrderBy(u => u.fecha);
+                    Lista = Lista.OrderBy(u => u.actualizacion);
+                }
+                if (orden == "Recomendados")
+                {
+                    Lista = Lista.OrderByDescending(u => u.score);
                 }
             }
             return Lista;
