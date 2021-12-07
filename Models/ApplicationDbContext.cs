@@ -16,6 +16,7 @@ namespace Test_Razor.Models
         public DbSet<Publicacion> Publicacion { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Reporte> Reporte { get; set; }
+        public DbSet<Visita> Visita { get; set; }
 
         public bool VerificarPublicacion(int id)
         {

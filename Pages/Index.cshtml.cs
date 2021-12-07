@@ -138,6 +138,7 @@ namespace Test_Razor.Pages
                 }
                 if (orden == "Recomendados")
                 {
+                    //Llamar a get puntaje sobre Lista
                     Lista = Lista.OrderByDescending(u => u.score);
                 }
             }
