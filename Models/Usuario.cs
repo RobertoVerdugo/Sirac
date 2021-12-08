@@ -16,14 +16,14 @@ namespace Test_Razor.Models
         
         [Required(ErrorMessage = "Este campo de obligatorio")]
         [Display(Name = "Nombre")]
-        [RegularExpression(@"[a-zA-Z]", 
+        [RegularExpression(@"[a-zA-Z ñÑáéíóúÁÉÍÓÚ]{1,25}", 
          ErrorMessage = "Caracteres no permitidos")]
         [MaxLength(16)]
         public string nombre { get; set; }
 
         [Required(ErrorMessage = "Este campo de obligatorio")]
         [Display(Name = "Apellidos")]
-        [RegularExpression(@"[a-zA-Z]",
+        [RegularExpression(@"[a-zA-Z ñÑáéíóúÁÉÍÓÚ]{1,25}",
          ErrorMessage = "Caracteres no permitidos")]
         [MaxLength(25)]
         public string apellidos { get; set; }
@@ -39,7 +39,7 @@ namespace Test_Razor.Models
 
         [Display(Name = "Número Telefónico")]
         [MaxLength(11)]
-        [RegularExpression(@"[0-9]",
+        [RegularExpression(@"[0-9]{1,11}",
          ErrorMessage = "Caracteres no permitidos")]
         public string telefono { get; set; }
 
