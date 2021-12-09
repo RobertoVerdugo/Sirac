@@ -514,3 +514,12 @@ D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\osx-x64\nat
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\LdaNative.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\LdaNative.dll
 D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\libman.json
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\MLModel.zip
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\Microsoft.ML.Recommender.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libMatrixFactorizationNative.so
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libMatrixFactorizationNative.so
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libMatrixFactorizationNative.so
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\osx-arm64\native\libMatrixFactorizationNative.dylib
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libMatrixFactorizationNative.dylib
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\MatrixFactorizationNative.dll
+D:\R_B_G\Documents\Web dev\C#\Sirac\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\MatrixFactorizationNative.dll

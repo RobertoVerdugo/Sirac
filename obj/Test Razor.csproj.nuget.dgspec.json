@@ -60,7 +60,11 @@
             },
             "Microsoft.ML": {
               "target": "Package",
-              "version": "[1.7.0, )"
+              "version": "[1.6.0, )"
+            },
+            "Microsoft.ML.Recommender": {
+              "target": "Package",
+              "version": "[0.18.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

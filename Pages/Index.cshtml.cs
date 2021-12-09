@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Test_Razor.Models;
 
 namespace Test_Razor.Pages
@@ -11,11 +13,13 @@ namespace Test_Razor.Pages
     {
         private readonly ApplicationDbContext db;
         private readonly ICategoryService categoryService;
+        private readonly UserManager<IdentityUser> userManager;
 
-        public IndexModel(ApplicationDbContext db, ICategoryService categoryService)
+        public IndexModel(ApplicationDbContext db, ICategoryService categoryService, UserManager<IdentityUser> userManager)
         {
             this.db = db;
             this.categoryService = categoryService;
+            this.userManager = userManager;
         }
         [BindProperty(SupportsGet = true)]
         public int CategoryId { get; set; }
@@ -138,7 +142,18 @@ namespace Test_Razor.Pages
                 }
                 if (orden == "Recomendados")
                 {
-                    //Llamar a get puntaje sobre Lista
+                    var rut = userManager.GetUserName(User);
+                    foreach (var pub in Lista)
+                    {
+                        var datos = new MLModel.ModelInput()
+                        {
+                            Id = 1,
+                            Rut = rut,
+                            IdPublicacion = pub.id,
+                        };
+                        var result = MLModel.Predict(datos);
+                        pub.score = result.Score;
+                    }
                     Lista = Lista.OrderByDescending(u => u.score);
                 }
             }
