@@ -87,7 +87,7 @@ namespace Test_Razor.Pages
         {
             if (rut != null && rut.Length <= 12 && rut.Length > 0 && rut[0] != '0' )
             {
-                Match m = Regex.Match(rut, "[0-9]{1,2}[.][1-9][0-9]{2}[.][1-9][0-9]{2}[-]([0-9]|(k|K))");
+                Match m = Regex.Match(rut, "[0-9]{1,2}[.][0-9]{3}[.][0-9]{3}[-]([0-9]|(k|K))");
                 if (m.Success)
                 {
                     return true;
