@@ -153,6 +153,7 @@
                                 <div class="col-sm-2">
                                     <label asp-for="Publicacion.tamano"></label>
                                 </div>
+                                <a><i class="bi bi-question-circle" typeof="button" data-toggle="modal" data-target="#Modal"></i></a>
                                 <div class="col-sm-4">
                                     <select asp-for="Publicacion.tamano" class="form-control">
                                         <option value="">Seleccione tamaño</option>
@@ -212,6 +213,78 @@
                                 <div class="col-aling-self-center col-sm-6">
                                     <input type="submit" value="Publicar" class="btn btn-primary form-control" />
                                     <a asp-page="Dashboard" class="btn btn-secondary form-control">Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Modal-->
+                        <div class="modal fade" id="Modal" tabindex="1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="col-sm-2">
+                                            <h2>Medidas</h2>
+                                        </div>
+                                        <div class="col-sm-1 col-sm-offset-9">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <table class="table table-responsive-md">
+                                            <tr class="table-borderless">
+                                                <th>
+
+                                                </th>
+                                                <th>
+                                                    Pequeño
+                                                </th>
+                                                <th>
+                                                    Mediano
+                                                </th>
+
+                                                <th>
+                                                    Grande
+                                                </th>
+                                                <th>
+                                                    Referencia
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    Perro
+                                                </th>
+                                                <th>
+                                                    25cm.
+                                                </th>
+                                                <th>
+                                                    50cm.
+                                                </th>
+                                                <th>
+                                                    73(+)cm.
+                                                </th>
+                                                <th>
+                                                    Alto.
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    Gato
+                                                </th>
+                                                <th>
+                                                    33cm.
+                                                </th>
+                                                <th>
+                                                    43cm.
+                                                </th>
+                                                <th>
+                                                    60(+)cm.
+                                                </th>
+                                                <th>
+                                                    Largo del tórax.
+                                                </th>
+                                            </tr>
+                                        </table>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
