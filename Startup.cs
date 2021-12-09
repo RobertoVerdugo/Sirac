@@ -46,7 +46,6 @@ namespace Test_Razor
                 options.SignIn.RequireConfirmedAccount = false;
                 options.SignIn.RequireConfirmedEmail = false;
                 options.SignIn.RequireConfirmedPhoneNumber = false;
-                options.User.AllowedUserNameCharacters = "0123456789.-";
             }).AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddAuthorization();
             services.ConfigureApplicationCookie(configure =>

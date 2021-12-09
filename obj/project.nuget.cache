@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DLAjgSLEyFyMyNytXILUPsFI4C039LknvYfUh0GCmdQQKaepB4X4LHrbm8/ihnvdwlrjUpeZiVJWkIXF2fBzWw==",
+  "dgSpecHash": "p4SdIdfPvfYsVzphHGbqAIAZwH8vPFXkgvq/hlbg/wokvbZQtMZyKJCJFZtyuHm0j8iNJo0uP/OGZ1+56zI8cA==",
   "success": true,
   "projectFilePath": "D:\\R_B_G\\Documents\\Web dev\\C#\\Sirac\\Test Razor.csproj",
   "expectedPackageFiles": [
@@ -52,6 +52,9 @@
     "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.identitymodel.protocols\\5.5.0\\microsoft.identitymodel.protocols.5.5.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.5.0\\microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
+    "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.ml\\1.7.0\\microsoft.ml.1.7.0.nupkg.sha512",
+    "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.ml.cpumath\\1.7.0\\microsoft.ml.cpumath.1.7.0.nupkg.sha512",
+    "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.ml.dataview\\1.7.0\\microsoft.ml.dataview.1.7.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\3.1.5\\microsoft.visualstudio.web.codegeneration.3.1.5.nupkg.sha512",
@@ -92,6 +95,7 @@
     "C:\\Users\\R_B_G\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\R_B_G\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
@@ -170,6 +174,7 @@
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
+    "C:\\Users\\R_B_G\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512",
     "C:\\Users\\R_B_G\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",

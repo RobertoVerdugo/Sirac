@@ -24,16 +24,19 @@ namespace Test_Razor.Pages
         [BindProperty]
         public Usuario Usuario { get; set; }
         public IdentityUser admin { get; set; }
+        public IEnumerable<Visita> Visita;
         public async Task<IActionResult> OnGet(int id)
         {
             if (db.VerificarPublicacion(id))
             {
-                Publicacion = await db.Publicacion.FindAsync(id);
                 var rut = userManager.GetUserName(User);
-                Usuario = await db.Usuario.FindAsync(rut);
-                admin = await userManager.FindByNameAsync(rut);
+
+                Publicacion =  db.Publicacion.Find(id);
+                Usuario =  db.Usuario.Find(rut);
+                admin =  await userManager.FindByNameAsync(rut);
                 if (admin != null && Usuario != null && Publicacion != null)
                 {
+                    await Visitar();
                     return Page();
                 }
                 else
@@ -58,6 +61,34 @@ namespace Test_Razor.Pages
                 return RedirectToPage("404Publicacion");
             }
 
+        }
+
+        public async Task<IActionResult> Visitar()
+        {
+            var rut = userManager.GetUserName(User);
+            Visita estaVisita;
+
+            Visita = db.Visita.ToList();
+            Visita = Visita.Where(u => u.rut == rut);
+            Visita = Visita.Where(u => u.idPublicacion == Publicacion.id);
+            if (Visita.Count() > 0)
+            {
+                estaVisita = Visita.First();
+                estaVisita.ranking = estaVisita.ranking + 1;
+                db.Visita.Update(estaVisita);
+            }
+            else
+            {
+                estaVisita = new Visita
+                {
+                    idPublicacion = Publicacion.id,
+                    ranking = 1,
+                    rut = rut
+                };
+                await db.Visita.AddAsync(estaVisita);
+            }
+            await db.SaveChangesAsync();
+            return Page();
         }
     }
 }
