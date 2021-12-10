@@ -36,6 +36,7 @@ namespace Test_Razor
                 options.Conventions.AuthorizePage("/EditarUsr");
                 options.Conventions.AuthorizePage("/Reportar");
                 options.Conventions.AuthorizePage("/Dashboard");
+                options.Conventions.AuthorizePage("/Logout");
             });
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(120);
