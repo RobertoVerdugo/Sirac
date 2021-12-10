@@ -133,7 +133,10 @@
             <div class="col-md-3" id="col">
                 <select asp-for="Orden" class="form-control">
                     <option value="">Ordenar por</option>
-                    <option>Recomendados</option>
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                        <option>Recomendados</option>
+                    }
                     <option>Nombre (A-Z)</option>
                     <option>Nombre (Z-A)</option>
                     <option>Fecha (Nuevo-Antiguo)</option>
