@@ -204,4 +204,13 @@
                 });
         });
     </script>
+    <script>
+        $('select[name="Publicacion.especie"]').change(function () {
+            var data = $(this).val();
+        });
+
+        $('select[name="Publicacion.especie"]')
+            .val('')
+            .trigger('change');
+    </script>
 }
