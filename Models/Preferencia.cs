@@ -183,7 +183,7 @@ namespace Test_Razor.Models
             pref = updtEspecie(pref, especie);
             pref = updtRaza(pref, raza);
 
-            return new Preferencia();
+            return pref;
         }
         public Preferencia normalizarPreferencia(Preferencia antigua, int TotalVisitas)
         {

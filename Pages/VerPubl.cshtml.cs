@@ -24,6 +24,7 @@ namespace Test_Razor.Pages
         [BindProperty]
         public Usuario Usuario { get; set; }
         public IdentityUser admin { get; set; }
+        
         public IEnumerable<Visita> Visita;
         public async Task<IActionResult> OnGet(int id)
         {
@@ -67,7 +68,7 @@ namespace Test_Razor.Pages
         {
             var rut = userManager.GetUserName(User);
             Visita estaVisita;
-
+            Preferencia Preferencia = db.Preferencia.Find(rut);
             Visita = db.Visita.ToList();
             Visita = Visita.Where(u => u.rut == rut);
             Visita = Visita.Where(u => u.idPublicacion == Publicacion.id);
@@ -87,6 +88,21 @@ namespace Test_Razor.Pages
                 };
                 await db.Visita.AddAsync(estaVisita);
             }
+            if (Preferencia == null)
+            {
+                Preferencia = new Preferencia
+                {
+                    rut = rut,
+                };
+                Preferencia = Preferencia.updtPreferencia(Preferencia, Publicacion);
+                await db.Preferencia.AddAsync(Preferencia);
+            }
+            else
+            {
+                Preferencia = Preferencia.updtPreferencia(Preferencia, Publicacion);
+                db.Preferencia.Update(Preferencia);
+            }
+            
             await db.SaveChangesAsync();
             return Page();
         }
