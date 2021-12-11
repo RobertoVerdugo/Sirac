@@ -26,7 +26,7 @@ namespace Test_Razor.Pages
             new SubCategory { SubCategoryId = 1, CategoryId = 1, SubCategoryName="Pastor de Bergamo" },
             new SubCategory { SubCategoryId = 2, CategoryId = 1, SubCategoryName="Schnoodle" },
             new SubCategory { SubCategoryId = 3, CategoryId = 1, SubCategoryName="Galgo" },
-            new SubCategory { SubCategoryId = 4, CategoryId = 1, SubCategoryName="Retriever" },
+            new SubCategory { SubCategoryId = 4, CategoryId = 1, SubCategoryName="Labrador Retriever" },
             new SubCategory { SubCategoryId = 5, CategoryId = 1, SubCategoryName="Elkhound" },
             new SubCategory { SubCategoryId = 6, CategoryId = 1, SubCategoryName="Keeshoun" },
             new SubCategory { SubCategoryId = 7, CategoryId = 1, SubCategoryName="Pastor Caucasico" },

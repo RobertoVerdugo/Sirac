@@ -41,6 +41,7 @@ namespace Test_Razor.Models
         public int Pastor_Bergamo { get; set; }
         public int Schnoodle { get; set; }
         public int Galgo { get; set; }
+        public int Labrador_Retriever { get; set; }
         public int Elkhound { get; set; }
         public int Keeshoun { get; set; }
         public int Pastor_Caucasico { get; set; }
@@ -261,6 +262,7 @@ namespace Test_Razor.Models
             pref.Kagnal_Turco = pref.Kagnal_Turco / TotalVisitas;
             pref.Keeshoun = pref.Keeshoun / TotalVisitas;
             pref.Korat = pref.Korat / TotalVisitas;
+            pref.Labrador_Retriever = pref.Labrador_Retriever / TotalVisitas;
             pref.Lampino = pref.Lampino / TotalVisitas;
             pref.LaPerm = pref.LaPerm / TotalVisitas;
             pref.Largo = pref.Largo / TotalVisitas;
@@ -490,6 +492,10 @@ namespace Test_Razor.Models
             else if (mod == "Galgo")
             {
                 pref.Galgo++;
+            }
+            else if (mod == "Labrador Retriever")
+            {
+                pref.Labrador_Retriever++;
             }
             else if (mod == "Elkhound")
             {
