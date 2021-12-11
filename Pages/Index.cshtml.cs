@@ -73,7 +73,6 @@ namespace Test_Razor.Pages
             }
             return Lista;
         }
-
         public IEnumerable<Publicacion> FiltrarPublicaciones(IEnumerable<Publicacion> Global, Filtro filtro)
         {
             IEnumerable<Publicacion> Lista = Global;

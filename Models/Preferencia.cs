@@ -41,7 +41,6 @@ namespace Test_Razor.Models
         public int Pastor_Bergamo { get; set; }
         public int Schnoodle { get; set; }
         public int Galgo { get; set; }
-        public int Retiever { get; set; }
         public int Elkhound { get; set; }
         public int Keeshoun { get; set; }
         public int Pastor_Caucasico { get; set; }
@@ -184,6 +183,160 @@ namespace Test_Razor.Models
             pref = updtRaza(pref, raza);
 
             return new Preferencia();
+        }
+        public Preferencia normalizarPreferencia(Preferencia antigua, int TotalVisitas)
+        {
+            Preferencia pref = antigua;
+            pref.Abisinio = pref.Abisinio / TotalVisitas;
+            pref.Adulto = pref.Adulto / TotalVisitas;
+            pref.Akita_Inu = pref.Akita_Inu / TotalVisitas;
+            pref.Alaskan_Malamute = pref.Alaskan_Malamute / TotalVisitas;
+            pref.Anaranjado = pref.Anaranjado / TotalVisitas;
+            pref.Ashera= pref.Ashera / TotalVisitas;
+            pref.Australian_Mist = pref.Australian_Mist / TotalVisitas;
+            pref.Azul_Ruso = pref.Azul_Ruso / TotalVisitas;
+            pref.Balines = pref.Balines / TotalVisitas;
+            pref.Basset_Hound = pref.Basset_Hound / TotalVisitas;
+            pref.Beagle = pref.Beagle / TotalVisitas;
+            pref.Beige = pref.Beige / TotalVisitas;
+            pref.Bengali = pref.Bengali / TotalVisitas;
+            pref.Bichon_Maltes = pref.Bichon_Maltes / TotalVisitas;
+            pref.Birmano = pref.Birmano / TotalVisitas;
+            pref.Blanco = pref.Blanco / TotalVisitas;
+            pref.Bobtail = pref.Bobtail / TotalVisitas;
+            pref.Bombay = pref.Bombay / TotalVisitas;
+            pref.Border_Collie = pref.Border_Collie / TotalVisitas;
+            pref.Bosque_Noruega = pref.Bosque_Noruega / TotalVisitas;
+            pref.Boxer = pref.Boxer / TotalVisitas;
+            pref.Boyero_Berna = pref.Boyero_Berna / TotalVisitas;
+            pref.Braco_Aleman = pref.Braco_Aleman / TotalVisitas;
+            pref.Braco_Burgos = pref.Braco_Burgos / TotalVisitas;
+            pref.Braco_Weimar = pref.Braco_Weimar / TotalVisitas;
+            pref.British_Shorthair = pref.British_Shorthair / TotalVisitas;
+            pref.Bulldog_Frances = pref.Bulldog_Frances / TotalVisitas;
+            pref.Bulldog_Ingles = pref.Bulldog_Ingles / TotalVisitas;
+            pref.Bull_Mastiff = pref.Bull_Mastiff / TotalVisitas;
+            pref.Burmes = pref.Burmes / TotalVisitas;
+            pref.Burmilla = pref.Burmilla / TotalVisitas;
+            pref.Cachorro = pref.Cachorro / TotalVisitas;
+            pref.Cafe = pref.Cafe / TotalVisitas;
+            pref.Cafe_Claro = pref.Cafe_Claro / TotalVisitas;
+            pref.Cafe_Oscuro = pref.Cafe_Oscuro / TotalVisitas;
+            pref.Caniche = pref.Caniche / TotalVisitas;
+            pref.Cavalier_King = pref.Cavalier_King / TotalVisitas;
+            pref.Chartreux = pref.Chartreux / TotalVisitas;
+            pref.Chihuahua = pref.Chihuahua / TotalVisitas;
+            pref.Chow_Chow = pref.Chow_Chow / TotalVisitas;
+            pref.Cocker_Spaniel = pref.Cocker_Spaniel / TotalVisitas;
+            pref.Corgi_Gales = pref.Corgi_Gales / TotalVisitas;
+            pref.Cornish_Rex = pref.Cornish_Rex / TotalVisitas;
+            pref.Corto = pref.Corto / TotalVisitas;
+            pref.Curl_Americano = pref.Curl_Americano / TotalVisitas;
+            pref.Dalmata = pref.Dalmata / TotalVisitas;
+            pref.Desconocido = pref.Desconocido / TotalVisitas;
+            pref.Devon_Rex = pref.Devon_Rex / TotalVisitas;
+            pref.Dobbermann = pref.Dobbermann / TotalVisitas;
+            pref.Dogo_Argentino = pref.Dogo_Argentino / TotalVisitas;
+            pref.Dogo_Burdeos = pref.Dogo_Burdeos / TotalVisitas;
+            pref.Duro = pref.Duro / TotalVisitas;
+            pref.Elkhound = pref.Elkhound / TotalVisitas;
+            pref.Europeo = pref.Europeo / TotalVisitas;
+            pref.Exotico_Pelocorto = pref.Exotico_Pelocorto / TotalVisitas;
+            pref.Fox_Terrier = pref.Fox_Terrier / TotalVisitas;
+            pref.Galgo = pref.Galgo / TotalVisitas;
+            pref.Galgo_Afgano = pref.Galgo_Afgano / TotalVisitas;
+            pref.Galgo_Espanol = pref.Galgo_Espanol / TotalVisitas;
+            pref.Galgo_Italiano = pref.Galgo_Italiano / TotalVisitas;
+            pref.Gato = pref.Gato / TotalVisitas;
+            pref.Golden_Retriever = pref.Golden_Retriever / TotalVisitas;
+            pref.Grande = pref.Grande / TotalVisitas;
+            pref.Gran_Danes = pref.Grifon_Bruselas / TotalVisitas;
+            pref.Gris = pref.Gris / TotalVisitas;
+            pref.Habana = pref.Habana / TotalVisitas;
+            pref.Hembra = pref.Hembra / TotalVisitas;
+            pref.Himalayo = pref.Himalayo / TotalVisitas;
+            pref.Husky_Siberiano = pref.Husky_Siberiano / TotalVisitas;
+            pref.Jack_Russell = pref.Jack_Russell / TotalVisitas;
+            pref.Javanes = pref.Javanes / TotalVisitas;
+            pref.Kagnal_Turco = pref.Kagnal_Turco / TotalVisitas;
+            pref.Keeshoun = pref.Keeshoun / TotalVisitas;
+            pref.Korat = pref.Korat / TotalVisitas;
+            pref.Lampino = pref.Lampino / TotalVisitas;
+            pref.LaPerm = pref.LaPerm / TotalVisitas;
+            pref.Largo = pref.Largo / TotalVisitas;
+            pref.Lhasa_Apso = pref.Lhasa_Apso / TotalVisitas;
+            pref.Lobero_Irlandes = pref.Lobero_Irlandes / TotalVisitas;
+            pref.Lykoi = pref.Lykoi / TotalVisitas;
+            pref.Macho = pref.Macho / TotalVisitas;
+            pref.Maine_Coon = pref.Maine_Coon / TotalVisitas;
+            pref.Manx = pref.Manx / TotalVisitas;
+            pref.Mastin_Espanol = pref.Mastin_Espanol / TotalVisitas;
+            pref.Mastin_Prineo = pref.Mastin_Prineo / TotalVisitas;
+            pref.Mastin_Tibetano = pref.Mastin_Tibetano / TotalVisitas;
+            pref.Mau_Egipcio = pref.Mau_Egipcio / TotalVisitas;
+            pref.Mediano = pref.Mediano / TotalVisitas;
+            pref.Montes = pref.Montes / TotalVisitas;
+            pref.Munchkin = pref.Munchkin / TotalVisitas;
+            pref.Nebelung = pref.Nebelung / TotalVisitas;
+            pref.Negro = pref.Negro / TotalVisitas;
+            pref.Ocicat = pref.Ocicat / TotalVisitas;
+            pref.Oriental_PeloCorto = pref.Oriental_PeloCorto / TotalVisitas;
+            pref.Otro_Color = pref.Otro_Color / TotalVisitas;
+            pref.Otro_Raza = pref.Otro_Raza / TotalVisitas;
+            pref.Pachon_Navarro = pref.Pachon_Navarro / TotalVisitas;
+            pref.Parson_Russell = pref.Parson_Russell / TotalVisitas;
+            pref.Pastor_Aleman = pref.Pastor_Aleman / TotalVisitas;
+            pref.Pastor_Australiano = pref.Pastor_Australiano / TotalVisitas;
+            pref.Pastor_Bergamo = pref.Pastor_Bergamo / TotalVisitas;
+            pref.Pastor_Caucasico = pref.Pastor_Caucasico / TotalVisitas;
+            pref.Pastor_Vasco = pref.Pastor_Vasco / TotalVisitas;
+            pref.Pastor_Yugoslavo = pref.Pastor_Yugoslavo / TotalVisitas;
+            pref.Pequeno = pref.Pequeno / TotalVisitas;
+            pref.Perro = pref.Perro / TotalVisitas;
+            pref.Perro_Aguas_Espanol = pref.Perro_Aguas_Espanol / TotalVisitas;
+            pref.Perro_Lobo = pref.Perro_Lobo / TotalVisitas;
+            pref.Perro_Pequines = pref.Perro_Pequines / TotalVisitas;
+            pref.Persa = pref.Persa / TotalVisitas;
+            pref.Peterbald = pref.Peterbald / TotalVisitas;
+            pref.Pinscher = pref.Pinscher / TotalVisitas;
+            pref.Pitbull = pref.Pitbull / TotalVisitas;
+            pref.Podenco_Andaluz = pref.Podenco_Andaluz / TotalVisitas;
+            pref.Pomerania = pref.Pomerania / TotalVisitas;
+            pref.Pug = pref.Pug / TotalVisitas;
+            pref.Ragdoll = pref.Ragdoll / TotalVisitas;
+            pref.Ratonero_Andaluz = pref.Ratonero_Andaluz / TotalVisitas;
+            pref.Retriever = pref.Retriever / TotalVisitas;
+            pref.Rizado = pref.Rizado / TotalVisitas;
+            pref.Rottweiler = pref.Rottweiler / TotalVisitas;
+            pref.Rubio = pref.Rubio / TotalVisitas;
+            pref.Sabueso_Espanol = pref.Sabueso_Espanol / TotalVisitas;
+            pref.Samoyedo = pref.Samoyedo / TotalVisitas;
+            pref.San_Bernardo = pref.San_Bernardo / TotalVisitas;
+            pref.Savannah = pref.Savannah / TotalVisitas;
+            pref.Schnauzer_Enano = pref.Schnauzer_Enano / TotalVisitas;
+            pref.Schnoodle = pref.Schnoodle / TotalVisitas;
+            pref.Scottish_Fold = pref.Scottish_Fold / TotalVisitas;
+            pref.Selkirk_Rex = pref.Selkirk_Rex / TotalVisitas;
+            pref.Senior = pref.Senior / TotalVisitas;
+            pref.Setter_Ingles = pref.Setter_Ingles / TotalVisitas;
+            pref.Shar_Pei = pref.Shar_Pei / TotalVisitas;
+            pref.Shausie = pref.Shausie / TotalVisitas;
+            pref.Shih_Tzu = pref.Shih_Tzu / TotalVisitas;
+            pref.Siames = pref.Siames / TotalVisitas;
+            pref.Siberiano = pref.Siberiano / TotalVisitas;
+            pref.Snowshoe = pref.Snowshoe / TotalVisitas;
+            pref.Sokoke = pref.Sokoke / TotalVisitas;
+            pref.Somali = pref.Somali / TotalVisitas;
+            pref.Spaniel_Breton = pref.Spaniel_Breton / TotalVisitas;
+            pref.Sphynx = pref.Sphynx / TotalVisitas;
+            pref.Teckel = pref.Teckel / TotalVisitas;
+            pref.Van_Turco = pref.Van_Turco / TotalVisitas;
+            pref.Vizsla = pref.Vizsla / TotalVisitas;
+            pref.Westie = pref.Westie / TotalVisitas;
+            pref.Xoloitzcuintle = pref.Xoloitzcuintle / TotalVisitas;
+            pref.Yorkshire_Terrier = pref.Yorkshire_Terrier / TotalVisitas;
+
+            return pref;
         }
 
 
@@ -337,10 +490,6 @@ namespace Test_Razor.Models
             else if (mod == "Galgo")
             {
                 pref.Galgo++;
-            }
-            else if (mod == "Retriever")
-            {
-                pref.Retiever++;
             }
             else if (mod == "Elkhound")
             {
