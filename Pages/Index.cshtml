@@ -17,11 +17,31 @@
 <div style="background-image: url(img/fondoAnimales.jpg)">
     <div class="container" id="blanco">
         <div class="row">
-            <div class="slider">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+                        <h2>Sistema de identificación y registro de animales callejeros</h2>
+                        <p>Sistema de identificación y registro de animales callejeros.<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br> lorem sit amet scelerisque justo</p>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="blanco">
+        <div class="row">
+            <div class="slider" style="margin-top:0;">
                 @if (signInManager.IsSignedIn(User))
                 {
                     @if (Model.ListaContenido.Count() > 0)
                     {
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="text-center">
+                                <h2>Recomendados para tí</h2>
+                            </div>
+                            <hr>
+                        </div>
                         <ul class="bxslider">
 
                             @foreach (var pub in Model.ListaContenido)
@@ -38,20 +58,6 @@
             </div>
         </div>
     </div>
-
-
-    <div class="container" id="blanco">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="text-center">
-                    <h2>Sistema de identificación y registro de animales callejeros</h2>
-                    <p>Sistema de identificación y registro de animales callejeros.<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br> lorem sit amet scelerisque justo</p>
-                </div>
-                <hr>
-            </div>
-        </div>
-    </div>
-
 
     <div class="container" id="blanco">
         <div class="row">

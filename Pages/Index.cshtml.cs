@@ -69,15 +69,15 @@ namespace Test_Razor.Pages
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
 
-        public IEnumerable<Publicacion> CrearListaContenido(IEnumerable<Publicacion> Global, Preferencia preferencia, int Visitas)
+        public IEnumerable<Publicacion> CrearListaContenido(IEnumerable<Publicacion> Global, Preferencia preferencia, int totalVisitas)
         {
             IEnumerable<Publicacion> ListaContenido = Global;
-            if (preferencia != null && Visitas>=1)
+            if (preferencia != null && totalVisitas>=1)
             {
-                preferencia = preferencia.normalizarPreferencia(preferencia, Visitas);
+                preferencia = preferencia.normalizarPreferencia(preferencia, totalVisitas);
                 foreach (var pub in ListaContenido)
                 {
-                    pub.scoreContenido = preferencia.getScorePublicacion(pub);
+                    pub.scoreContenido = preferencia.calcularScore(pub);
                 }
                 ListaContenido = ListaContenido.OrderByDescending(u => u.scoreContenido);
                 return ListaContenido.Take(3);

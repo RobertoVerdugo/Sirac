@@ -165,7 +165,7 @@ namespace Test_Razor.Models
         public float Ragdoll { get; set; }
         public float Otro_Raza { get; set; }
 
-        public double getScorePublicacion(Publicacion mod)
+        public double calcularScore(Publicacion mod)
         {
             double score = 0;
 
