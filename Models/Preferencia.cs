@@ -804,6 +804,10 @@ namespace Test_Razor.Models
         }
         public Preferencia normalizarPreferencia(Preferencia antigua, int TotalVisitas)
         {
+            if (TotalVisitas < 1)
+            {
+                TotalVisitas = 1;
+            }
             Preferencia pref = antigua;
             pref.Abisinio = pref.Abisinio / TotalVisitas;
             pref.Adulto = pref.Adulto / TotalVisitas;

@@ -30,46 +30,51 @@ namespace Test_Razor.Pages
         public Filtro Filtro { get; set; }
         [BindProperty]
         public string Orden { get; set; }
+        public string rut { get; set; }
+        public Preferencia Preferencia { get; set; }
         public IEnumerable<Publicacion> ListaGlobal;
         public IEnumerable<Publicacion> ListaLocal;
         public IEnumerable<Publicacion> ListaActual;
         public IEnumerable<Publicacion> ListaContenido;
         public void OnGet()
         {
+            rut = userManager.GetUserName(User);
+            Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal);
+            ListaContenido = CrearListaContenido(ListaGlobal,Preferencia, db.getTotalVisitas(rut));
             ListaLocal = ListaGlobal;
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
         public void OnPost()
         {
+            rut = userManager.GetUserName(User);
+            Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal);
+            ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, db.getTotalVisitas(rut));
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
-            ListaLocal = OrdenarPublicaciones(ListaLocal, Orden);
+            ListaLocal = OrdenarPublicaciones(ListaLocal, Orden, rut);
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
-
         public void OnPostPaginar(int id)
         {
+            rut = userManager.GetUserName(User);
+            Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal);
+            ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, db.getTotalVisitas(rut));
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
-            ListaLocal = OrdenarPublicaciones(ListaLocal, Orden);
+            ListaLocal = OrdenarPublicaciones(ListaLocal, Orden,rut);
             ListaActual = PaginarPublicaciones(ListaLocal, id);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
 
-        public IEnumerable<Publicacion> CrearListaContenido(IEnumerable<Publicacion> listaGlobal)
+        public IEnumerable<Publicacion> CrearListaContenido(IEnumerable<Publicacion> Global, Preferencia preferencia, int Visitas)
         {
-            string rut = userManager.GetUserName(User);
-            IEnumerable<Publicacion> ListaContenido = listaGlobal;
-            Preferencia preferencia = db.Preferencia.Find(rut);
-            if (preferencia != null)
+            IEnumerable<Publicacion> ListaContenido = Global;
+            if (preferencia != null && Visitas>=1)
             {
-                preferencia = preferencia.normalizarPreferencia(preferencia, db.getTotalVisitas(rut));
+                preferencia = preferencia.normalizarPreferencia(preferencia, Visitas);
                 foreach (var pub in ListaContenido)
                 {
                     pub.scoreContenido = preferencia.getScorePublicacion(pub);
@@ -140,7 +145,7 @@ namespace Test_Razor.Pages
             }
             return Lista;
         }
-        public IEnumerable<Publicacion> OrdenarPublicaciones(IEnumerable<Publicacion> Filtrada, string orden)
+        public IEnumerable<Publicacion> OrdenarPublicaciones(IEnumerable<Publicacion> Filtrada, string orden, string rut)
         {
             IEnumerable<Publicacion> Lista = Filtrada;
             if (orden != null)
@@ -163,7 +168,6 @@ namespace Test_Razor.Pages
                 }
                 if (orden == "Recomendados")
                 {
-                    var rut = userManager.GetUserName(User);
                     foreach (var pub in Lista)
                     {
                         var datos = new MLModel.ModelInput()
