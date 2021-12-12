@@ -6,290 +6,292 @@
     ViewData["Title"] = "Editar";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="blogs">
-                <div class="text-center">
-                    <h2>Editar</h2>
+<div style="background-image: url(img/fondoAnimales.jpg)">
+    <div class="container" style="background:white;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+                        <h2>Editar</h2>
+                    </div>
+                    <hr>
                 </div>
-                <hr>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="border">
-                <form method="post" enctype="multipart/form-data">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="container" style="padding:30px">
+    <div class="container" style="background:white;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="border">
+                    <form method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="container" style="padding:30px">
 
-                        <input type="hidden" asp-for="Publicacion.fecha" value=@DateTime.Now />
-                        <input type="hidden" asp-for="Publicacion.rut" value=@userManager.GetUserName(User) />
+                            <input type="hidden" asp-for="Publicacion.fecha" value=@DateTime.Now />
+                            <input type="hidden" asp-for="Publicacion.rut" value=@userManager.GetUserName(User) />
 
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.nombre"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input asp-for="Publicacion.nombre" class="form-control" placeholder="Pelusa" />
-                                </div>
-                                <span asp-validation-for="Publicacion.nombre" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.especie"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.especie" name="Publicacion.especie" class="form-control" asp-items="Model.Categories">
-                                        <option value="">Seleccione una especie</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.especie" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.raza"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.raza" name="Publicacion.raza" class="form-control">
-                                        <option value="">Seleccione una raza</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.genero"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.genero" class="form-control">
-                                        <option value="">Seleccione genero</option>
-                                        <option>Macho</option>
-                                        <option>Hembra</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.genero" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.edad"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.edad" class="form-control">
-                                        <option value="">Seleccione edad</option>
-                                        <option>Cachorro</option>
-                                        <option>Adulto</option>
-                                        <option>Senior</option>
-                                        <option>Desconocido</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.edad" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.pelaje"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.pelaje" class="form-control">
-                                        <option value="">Seleccione tipo de pelaje</option>
-                                        <option>Duro</option>
-                                        <option>Rizado</option>
-                                        <option>Corto</option>
-                                        <option>Largo</option>
-                                        <option>Lampiño</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.pelaje" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.color"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.color" class="form-control">
-                                        <option value="">Seleccione un color</option>
-                                        <option>Negro</option>
-                                        <option>Blanco</option>
-                                        <option>Beige</option>
-                                        <option>Gris</option>
-                                        <option>Café</option>
-                                        <option>Café claro</option>
-                                        <option>Café oscuro</option>
-                                        <option>Anaranjado</option>
-                                        <option>Rubio</option>
-                                        <option>Otro</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.color" class="text-danger"></span>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.tamano"></label>
-                                </div>
-                                <a><i class="bi bi-question-circle" typeof="button" data-toggle="modal" data-target="#Modal"></i></a>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.tamano" class="form-control">
-                                        <option value="">Seleccione tamaño</option>
-                                        <option>Pequeño</option>
-                                        <option>Mediano</option>
-                                        <option>Grande</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.tamano" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.estado"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Publicacion.estado" class="form-control">
-                                        <option value="">Seleccione estado</option>
-                                        <option>Situación de calle</option>
-                                        <option>Tenencia Temporal</option>
-                                        <option>En Adopción</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Publicacion.estado" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.ubicacion"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input asp-for="Publicacion.ubicacion" class="form-control" placeholder="Calle falsa 123 cerca del supermercado" />
-                                </div>
-                                <span asp-validation-for="Publicacion.ubicacion" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Publicacion.descripcion"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <textarea asp-for="Publicacion.descripcion" class="form-control" rows="5" data-rule="required" placeholder="Message" style="resize:none"></textarea>
-                                </div>
-                                <span asp-validation-for="Publicacion.descripcion" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <!--Botones-->
-                        <div class="form-group">
-                            <div class="row aling-items-center">
-                                <div class="col-aling-self-center col-sm-6">
-                                    <input type="submit" value="Publicar" class="btn btn-primary form-control" />
-                                    <a asp-page="Dashboard" class="btn btn-secondary form-control">Cancelar</a>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.nombre"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input asp-for="Publicacion.nombre" class="form-control" placeholder="Pelusa" />
+                                    </div>
+                                    <span asp-validation-for="Publicacion.nombre" class="text-danger"></span>
                                 </div>
                             </div>
-                        </div>
-                        <!--Modal-->
-                        <div class="modal fade" id="Modal" tabindex="1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <div class="col-sm-2">
-                                            <h2>Medidas</h2>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.especie"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.especie" name="Publicacion.especie" class="form-control" asp-items="Model.Categories">
+                                            <option value="">Seleccione una especie</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.especie" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.raza"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.raza" name="Publicacion.raza" class="form-control">
+                                            <option value="">Seleccione una raza</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.raza" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.genero"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.genero" class="form-control">
+                                            <option value="">Seleccione genero</option>
+                                            <option>Macho</option>
+                                            <option>Hembra</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.genero" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.edad"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.edad" class="form-control">
+                                            <option value="">Seleccione edad</option>
+                                            <option>Cachorro</option>
+                                            <option>Adulto</option>
+                                            <option>Senior</option>
+                                            <option>Desconocido</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.edad" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.pelaje"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.pelaje" class="form-control">
+                                            <option value="">Seleccione tipo de pelaje</option>
+                                            <option>Duro</option>
+                                            <option>Rizado</option>
+                                            <option>Corto</option>
+                                            <option>Largo</option>
+                                            <option>Lampiño</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.pelaje" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.color"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.color" class="form-control">
+                                            <option value="">Seleccione un color</option>
+                                            <option>Negro</option>
+                                            <option>Blanco</option>
+                                            <option>Beige</option>
+                                            <option>Gris</option>
+                                            <option>Café</option>
+                                            <option>Café claro</option>
+                                            <option>Café oscuro</option>
+                                            <option>Anaranjado</option>
+                                            <option>Rubio</option>
+                                            <option>Otro</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.color" class="text-danger"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.tamano"></label>
+                                    </div>
+                                    <a><i class="bi bi-question-circle" typeof="button" data-toggle="modal" data-target="#Modal"></i></a>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.tamano" class="form-control">
+                                            <option value="">Seleccione tamaño</option>
+                                            <option>Pequeño</option>
+                                            <option>Mediano</option>
+                                            <option>Grande</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.tamano" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.estado"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Publicacion.estado" class="form-control">
+                                            <option value="">Seleccione estado</option>
+                                            <option>Situación de calle</option>
+                                            <option>Tenencia Temporal</option>
+                                            <option>En Adopción</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.estado" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.ubicacion"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input asp-for="Publicacion.ubicacion" class="form-control" placeholder="Calle falsa 123 cerca del supermercado" />
+                                    </div>
+                                    <span asp-validation-for="Publicacion.ubicacion" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Publicacion.descripcion"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <textarea asp-for="Publicacion.descripcion" class="form-control" rows="5" data-rule="required" placeholder="Message" style="resize:none"></textarea>
+                                    </div>
+                                    <span asp-validation-for="Publicacion.descripcion" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!--Botones-->
+                            <div class="form-group">
+                                <div class="row aling-items-center">
+                                    <div class="col-aling-self-center col-sm-6">
+                                        <input type="submit" value="Publicar" class="btn btn-primary form-control" />
+                                        <a asp-page="Dashboard" class="btn btn-secondary form-control">Cancelar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Modal-->
+                            <div class="modal fade" id="Modal" tabindex="1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div class="col-sm-2">
+                                                <h2>Medidas</h2>
+                                            </div>
+                                            <div class="col-sm-1 col-sm-offset-9">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <table class="table table-responsive-md">
+                                                <tr class="table-borderless">
+                                                    <th>
+
+                                                    </th>
+                                                    <th>
+                                                        Pequeño
+                                                    </th>
+                                                    <th>
+                                                        Mediano
+                                                    </th>
+
+                                                    <th>
+                                                        Grande
+                                                    </th>
+                                                    <th>
+                                                        Referencia
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        Perro
+                                                    </th>
+                                                    <th>
+                                                        25cm.
+                                                    </th>
+                                                    <th>
+                                                        50cm.
+                                                    </th>
+                                                    <th>
+                                                        73(+)cm.
+                                                    </th>
+                                                    <th>
+                                                        Alto.
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        Gato
+                                                    </th>
+                                                    <th>
+                                                        33cm.
+                                                    </th>
+                                                    <th>
+                                                        43cm.
+                                                    </th>
+                                                    <th>
+                                                        60(+)cm.
+                                                    </th>
+                                                    <th>
+                                                        Largo del tórax.
+                                                    </th>
+                                                </tr>
+                                            </table>
+
                                         </div>
-                                        <div class="col-sm-1 col-sm-offset-9">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <table class="table table-responsive-md">
-                                            <tr class="table-borderless">
-                                                <th>
-
-                                                </th>
-                                                <th>
-                                                    Pequeño
-                                                </th>
-                                                <th>
-                                                    Mediano
-                                                </th>
-
-                                                <th>
-                                                    Grande
-                                                </th>
-                                                <th>
-                                                    Referencia
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    Perro
-                                                </th>
-                                                <th>
-                                                    25cm.
-                                                </th>
-                                                <th>
-                                                    50cm.
-                                                </th>
-                                                <th>
-                                                    73(+)cm.
-                                                </th>
-                                                <th>
-                                                    Alto.
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    Gato
-                                                </th>
-                                                <th>
-                                                    33cm.
-                                                </th>
-                                                <th>
-                                                    43cm.
-                                                </th>
-                                                <th>
-                                                    60(+)cm.
-                                                </th>
-                                                <th>
-                                                    Largo del tórax.
-                                                </th>
-                                            </tr>
-                                        </table>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

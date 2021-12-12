@@ -6,154 +6,159 @@
     ViewData["Title"] = "Dashboard";
 }
 
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="blogs">
-                <div class="text-center">
-                    <h2>Mi Perfil</h2>
-                </div>
-                <br />
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="page-header">
-                <div class="blog">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p><b>Nombre: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Usuario.nombre</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p><b>Apellidos: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Usuario.apellidos</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p><b>Email: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Usuario.email</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p><b>Teléfono: </b></p>
-                        </div>
-                        @if (Model.Usuario.telefono != null)
-                        {
-                            <div class="col-md-3">
-                                <p>@Model.Usuario.telefono</p>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="col-md-3">
-                                <p>Sin registrar</p>
-                            </div>
-                        }
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p><b>Rut: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Usuario.rut</p>
-                        </div>
-                    </div>
-                    <p class="text-right"><a asp-route-id=@Model.Usuario.rut asp-page="EditarUsr" class="btn btn-primary btn-sm">Editar</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="blogs">
-                <div class="text-center">
-                    <h2>Mis Publicaciones</h2>
-                </div>
-                <br />
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <form method="post">
-        @if (Model.Publicaciones.Count() > 0)
-        {
-            <table class="table table-responsive-md">
-                <tr class="table-secondary">
-                    <th>
-                        @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().nombre)
-                    </th>
-
-                    <th>
-                        @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().fecha)
-                    </th>
-
-                    <th>
-                        Publicación
-                    </th>
-
-                    <th>
-                        Acciones
-                    </th>
-                </tr>
-                @foreach (var pub in Model.PublicacionesActual)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(m => pub.nombre)</td>
-                        <td>@Html.DisplayFor(m => pub.fecha)</td>
-                        <td><a asp-route-id=@pub.id asp-page="VerPubl">Ver</a></td>
-                        <td>
-                            <button asp-page-handler="Delete" asp-route-id="@pub.id" class="btn btn-secondary btn-sm" onclick="return confirm('Desea eliminar esta publicación?')">Eliminar</button>
-                            <a asp-route-id=@pub.id asp-page="EditarPubl" class="btn btn-secondary btn-sm">Editar</a>
-                        </td>
-                    </tr>
-                }
-            </table>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+<div style="background-image: url(img/fondoAnimales.jpg)">
+    <div class="container" style="background:white;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
                     <div class="text-center">
-                        <nav>
-                            <ul class="pagination">
-                                @for (int i = 1; i < ((Model.Publicaciones.Count() - 1) / 10) + 2; i++)
-                                {
-                                    <li><button asp-page-handler="Paginar" asp-route-id="@i">@i</button></li>
-                                }
-                            </ul>
-                        </nav>
+                        <h2>Mi Perfil</h2>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background:white;">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="page-header">
+                    <div class="blog">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p><b>Nombre: </b></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>@Model.Usuario.nombre</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p><b>Apellidos: </b></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>@Model.Usuario.apellidos</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p><b>Email: </b></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>@Model.Usuario.email</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p><b>Teléfono: </b></p>
+                            </div>
+                            @if (Model.Usuario.telefono != null)
+                            {
+                                <div class="col-md-3">
+                                    <p>@Model.Usuario.telefono</p>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-md-3">
+                                    <p>Sin registrar</p>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p><b>Rut: </b></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>@Model.Usuario.rut</p>
+                            </div>
+                        </div>
+                        <p class="text-right"><a asp-route-id=@Model.Usuario.rut asp-page="EditarUsr" class="btn btn-primary btn-sm">Editar</a></p>
                     </div>
                 </div>
             </div>
-        }
-        else
-        {
-            <div class="container">
+        </div>
+    </div>
+
+    <div class="container" style="background:white;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+                        <h2>Mis Publicaciones</h2>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background:white;">
+        <form method="post">
+            @if (Model.Publicaciones.Count() > 0)
+            {
+                <table class="table table-responsive-md">
+                    <tr class="table-secondary">
+                        <th>
+                            @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().nombre)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(m => m.Publicaciones.FirstOrDefault().fecha)
+                        </th>
+
+                        <th>
+                            Publicación
+                        </th>
+
+                        <th>
+                            Acciones
+                        </th>
+                    </tr>
+                    @foreach (var pub in Model.PublicacionesActual)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => pub.nombre)</td>
+                            <td>@Html.DisplayFor(m => pub.fecha)</td>
+                            <td><a asp-route-id=@pub.id asp-page="VerPubl">Ver</a></td>
+                            <td>
+                                <button asp-page-handler="Delete" asp-route-id="@pub.id" class="btn btn-secondary btn-sm" onclick="return confirm('Desea eliminar esta publicación?')">Eliminar</button>
+                                <a asp-route-id=@pub.id asp-page="EditarPubl" class="btn btn-secondary btn-sm">Editar</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <div class="text-center">
-                            <p>No hay publicacones</p>
+                            <nav>
+                                <ul class="pagination">
+                                    @for (int i = 1; i < ((Model.Publicaciones.Count() - 1) / 10) + 2; i++)
+                                    {
+                                        <li><button asp-page-handler="Paginar" asp-route-id="@i">@i</button></li>
+                                    }
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
-            </div>
-        }
-    </form>
+            }
+            else
+            {
+                <div class="container" id="div">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="text-center">
+                                <p>No hay publicacones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $('#div').height($(window).height() - 770);
+                </script>
+            }
+        </form>
+    </div>
 </div>
+
 
 
 

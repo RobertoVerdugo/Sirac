@@ -4,68 +4,74 @@
     ViewData["Title"] = "Reportar";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="blogs">
-                <div class="text-center">
-                    <h2>Reportar</h2>
-                </div>
-                <br />
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="border">
-                <form method="post" enctype="multipart/form-data">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="container" style="padding:30px">
-                        <input type="hidden" asp-for="Reporte.idPublicacion" value=@Model.idPub />
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Reporte.causal"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select asp-for="Reporte.causal" class="form-control">
-                                        <option value="">Seleccione causal</option>
-                                        <option>Publicación repetida</option>
-                                        <option>Información Falsa</option>
-                                    </select>
-                                </div>
-                                <span asp-validation-for="Reporte.causal" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Reporte.descripcion"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <textarea asp-for="Reporte.descripcion" class="form-control" rows="5" data-rule="required" placeholder="Message" style="resize:none"></textarea>
-                                </div>
-                                <span asp-validation-for="Reporte.descripcion" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <!--Botones-->
-                        <div class="form-group">
-                            <div class="row aling-items-center">
-                                <div class="col-aling-self-center col-sm-6">
-                                    <input type="submit" value="Reportar" class="btn btn-primary form-control" />
-                                    <a asp-page="Index" class="btn btn-secondary form-control">Cancelar</a>
-                                </div>
-                            </div>
-                        </div>
-
+<div style="background-image: url(img/fondoAnimales.jpg)">
+    <div class="container" style="background:white;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+                        <h2>Reportar</h2>
                     </div>
-                </form>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="div" style="background:white;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="border">
+                    <form method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="container" style="padding:30px">
+                            <input type="hidden" asp-for="Reporte.idPublicacion" value=@Model.idPub />
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Reporte.causal"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select asp-for="Reporte.causal" class="form-control">
+                                            <option value="">Seleccione causal</option>
+                                            <option>Publicación repetida</option>
+                                            <option>Información Falsa</option>
+                                        </select>
+                                    </div>
+                                    <span asp-validation-for="Reporte.causal" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Reporte.descripcion"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <textarea asp-for="Reporte.descripcion" class="form-control" rows="5" data-rule="required" placeholder="Message" style="resize:none"></textarea>
+                                    </div>
+                                    <span asp-validation-for="Reporte.descripcion" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!--Botones-->
+                            <div class="form-group">
+                                <div class="row aling-items-center">
+                                    <div class="col-aling-self-center col-sm-6">
+                                        <input type="submit" value="Reportar" class="btn btn-primary form-control" />
+                                        <a asp-page="Index" class="btn btn-secondary form-control">Cancelar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $('#div').height($(window).height() - 255);
+</script>

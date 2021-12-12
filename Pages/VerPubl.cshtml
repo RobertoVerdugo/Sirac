@@ -5,124 +5,126 @@
 @{
     ViewData["Title"] = Model.Publicacion.nombre;
 }
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <hr />
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="page-header">
-                <div class="blog">
-                    <h5>@Model.Publicacion.fecha.ToString("dd MMMM, yyyy")</h5>
-                    <img src="img/@Model.Publicacion.rutaimg" class="img-responsive center-block"  />
-                    
-                    <h2 class="text-center">@Model.Publicacion.nombre</h2>
 
+<div style="background-image: url(img/fondoAnimales.jpg)">
+        <div class="container" style="background:white">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
                     <hr />
-                    <p>
-                        @Model.Publicacion.descripcion
-                    </p>
-
-                    <h3>Detalles físicos</h3>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p><b>Especie: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Publicacion.especie</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p><b>Raza: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Publicacion.raza</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p><b>Género: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Publicacion.genero</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p><b>Edad: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Publicacion.edad</p>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p><b>Tipo de pelaje: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Publicacion.pelaje</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p><b>Color de pelaje: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Publicacion.color</p>
-                        </div>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-md-3">
-                            <p><b>Tamaño: </b></p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>@Model.Publicacion.tamano</p>
-                        </div>
-                    </div>
-
-                    <h3>Detalles de situación</h3>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <p><b>Ubicación: </b></p>
-                        </div>
-                        <div class="col-md-10">
-                            <p>@Model.Publicacion.ubicacion</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <p><b>Estado: </b></p>
-                        </div>
-                        <div class="col-md-10">
-                            <p>@Model.Publicacion.estado</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row" style="padding-top:20px; margin: 0px; border: 0px;">
-                        <div class="col-md-6">
-                            <p>
-                                <small>
-                                    Por:<br /> @Model.Usuario.nombre @Model.Usuario.apellidos<br /> @Model.Usuario.email @if (Model.Usuario.telefono != null)
-                                    {<br /> @Model.Usuario.telefono}
-                                </small>
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            @if (@Model.Publicacion.actualizacion != null)
-                            {<p class="text-right"><small>Actualizado el @Model.Publicacion.actualizacion.ToString("dd MMMM, yyyy")</small></p>}
-                        </div>
-                    </div>
                 </div>
             </div>
-            <p class="text-right"><a asp-route-id=@Model.Publicacion.id asp-page="Reportar" class="btn btn-secondary btn-sm">Reportar</a></p>
-            @if (await userManager.IsInRoleAsync(Model.admin, "Admin"))
-            {
-                <form method="post">
-                    <p class="text-left"><button asp-page-handler="Delete" asp-route-id="@Model.Publicacion.id" class="btn btn-secondary btn-sm" onclick="return confirm('Desea eliminar esta publicación?')">Eliminar</button></p>
-                </form>
-            }
         </div>
-    </div>
+        <div class="container" style="background:white">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="page-header">
+                        <div class="blog">
+                            <h5>@Model.Publicacion.fecha.ToString("dd MMMM, yyyy")</h5>
+                            <img src="img/@Model.Publicacion.rutaimg" class="img-responsive center-block" />
+                            <h2 class="text-center">@Model.Publicacion.nombre</h2>
+
+                            <hr />
+                            <p>
+                                @Model.Publicacion.descripcion
+                            </p>
+
+                            <h3>Detalles físicos</h3>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p><b>Especie: </b></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>@Model.Publicacion.especie</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p><b>Raza: </b></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>@Model.Publicacion.raza</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p><b>Género: </b></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>@Model.Publicacion.genero</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p><b>Edad: </b></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>@Model.Publicacion.edad</p>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p><b>Tipo de pelaje: </b></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>@Model.Publicacion.pelaje</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p><b>Color de pelaje: </b></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>@Model.Publicacion.color</p>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <p><b>Tamaño: </b></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>@Model.Publicacion.tamano</p>
+                                </div>
+                            </div>
+
+                            <h3>Detalles de situación</h3>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p><b>Ubicación: </b></p>
+                                </div>
+                                <div class="col-md-10">
+                                    <p>@Model.Publicacion.ubicacion</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p><b>Estado: </b></p>
+                                </div>
+                                <div class="col-md-10">
+                                    <p>@Model.Publicacion.estado</p>
+                                </div>
+                            </div>
+
+
+                            <div class="row" style="padding-top:20px; margin: 0px; border: 0px;background:white;">
+                                <div class="col-md-6">
+                                    <p>
+                                        <small>
+                                            Por:<br /> @Model.Usuario.nombre @Model.Usuario.apellidos<br /> @Model.Usuario.email @if (Model.Usuario.telefono != null)
+                                            {<br /> @Model.Usuario.telefono}
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    @if (@Model.Publicacion.actualizacion != null)
+                                    {<p class="text-right"><small>Actualizado el @Model.Publicacion.actualizacion.ToString("dd MMMM, yyyy")</small></p>}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-right"><a asp-route-id=@Model.Publicacion.id asp-page="Reportar" class="btn btn-secondary btn-sm">Reportar</a></p>
+                    @if (await userManager.IsInRoleAsync(Model.admin, "Admin"))
+                    {
+                        <form method="post">
+                            <p class="text-left"><button asp-page-handler="Delete" asp-route-id="@Model.Publicacion.id" class="btn btn-secondary btn-sm" onclick="return confirm('Desea eliminar esta publicación?')">Eliminar</button></p>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
 </div>

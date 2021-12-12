@@ -4,63 +4,70 @@
     ViewData["Title"] = "Login";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="blogs">
-                <div class="text-center">
-                    <h2>Iniciar Sesión</h2>
-                </div>
-                <hr>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="border">
-                <form method="post">
-                    <div class="container" style="padding:30px">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Auth.rut"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input asp-for="Auth.rut" class="form-control" placeholder="12.345.689-0" />
-                                </div>
-                                <span asp-validation-for="Auth.rut" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label asp-for="Auth.password"></label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input asp-for="Auth.password" class="form-control" type="password" placeholder="Contraseña" />
-                                </div>
-                                <span asp-validation-for="Auth.password" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <!--Botones-->
-                        <div class="form-group">
-                            <div class="row aling-items-center">
-                                <div class="col-aling-self-center col-sm-6">
-                                    <input type="submit" value="Iniciar Sesión" class="btn btn-primary form-control" />
-                                    <a asp-page="Registro" class="btn btn-secondary form-control">Regístrate</a>
-                                </div>
-                            </div>
-                        </div>
-
+<div style="background-image: url(img/fondoAnimales.jpg)">
+    <div class="container" style="background:white;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+                        <h2>Iniciar Sesión</h2>
                     </div>
-                </form>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background:white;">
+        <div class="row" id="div">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="border">
+                    <form method="post">
+                        <div class="container" style="padding:30px">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Auth.rut"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input asp-for="Auth.rut" class="form-control" placeholder="12.345.689-0" />
+                                    </div>
+                                    <span asp-validation-for="Auth.rut" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label asp-for="Auth.password"></label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input asp-for="Auth.password" class="form-control" type="password" placeholder="Contraseña" />
+                                    </div>
+                                    <span asp-validation-for="Auth.password" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!--Botones-->
+                            <div class="form-group">
+                                <div class="row aling-items-center">
+                                    <div class="col-aling-self-center col-sm-6">
+                                        <input type="submit" value="Iniciar Sesión" class="btn btn-primary form-control" />
+                                        <a asp-page="Registro" class="btn btn-secondary form-control">Regístrate</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $('#div').height($(window).height() - 280);
+</script>
+
+
 

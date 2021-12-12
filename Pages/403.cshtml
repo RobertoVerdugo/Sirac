@@ -4,18 +4,24 @@
     ViewData["Title"] = "403";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="blogs">
-                <div class="text-center">
-                    <h2>403 - Forbidden</h2>
-                </div>
-                <hr>
-                <div class="text-center">
-                    <p>No tienes acceso a esta información</p>
+<div style="background-image: url(img/fondoAnimales.jpg)">
+    <div class="container" id="div" style="background:white">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+                        <h2>403 - Forbidden</h2>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p>No tienes acceso a esta información</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $('#div').height($(window).height() - 70);
+</script>
