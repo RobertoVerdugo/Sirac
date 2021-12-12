@@ -30,7 +30,7 @@ namespace Test_Razor
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.Conversion.MapValueToKey(@"rut", @"rut")      
                                     .Append(mlContext.Transforms.Conversion.MapValueToKey(@"idPublicacion", @"idPublicacion"))      
-                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(labelColumnName:@"ranking",matrixColumnIndexColumnName:@"rut",matrixRowIndexColumnName:@"idPublicacion", approximationRank: 8, learningRate: 0, numberOfIterations: 20));
+                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(approximationRank:64,numberOfIterations:40,learningRate:0,labelColumnName:@"ranking",matrixColumnIndexColumnName:@"rut",matrixRowIndexColumnName:@"idPublicacion"));
 
             return pipeline;
         }

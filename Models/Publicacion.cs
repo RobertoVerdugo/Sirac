@@ -81,5 +81,6 @@ namespace Test_Razor.Models
         public string rut { get; set; }
 
         public double score { get; set; }
+        public double scoreContenido { get; set; }
     }
 }

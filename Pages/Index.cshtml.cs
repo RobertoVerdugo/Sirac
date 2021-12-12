@@ -33,9 +33,11 @@ namespace Test_Razor.Pages
         public IEnumerable<Publicacion> ListaGlobal;
         public IEnumerable<Publicacion> ListaLocal;
         public IEnumerable<Publicacion> ListaActual;
+        public IEnumerable<Publicacion> ListaContenido;
         public void OnGet()
         {
             ListaGlobal = db.Publicacion.ToList();
+            ListaContenido = CrearListaContenido(ListaGlobal);
             ListaLocal = ListaGlobal;
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
@@ -43,6 +45,7 @@ namespace Test_Razor.Pages
         public void OnPost()
         {
             ListaGlobal = db.Publicacion.ToList();
+            ListaContenido = CrearListaContenido(ListaGlobal);
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
             ListaLocal = OrdenarPublicaciones(ListaLocal, Orden);
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
@@ -52,10 +55,29 @@ namespace Test_Razor.Pages
         public void OnPostPaginar(int id)
         {
             ListaGlobal = db.Publicacion.ToList();
+            ListaContenido = CrearListaContenido(ListaGlobal);
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
             ListaLocal = OrdenarPublicaciones(ListaLocal, Orden);
             ListaActual = PaginarPublicaciones(ListaLocal, id);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
+        }
+
+        public IEnumerable<Publicacion> CrearListaContenido(IEnumerable<Publicacion> listaGlobal)
+        {
+            string rut = userManager.GetUserName(User);
+            IEnumerable<Publicacion> ListaContenido = listaGlobal;
+            Preferencia preferencia = db.Preferencia.Find(rut);
+            if (preferencia != null)
+            {
+                preferencia = preferencia.normalizarPreferencia(preferencia, db.getTotalVisitas(rut));
+                foreach (var pub in ListaContenido)
+                {
+                    pub.scoreContenido = preferencia.getScorePublicacion(pub);
+                }
+                ListaContenido = ListaContenido.OrderByDescending(u => u.scoreContenido);
+                return ListaContenido.Take(3);
+            }
+            return new List<Publicacion>();
         }
 
         public IEnumerable<Publicacion> PaginarPublicaciones(IEnumerable<Publicacion> Local, int indice)

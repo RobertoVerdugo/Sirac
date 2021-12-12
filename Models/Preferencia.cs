@@ -12,159 +12,776 @@ namespace Test_Razor.Models
         [MaxLength(12)]
         public string rut { get; set; }
 
-        public int Macho { get; set; }
-        public int Hembra { get; set; }
-        public int Cachorro { get; set; }
-        public int Adulto { get; set; }
-        public int Senior { get; set; }
-        public int Desconocido { get; set; }
-        public int Duro { get; set; }
-        public int Rizado { get; set; }
-        public int Corto { get; set; }
-        public int Largo { get; set; }
-        public int Lampino { get; set; }
-        public int Negro { get; set; }
-        public int Blanco { get; set; }
-        public int Beige { get; set; }
-        public int Gris { get; set; }
-        public int Cafe { get; set; }
-        public int Cafe_Claro { get; set; }
-        public int Cafe_Oscuro { get; set; }
-        public int Anaranjado { get; set; }
-        public int Rubio { get; set; }
-        public int Otro_Color { get; set; }
-        public int Pequeno { get; set; }
-        public int Mediano { get; set; }
-        public int Grande { get; set; }
-        public int Perro { get; set; }
-        public int Gato { get; set; }
-        public int Pastor_Bergamo { get; set; }
-        public int Schnoodle { get; set; }
-        public int Galgo { get; set; }
-        public int Labrador_Retriever { get; set; }
-        public int Elkhound { get; set; }
-        public int Keeshoun { get; set; }
-        public int Pastor_Caucasico { get; set; }
-        public int Basset_Hound { get; set; }
-        public int Kagnal_Turco { get; set; }
-        public int Pastor_Australiano { get; set; }
-        public int Xoloitzcuintle { get; set; }
-        public int Corgi_Gales { get; set; }
-        public int Perro_Lobo { get; set; }
-        public int Alaskan_Malamute { get; set; }
-        public int Mastin_Tibetano { get; set; }
-        public int Shar_Pei { get; set; }
-        public int Galgo_Italiano { get; set; }
-        public int Spaniel_Breton { get; set; }
-        public int Ratonero_Andaluz { get; set; }
-        public int Fox_Terrier { get; set; }
-        public int Bull_Mastiff { get; set; }
-        public int Pastor_Yugoslavo { get; set; }
-        public int Braco_Weimar { get; set; }
-        public int Setter_Ingles { get; set; }
-        public int Sabueso_Espanol { get; set; }
-        public int Boyero_Berna { get; set; }
-        public int Grifon_Bruselas { get; set; }
-        public int Dogo_Burdeos { get; set; }
-        public int Lobero_Irlandes { get; set; }
-        public int Lhasa_Apso { get; set; }
-        public int Bulldog_Ingles { get; set; }
-        public int Cavalier_King { get; set; }
-        public int Perro_Pequines { get; set; }
-        public int Pug { get; set; }
-        public int Parson_Russell { get; set; }
-        public int Braco_Aleman { get; set; }
-        public int Jack_Russell { get; set; }
-        public int Pachon_Navarro { get; set; }
-        public int Westie { get; set; }
-        public int Galgo_Espanol { get; set; }
-        public int Mastin_Espanol { get; set; }
-        public int San_Bernardo { get; set; }
-        public int Gran_Danes { get; set; }
-        public int Pinscher { get; set; }
-        public int Podenco_Andaluz { get; set; }
-        public int Braco_Burgos { get; set; }
-        public int Perro_Aguas_Espanol { get; set; }
-        public int Dogo_Argentino { get; set; }
-        public int Pomerania { get; set; }
-        public int Mastin_Prineo { get; set; }
-        public int Rottweiler { get; set; }
-        public int Chow_Chow { get; set; }
-        public int Samoyedo { get; set; }
-        public int Bobtail { get; set; }
-        public int Teckel { get; set; }
-        public int Shih_Tzu { get; set; }
-        public int Caniche { get; set; }
-        public int Pitbull { get; set; }
-        public int Bichon_Maltes { get; set; }
-        public int Husky_Siberiano { get; set; }
-        public int Cocker_Spaniel { get; set; }
-        public int Border_Collie { get; set; }
-        public int Dalmata { get; set; }
-        public int Beagle { get; set; }
-        public int Dobbermann { get; set; }
-        public int Yorkshire_Terrier { get; set; }
-        public int Pastor_Vasco { get; set; }
-        public int Schnauzer_Enano { get; set; }
-        public int Vizsla { get; set; }
-        public int Pastor_Aleman { get; set; }
-        public int Retriever { get; set; }
-        public int Boxer { get; set; }
-        public int Akita_Inu { get; set; }
-        public int Galgo_Afgano { get; set; }
-        public int Golden_Retriever { get; set; }
-        public int Bulldog_Frances { get; set; }
-        public int Chihuahua { get; set; }
+        public float Macho { get; set; }
+        public float Hembra { get; set; }
+        public float Cachorro { get; set; }
+        public float Adulto { get; set; }
+        public float Senior { get; set; }
+        public float Desconocido { get; set; }
+        public float Duro { get; set; }
+        public float Rizado { get; set; }
+        public float Corto { get; set; }
+        public float Largo { get; set; }
+        public float Lampino { get; set; }
+        public float Negro { get; set; }
+        public float Blanco { get; set; }
+        public float Beige { get; set; }
+        public float Gris { get; set; }
+        public float Cafe { get; set; }
+        public float Cafe_Claro { get; set; }
+        public float Cafe_Oscuro { get; set; }
+        public float Anaranjado { get; set; }
+        public float Rubio { get; set; }
+        public float Otro_Color { get; set; }
+        public float Pequeno { get; set; }
+        public float Mediano { get; set; }
+        public float Grande { get; set; }
+        public float Perro { get; set; }
+        public float Gato { get; set; }
+        public float Pastor_Bergamo { get; set; }
+        public float Schnoodle { get; set; }
+        public float Galgo { get; set; }
+        public float Labrador_Retriever { get; set; }
+        public float Elkhound { get; set; }
+        public float Keeshoun { get; set; }
+        public float Pastor_Caucasico { get; set; }
+        public float Basset_Hound { get; set; }
+        public float Kagnal_Turco { get; set; }
+        public float Pastor_Australiano { get; set; }
+        public float Xoloitzcuintle { get; set; }
+        public float Corgi_Gales { get; set; }
+        public float Perro_Lobo { get; set; }
+        public float Alaskan_Malamute { get; set; }
+        public float Mastin_Tibetano { get; set; }
+        public float Shar_Pei { get; set; }
+        public float Galgo_Italiano { get; set; }
+
+        public float Spaniel_Breton { get; set; }
+        public float Ratonero_Andaluz { get; set; }
+        public float Fox_Terrier { get; set; }
+        public float Bull_Mastiff { get; set; }
+        public float Pastor_Yugoslavo { get; set; }
+        public float Braco_Weimar { get; set; }
+        public float Setter_Ingles { get; set; }
+        public float Sabueso_Espanol { get; set; }
+        public float Boyero_Berna { get; set; }
+        public float Grifon_Bruselas { get; set; }
+        public float Dogo_Burdeos { get; set; }
+        public float Lobero_Irlandes { get; set; }
+        public float Lhasa_Apso { get; set; }
+        public float Bulldog_Ingles { get; set; }
+        public float Cavalier_King { get; set; }
+        public float Perro_Pequines { get; set; }
+        public float Pug { get; set; }
+        public float Parson_Russell { get; set; }
+        public float Braco_Aleman { get; set; }
+        public float Jack_Russell { get; set; }
+        public float Pachon_Navarro { get; set; }
+        public float Westie { get; set; }
+        public float Galgo_Espanol { get; set; }
+        public float Mastin_Espanol { get; set; }
+        public float San_Bernardo { get; set; }
+        public float Gran_Danes { get; set; }
+        public float Pinscher { get; set; }
+        public float Podenco_Andaluz { get; set; }
+        public float Braco_Burgos { get; set; }
+        public float Perro_Aguas_Espanol { get; set; }
+        public float Dogo_Argentino { get; set; }
+        public float Pomerania { get; set; }
+        public float Mastin_Prineo { get; set; }
+        public float Rottweiler { get; set; }
+        public float Chow_Chow { get; set; }
+        public float Samoyedo { get; set; }
+        public float Bobtail { get; set; }
+        public float Teckel { get; set; }
+        public float Shih_Tzu { get; set; }
+        public float Caniche { get; set; }
+        public float Pitbull { get; set; }
+        public float Bichon_Maltes { get; set; }
+        public float Husky_Siberiano { get; set; }
+        public float Cocker_Spaniel { get; set; }
+        public float Border_Collie { get; set; }
+        public float Dalmata { get; set; }
+        public float Beagle { get; set; }
+        public float Dobbermann { get; set; }
+        public float Yorkshire_Terrier { get; set; }
+        public float Pastor_Vasco { get; set; }
+        public float Schnauzer_Enano { get; set; }
+        public float Vizsla { get; set; }
+        public float Pastor_Aleman { get; set; }
+        public float Retriever { get; set; }
+        public float Boxer { get; set; }
+        public float Akita_Inu { get; set; }
+        public float Galgo_Afgano { get; set; }
+        public float Golden_Retriever { get; set; }
+        public float Bulldog_Frances { get; set; }
+        public float Chihuahua { get; set; }
         //Gatos
-        public int LaPerm { get; set; }
-        public int Burmilla { get; set; }
-        public int Curl_Americano { get; set; }
-        public int Montes { get; set; }
-        public int Burmes { get; set; }
-        public int Munchkin { get; set; }
-        public int Shausie { get; set; }
-        public int Devon_Rex { get; set; }
-        public int Javanes { get; set; }
-        public int Scottish_Fold { get; set; }
-        public int Van_Turco { get; set; }
-        public int Korat { get; set; }
-        public int Somali { get; set; }
-        public int Sphynx { get; set; }
-        public int Savannah { get; set; }
-        public int Chartreux { get; set; }
-        public int Sokoke { get; set; }
-        public int Selkirk_Rex { get; set; }
-        public int Nebelung { get; set; }
-        public int Lykoi { get; set; }
-        public int Cornish_Rex { get; set; }
-        public int Ocicat { get; set; }
-        public int Peterbald { get; set; }
-        public int Oriental_PeloCorto { get; set; }
-        public int Siberiano { get; set; }
-        public int Manx { get; set; }
-        public int Exotico_Pelocorto { get; set; }
-        public int Birmano { get; set; }
-        public int Bosque_Noruega { get; set; }
-        public int Snowshoe { get; set; }
-        public int Bengali { get; set; }
-        public int Ashera { get; set; }
-        public int Abisinio { get; set; }
-        public int Balines { get; set; }
-        public int Maine_Coon { get; set; }
-        public int British_Shorthair { get; set; }
-        public int Azul_Ruso { get; set; }
-        public int Bombay { get; set; }
-        public int Europeo { get; set; }
-        public int Mau_Egipcio { get; set; }
-        public int Australian_Mist { get; set; }
-        public int Himalayo { get; set; }
-        public int Habana { get; set; }
-        public int Persa { get; set; }
-        public int Siames { get; set; }
-        public int Ragdoll { get; set; }
-        public int Otro_Raza { get; set; }
+        public float LaPerm { get; set; }
+        public float Burmilla { get; set; }
+        public float Curl_Americano { get; set; }
+        public float Montes { get; set; }
+        public float Burmes { get; set; }
+        public float Munchkin { get; set; }
+        public float Shausie { get; set; }
+        public float Devon_Rex { get; set; }
+        public float Javanes { get; set; }
+        public float Scottish_Fold { get; set; }
+        public float Van_Turco { get; set; }
+        public float Korat { get; set; }
+        public float Somali { get; set; }
+        public float Sphynx { get; set; }
+        public float Savannah { get; set; }
+        public float Chartreux { get; set; }
+        public float Sokoke { get; set; }
+        public float Selkirk_Rex { get; set; }
+        public float Nebelung { get; set; }
+        public float Lykoi { get; set; }
+        public float Cornish_Rex { get; set; }
+        public float Ocicat { get; set; }
+        public float Peterbald { get; set; }
+        public float Oriental_PeloCorto { get; set; }
+        public float Siberiano { get; set; }
+        public float Manx { get; set; }
+        public float Exotico_Pelocorto { get; set; }
+        public float Birmano { get; set; }
+        public float Bosque_Noruega { get; set; }
+        public float Snowshoe { get; set; }
+        public float Bengali { get; set; }
+        public float Ashera { get; set; }
+        public float Abisinio { get; set; }
+        public float Balines { get; set; }
+        public float Maine_Coon { get; set; }
+        public float British_Shorthair { get; set; }
+        public float Azul_Ruso { get; set; }
+        public float Bombay { get; set; }
+        public float Europeo { get; set; }
+        public float Mau_Egipcio { get; set; }
+        public float Australian_Mist { get; set; }
+        public float Himalayo { get; set; }
+        public float Habana { get; set; }
+        public float Persa { get; set; }
+        public float Siames { get; set; }
+        public float Ragdoll { get; set; }
+        public float Otro_Raza { get; set; }
 
+        public double getScorePublicacion(Publicacion mod)
+        {
+            double score = 0;
 
+            //Añadir score segun edad
+            if (mod.edad == "Cachorro")
+            {
+                score += this.Cachorro;
+            }
+            else if (mod.edad == "Adulto")
+            {
+                score += this.Adulto;
+            }
+            else if (mod.edad == "Senior")
+            {
+                score += this.Senior;
+            }
+            else if (mod.edad == "Desconocido")
+            {
+                score += this.Desconocido;
+            }
+
+            //Añadir score segun genero
+            if (mod.genero == "Macho")
+            {
+                score += this.Macho;
+            }
+            else
+            {
+                score += this.Hembra;
+            }
+
+            //Añadir score segun tamaño
+            if (mod.tamano == "Pequeño")
+            {
+                score += this.Pequeno;
+            }
+            else if (mod.tamano == "Mediano")
+            {
+                score += this.Mediano;
+            }
+            else if (mod.tamano == "Grande")
+            {
+                score += this.Grande;
+            }
+
+            //Añadir score segun tipo de pelaje
+            if (mod.pelaje == "Duro")
+            {
+                score += this.Duro;
+            }
+            else if (mod.pelaje == "Rizado")
+            {
+                score += this.Rizado;
+            }
+            else if (mod.pelaje == "Corto")
+            {
+                score += this.Corto;
+            }
+            else if (mod.pelaje == "Largo")
+            {
+                score += this.Largo;
+            }
+            else if (mod.pelaje == "Lampiño")
+            {
+                score += this.Lampino;
+            }
+
+            //Añadir score segun color
+            if (mod.color == "Negro")
+            {
+                score += this.Negro;
+            }
+            else if (mod.color == "Blanco")
+            {
+                score += this.Blanco;
+            }
+            else if (mod.color == "Beige")
+            {
+                score += this.Beige;
+            }
+            else if (mod.color == "Gris")
+            {
+                score += this.Gris;
+            }
+            else if (mod.color == "Café")
+            {
+                score += this.Cafe;
+            }
+            else if (mod.color == "Café claro")
+            {
+                score += this.Cafe_Claro;
+            }
+            else if (mod.color == "Café oscuro")
+            {
+                score += this.Cafe_Oscuro;
+            }
+            else if (mod.color == "Anaranjado")
+            {
+                score += this.Anaranjado;
+            }
+            else if (mod.color == "Rubio")
+            {
+                score += this.Rubio;
+            }
+            else if (mod.color == "Otro")
+            {
+                score += this.Otro_Color;
+            }
+
+            //Añadir score segun especie
+            if (mod.especie == "Perro")
+            {
+                score += this.Perro;
+            }
+            else if (mod.especie == "Gato")
+            {
+                score += this.Gato;
+            }
+
+            //Añadir score segun raza
+            if (mod.raza == "Pastor Bergamo")
+            {
+                score += this.Pastor_Bergamo;
+            }
+            else if (mod.raza == "Schnoodle")
+            {
+                score += this.Schnoodle;
+            }
+            else if (mod.raza == "Galgo")
+            {
+                score += this.Galgo;
+            }
+            else if (mod.raza == "Labrador Retriever")
+            {
+                score += this.Labrador_Retriever;
+            }
+            else if (mod.raza == "Elkhound")
+            {
+                score += this.Elkhound;
+            }
+            else if (mod.raza == "Keeshoun")
+            {
+                score += this.Keeshoun;
+            }
+            else if (mod.raza == "Pastor Caucasico")
+            {
+                score += this.Pastor_Caucasico;
+            }
+            else if (mod.raza == "Basset Hound")
+            {
+                score += this.Basset_Hound;
+            }
+            else if (mod.raza == "Kangal turco")
+            {
+                score += this.Kagnal_Turco;
+            }
+            else if (mod.raza == "Pastor ganadero australiano")
+            {
+                score += this.Pastor_Australiano;
+            }
+            else if (mod.raza == "Xoloitzcuintle")
+            {
+                score += this.Xoloitzcuintle;
+            }
+            else if (mod.raza == "Corgi gales de Pembroke")
+            {
+                score += this.Corgi_Gales;
+            }
+            else if (mod.raza == "Perro Lobo Checoslovaco")
+            {
+                score += this.Perro_Lobo;
+            }
+            else if (mod.raza == "Alaskan Malamute")
+            {
+                score += this.Alaskan_Malamute;
+            }
+            else if (mod.raza == "Mastin tibetano")
+            {
+                score += this.Mastin_Tibetano;
+            }
+            else if (mod.raza == "Shar Pei")
+            {
+                score += this.Shar_Pei;
+            }
+            else if (mod.raza == "Galgo italiano")
+            {
+                score += this.Galgo_Italiano;
+            }
+            else if (mod.raza == "Spaniel Breton")
+            {
+                score += this.Spaniel_Breton;
+            }
+            else if (mod.raza == "Ratonero Bodeguero Andaluz")
+            {
+                score += this.Ratonero_Andaluz;
+            }
+            else if (mod.raza == "Fox Terrier")
+            {
+                score += this.Fox_Terrier;
+            }
+            else if (mod.raza == "BullMastiff")
+            {
+                score += this.Bull_Mastiff;
+            }
+            else if (mod.raza == "Pastor Yugoslavo")
+            {
+                score += this.Pastor_Yugoslavo;
+            }
+            else if (mod.raza == "Braco de Weimar")
+            {
+                score += this.Braco_Weimar;
+            }
+            else if (mod.raza == "Setter Ingles")
+            {
+                score += this.Setter_Ingles;
+            }
+            else if (mod.raza == "Sabueso español")
+            {
+                score += this.Sabueso_Espanol;
+            }
+            else if (mod.raza == "Boyero de Berna")
+            {
+                score += this.Boyero_Berna;
+            }
+            else if (mod.raza == "Grifon de Bruselas")
+            {
+                score += this.Grifon_Bruselas;
+            }
+            else if (mod.raza == "Dogo de Burdeos")
+            {
+                score += this.Dogo_Burdeos;
+            }
+            else if (mod.raza == "Lobero irlandes")
+            {
+                score += this.Lobero_Irlandes;
+            }
+            else if (mod.raza == "Lhasa Apso")
+            {
+                score += this.Lhasa_Apso;
+            }
+            else if (mod.raza == "Bulldog Ingles")
+            {
+                score += this.Bulldog_Ingles;
+            }
+            else if (mod.raza == "Cavalier King Charles Spaniel")
+            {
+                score += this.Cavalier_King;
+            }
+            else if (mod.raza == "Perro Pequines")
+            {
+                score += this.Perro_Pequines;
+            }
+            else if (mod.raza == "Pug")
+            {
+                score += this.Pug;
+            }
+            else if (mod.raza == "Parson Russel Terrier")
+            {
+                score += this.Parson_Russell;
+            }
+            else if (mod.raza == "Braco aleman")
+            {
+                score += this.Braco_Aleman;
+            }
+            else if (mod.raza == "Jack Russell Terrier")
+            {
+                score += this.Jack_Russell;
+            }
+            else if (mod.raza == "Pachon Navarro")
+            {
+                score += this.Pachon_Navarro;
+            }
+            else if (mod.raza == "Westie")
+            {
+                score += this.Westie;
+            }
+            else if (mod.raza == "Galgo Español")
+            {
+                score += this.Galgo_Espanol;
+            }
+            else if (mod.raza == "Mastin Español")
+            {
+                score += this.Mastin_Espanol;
+            }
+            else if (mod.raza == "San Bernardo")
+            {
+                score += this.San_Bernardo;
+            }
+            else if (mod.raza == "Gran Danes")
+            {
+                score += this.Gran_Danes;
+            }
+            else if (mod.raza == "Pinscher miniatura")
+            {
+                score += this.Pinscher;
+            }
+            else if (mod.raza == "Podenco andaluz")
+            {
+                score += this.Podenco_Andaluz;
+            }
+            else if (mod.raza == "Braco de Burgos")
+            {
+                score += this.Braco_Burgos;
+            }
+            else if (mod.raza == "Perro de Aguas Español")
+            {
+                score += this.Perro_Aguas_Espanol;
+            }
+            else if (mod.raza == "Dogo Argentino")
+            {
+                score += this.Dogo_Argentino;
+            }
+            else if (mod.raza == "Pomerania")
+            {
+                score += this.Pomerania;
+            }
+            else if (mod.raza == "Mastin del Pirineo")
+            {
+                score += this.Mastin_Prineo;
+            }
+            else if (mod.raza == "Rottweiler")
+            {
+                score += this.Rottweiler;
+            }
+            else if (mod.raza == "Chow Chow")
+            {
+                score += this.Chow_Chow;
+            }
+            else if (mod.raza == "Samoyedo")
+            {
+                score += this.Samoyedo;
+            }
+            else if (mod.raza == "Bobtail")
+            {
+                score += this.Bobtail;
+            }
+            else if (mod.raza == "Teckel")
+            {
+                score += this.Teckel;
+            }
+            else if (mod.raza == "Shih Tzu")
+            {
+                score += this.Shih_Tzu;
+            }
+            else if (mod.raza == "Caniche")
+            {
+                score += this.Caniche;
+            }
+            else if (mod.raza == "Pitbull")
+            {
+                score += this.Pitbull;
+            }
+            else if (mod.raza == "Bichon Maltes")
+            {
+                score += this.Bichon_Maltes;
+            }
+            else if (mod.raza == "Husky Siberiano")
+            {
+                score += this.Husky_Siberiano;
+            }
+            else if (mod.raza == "Cocker Spaniel")
+            {
+                score += this.Cocker_Spaniel;
+            }
+            else if (mod.raza == "Border Collie")
+            {
+                score += this.Border_Collie;
+            }
+            else if (mod.raza == "Dalmata")
+            { 
+                score += this.Dalmata;
+            }
+            else if (mod.raza == "Beagle")
+            {
+                score += this.Beagle;
+            }
+            else if (mod.raza == "Dobermann")
+            {
+                score += this.Dobbermann;
+            }
+            else if (mod.raza == "Yorkshire Terrier")
+            {
+                score += this.Yorkshire_Terrier;
+            }
+            else if (mod.raza == "Pastor Vasco")
+            {
+                score += this.Pastor_Vasco;
+            }
+            else if (mod.raza == "Schnauzer enano")
+            {
+                score += this.Schnauzer_Enano;
+            }
+            else if (mod.raza == "Vizsla")
+            {
+                score += this.Vizsla;
+            }
+            else if (mod.raza == "Pastor Aleman")
+            {
+                score += this.Pastor_Aleman;
+            }
+            else if (mod.raza == "Retriever")
+            {
+                score += this.Retriever;
+            }
+            else if (mod.raza == "Boxer")
+            {
+                score += this.Boxer;
+            }
+            else if (mod.raza == "Akita Inu")
+            {
+                score += this.Akita_Inu;
+            }
+            else if (mod.raza == "Galgo Afgano")
+            {
+                score += this.Galgo_Afgano;
+            }
+            else if (mod.raza == "Golden Retriever")
+            {
+                score += this.Golden_Retriever;
+            }
+            else if (mod.raza == "Bulldog Frances")
+            {
+                score += this.Bulldog_Frances;
+            }
+            else if (mod.raza == "Chihuahua")
+            {
+                score += this.Chihuahua;
+            }
+            //Gatos
+            else if (mod.raza == "LaPerm")
+            {
+                score += this.LaPerm;
+            }
+            else if (mod.raza == "Burmilla")
+            {
+                score += this.Burmilla;
+            }
+            else if (mod.raza == "Curl Americano")
+            {
+                score += this.Curl_Americano;
+            }
+            else if (mod.raza == "Montes")
+            {
+                score += this.Montes;
+            }
+            else if (mod.raza == "Burmes")
+            {
+                score += this.Burmes;
+            }
+            else if (mod.raza == "Munchkin")
+            {
+                score += this.Munchkin;
+            }
+            else if (mod.raza == "Shausie")
+            {
+                score += this.Shausie;
+            }
+            else if (mod.raza == "Devon Rex")
+            {
+                score += this.Devon_Rex;
+            }
+            else if (mod.raza == "Javanes")
+            {
+                score += this.Javanes;
+            }
+            else if (mod.raza == "Scottish Fold")
+            {
+                score += this.Scottish_Fold;
+            }
+            else if (mod.raza == "Van Turco")
+            {
+                score += this.Van_Turco;
+            }
+            else if (mod.raza == "Korat")
+            {
+                score += this.Korat;
+            }
+            else if (mod.raza == "Somali")
+            {
+                score += this.Somali;
+            }
+            else if (mod.raza == "Sphynx")
+            {
+                score += this.Sphynx;
+            }
+            else if (mod.raza == "Savannah")
+            {
+                score += this.Savannah;
+            }
+            else if (mod.raza == "Chartreux")
+            {
+                score += this.Chartreux;
+            }
+            else if (mod.raza == "Sokoke")
+            {
+                score += this.Sokoke;
+            }
+            else if (mod.raza == "Selkirk Rex")
+            {
+                score += this.Selkirk_Rex;
+            }
+            else if (mod.raza == "Nebelung")
+            {
+                score += this.Nebelung;
+            }
+            else if (mod.raza == "Lykoi")
+            {
+                score += this.Lykoi;
+            }
+            else if (mod.raza == "Cornish Rex")
+            {
+                score += this.Cornish_Rex;
+            }
+            else if (mod.raza == "Peterbald")
+            {
+                score += this.Peterbald;
+            }
+            else if (mod.raza == "Oriental de pelo corto")
+            {
+                score += this.Oriental_PeloCorto;
+            }
+            else if (mod.raza == "Siberiano")
+            {
+                score += this.Siberiano;
+            }
+            else if (mod.raza == "Manx")
+            {
+                score += this.Manx;
+            }
+            else if (mod.raza == "Exotico de pelo corto")
+            {
+                score += this.Exotico_Pelocorto;
+            }
+            else if (mod.raza == "Birmano")
+            {
+                score += this.Birmano;
+            }
+            else if (mod.raza == "Bosque de Noruega")
+            {
+                score += this.Bosque_Noruega;
+            }
+            else if (mod.raza == "Snowshoe")
+            {
+                score += this.Snowshoe;
+            }
+            else if (mod.raza == "Bengali")
+            {
+                score += this.Bengali;
+            }
+            else if (mod.raza == "Ashera")
+            {
+                score += this.Ashera;
+            }
+            else if (mod.raza == "Abisinio")
+            {
+                score += this.Abisinio;
+            }
+            else if (mod.raza == "Balines")
+            {
+                score += this.Balines;
+            }
+            else if (mod.raza == "Maine Coon")
+            {
+                score += this.Maine_Coon;
+            }
+            else if (mod.raza == "British shorthair")
+            {
+                score += this.British_Shorthair;
+            }
+            else if (mod.raza == "Azul Ruso")
+            {
+                score += this.Azul_Ruso;
+            }
+            else if (mod.raza == "Bombay")
+            {
+                score += this.Bombay;
+            }
+            else if (mod.raza == "Europeo")
+            {
+                score += this.Europeo;
+            }
+            else if (mod.raza == "Mau Egipcio")
+            {
+                score += this.Mau_Egipcio;
+            }
+            else if (mod.raza == "Australian Mist")
+            {
+                score += this.Australian_Mist;
+            }
+            else if (mod.raza == "Himalayo")
+            {
+                score += this.Himalayo;
+            }
+            else if (mod.raza == "Habana")
+            {
+                score += this.Habana;
+            }
+            else if (mod.raza == "Persa")
+            {
+                score += this.Persa;
+            }
+            else if (mod.raza == "Siames")
+            {
+                score += this.Siames;
+            }
+            else if (mod.raza == "Ragdoll")
+            {
+                score += this.Ragdoll;
+            }
+            else if (mod.raza == "Otro/Desconocido")
+            {
+                score += this.Otro_Raza;
+            }
+
+                return score;
+         }
         public Preferencia updtPreferencia(Preferencia antigua, Publicacion pub)
         {
             Preferencia pref = antigua;

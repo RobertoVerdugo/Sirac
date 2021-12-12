@@ -10,156 +10,166 @@
     #col {
         padding-bottom: 10px;
     }
+    #blanco{
+        background-color: #ffffff;
+    }
 </style>
-<div class="container">
-    <div class="row">
-        <div class="slider">
-            <div class="img-responsive">
+<div style="background-image: url(img/fondoAnimales.jpg)">
+    <div class="container" id="blanco">
+        <div class="row">
+            <div class="slider">
                 @if (signInManager.IsSignedIn(User))
                 {
-                    <!-- Aqui puede ir un slider con las publicaciones recomendadas por el algoritmo-->
-                    <ul class="bxslider">
-                        <li><img src="~/img/01.jpg" alt="" /></li>
-                        <li><img src="~/img/01.jpg" alt="" /></li>
-                        <li><img src="~/img/01.jpg" alt="" /></li>
-                    </ul>
-                }
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="text-center">
-                <h2>Sistema de identificación y registro de animales callejeros</h2>
-                <p>Sistema de identificación y registro de animales callejeros.<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br> lorem sit amet scelerisque justo</p>
-            </div>
-            <hr>
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="text-center">
-                <h2>Mascotas</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-                </p>
-            </div>
-            <hr>
-        </div>
-    </div>
-</div>0
-<div class="container">
-    <form method="post">
-        <div class="row">
-            <div class="col-md-3" id="col">
-                <select asp-for="Filtro.especie" class="form-control" asp-items="Model.Categories">
-                    <option value="">Seleccione una especie</option>
-                </select>
-            </div>
-            <div class="col-md-3" id="col">
-                <select asp-for="Filtro.raza" class="form-control">
-                    <option value="">Seleccione una raza</option>
-                </select>
-            </div>
-            <div class="col-md-3" id="col">
-                <select asp-for="Filtro.genero" class="form-control">
-                    <option value="">Seleccione genero</option>
-                    <option>Macho</option>
-                    <option>Hembra</option>
-                </select>
-            </div>
-            <div class="col-md-3" id="col">
-                <select asp-for="Filtro.edad" class="form-control">
-                    <option value="">Seleccione edad</option>
-                    <option>Cachorro</option>
-                    <option>Adulto</option>
-                    <option>Senior</option>
-                    <option>Desconocido</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3" id="col">
-                <select asp-for="Filtro.pelaje" class="form-control">
-                    <option value="">Seleccione tipo de pelaje</option>
-                    <option>Duro</option>
-                    <option>Rizado</option>
-                    <option>Corto</option>
-                    <option>Largo</option>
-                    <option>Lampiño</option>
-                </select>
-            </div>
-            <div class="col-md-3" id="col">
-                <select asp-for="Filtro.color" class="form-control">
-                    <option value="">Seleccione un color</option>
-                    <option>Negro</option>
-                    <option>Blanco</option>
-                    <option>Beige</option>
-                    <option>Gris</option>
-                    <option>Café</option>
-                    <option>Café claro</option>
-                    <option>Café oscuro</option>
-                    <option>Anaranjado</option>
-                    <option>Rubio</option>
-                    <option>Otro</option>
-                </select>
-            </div>
-            <div class="col-md-3" id="col">
-                <select asp-for="Filtro.tamano" class="form-control">
-                    <option value="">Seleccione tamaño</option>
-                    <option>Pequeño</option>
-                    <option>Mediano</option>
-                    <option>Grande</option>
-                </select>
-            </div>
-            <div class="col-md-3" id="col">
-                <select asp-for="Filtro.estado" class="form-control">
-                    <option value="">Seleccione estado</option>
-                    <option>Situación de calle</option>
-                    <option>Tenencia Temporal</option>
-                    <option>En Adopción</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3" id="col">
-                <select asp-for="Orden" class="form-control">
-                    <option value="">Ordenar por</option>
-                    @if (signInManager.IsSignedIn(User))
+                    @if (Model.ListaContenido.Count() > 0)
                     {
-                        <option>Recomendados</option>
+                        <ul class="bxslider">
+
+                            @foreach (var pub in Model.ListaContenido)
+                            {
+                                <li>
+                                    <div class="justify-content-center">
+                                        <a asp-route-id=@pub.id asp-page="VerPubl"><img src="img/@pub.rutaimg" class="img-responsive center-block" style="height:300px;" /></a>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
                     }
-                    <option>Nombre (A-Z)</option>
-                    <option>Nombre (Z-A)</option>
-                    <option>Fecha (Nuevo-Antiguo)</option>
-                    <option>Fecha (Antiguo-Nuevo)</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <input type="submit" asp-page-handler="Post" value="Filtrar" class="btn btn-primary form-control" style="margin: 0px; border: 0px;" />
+                }
             </div>
         </div>
-        <div class="grid">
-            @if (Model.ListaActual.Count() > 0)
-            {
-                @foreach (var pub in Model.ListaActual)
+    </div>
+
+
+    <div class="container" id="blanco">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="text-center">
+                    <h2>Sistema de identificación y registro de animales callejeros</h2>
+                    <p>Sistema de identificación y registro de animales callejeros.<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br> lorem sit amet scelerisque justo</p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" id="blanco">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="text-center">
+                    <h2>Mascotas</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
+                    </p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="blanco">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-3" id="col">
+                    <select asp-for="Filtro.especie" class="form-control" asp-items="Model.Categories">
+                        <option value="">Seleccione una especie</option>
+                    </select>
+                </div>
+                <div class="col-md-3" id="col">
+                    <select asp-for="Filtro.raza" class="form-control">
+                        <option value="">Seleccione una raza</option>
+                    </select>
+                </div>
+                <div class="col-md-3" id="col">
+                    <select asp-for="Filtro.genero" class="form-control">
+                        <option value="">Seleccione genero</option>
+                        <option>Macho</option>
+                        <option>Hembra</option>
+                    </select>
+                </div>
+                <div class="col-md-3" id="col">
+                    <select asp-for="Filtro.edad" class="form-control">
+                        <option value="">Seleccione edad</option>
+                        <option>Cachorro</option>
+                        <option>Adulto</option>
+                        <option>Senior</option>
+                        <option>Desconocido</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" id="col">
+                    <select asp-for="Filtro.pelaje" class="form-control">
+                        <option value="">Seleccione tipo de pelaje</option>
+                        <option>Duro</option>
+                        <option>Rizado</option>
+                        <option>Corto</option>
+                        <option>Largo</option>
+                        <option>Lampiño</option>
+                    </select>
+                </div>
+                <div class="col-md-3" id="col">
+                    <select asp-for="Filtro.color" class="form-control">
+                        <option value="">Seleccione un color</option>
+                        <option>Negro</option>
+                        <option>Blanco</option>
+                        <option>Beige</option>
+                        <option>Gris</option>
+                        <option>Café</option>
+                        <option>Café claro</option>
+                        <option>Café oscuro</option>
+                        <option>Anaranjado</option>
+                        <option>Rubio</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+                <div class="col-md-3" id="col">
+                    <select asp-for="Filtro.tamano" class="form-control">
+                        <option value="">Seleccione tamaño</option>
+                        <option>Pequeño</option>
+                        <option>Mediano</option>
+                        <option>Grande</option>
+                    </select>
+                </div>
+                <div class="col-md-3" id="col">
+                    <select asp-for="Filtro.estado" class="form-control">
+                        <option value="">Seleccione estado</option>
+                        <option>Situación de calle</option>
+                        <option>Tenencia Temporal</option>
+                        <option>En Adopción</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" id="col">
+                    <select asp-for="Orden" class="form-control">
+                        <option value="">Ordenar por</option>
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <option>Recomendados</option>
+                        }
+                        <option>Nombre (A-Z)</option>
+                        <option>Nombre (Z-A)</option>
+                        <option>Fecha (Nuevo-Antiguo)</option>
+                        <option>Fecha (Antiguo-Nuevo)</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <input type="submit" asp-page-handler="Post" value="Filtrar" class="btn btn-primary form-control" style="margin: 0px; border: 0px;" />
+                </div>
+            </div>
+            <div class="grid">
+                @if (Model.ListaActual.Count() > 0)
                 {
-                    <figure class="effect-zoe">
-                        <a asp-route-id=@pub.id asp-page="VerPubl"><img src="img/@pub.rutaimg" alt="img26" /></a>
-                        <figcaption>
-                            <h3>@pub.nombre</h3>
-                            <p class="description">@pub.ubicacion</p>
-                        </figcaption>
-                    </figure>
-                }
+                    @foreach (var pub in Model.ListaActual)
+                    {
+                        <figure class="effect-zoe">
+                            <a asp-route-id=@pub.id asp-page="VerPubl"><img src="img/@pub.rutaimg" class="img-responsive center-block" style="width: 480px; height: 320px;" /></a>
+                            <figcaption>
+                                <h3>@pub.nombre</h3>
+                                <p class="description">@pub.ubicacion</p>
+                            </figcaption>
+                        </figure>
+                    }
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3">
                             <div class="text-center">
@@ -174,21 +184,21 @@
                             </div>
                         </div>
                     </div>
-            }
-            else
-            {
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="text-center">
-                            <p>No se encontraron publicaciones</p>
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="text-center">
+                                <p>No se encontraron publicaciones</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
-        </div>
-    </form>
+                }
+            </div>
+        </form>
+    </div>
 </div>
-
 @section scripts{
     <script>
         document.getElementsByName('Filtro.especie')[0].addEventListener('change', (e) => {
