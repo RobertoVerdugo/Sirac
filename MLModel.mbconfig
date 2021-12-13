@@ -56,60 +56,32 @@
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -2.5856,
-        "RuntimeInSeconds": 1.3
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": -1.6153,
-        "RuntimeInSeconds": 1.3
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": -1.4941,
+        "Score": 0.0,
         "RuntimeInSeconds": 0.8
       },
       {
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -0.6784,
+        "Score": 0.0,
+        "RuntimeInSeconds": 1.1
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": 0.0,
+        "RuntimeInSeconds": 0.9
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": 0.0,
         "RuntimeInSeconds": 0.8
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": -1.6752,
-        "RuntimeInSeconds": 0.7
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": -1.6569,
-        "RuntimeInSeconds": 1.8
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": -3.2695,
-        "RuntimeInSeconds": 0.6
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": -1.7441,
-        "RuntimeInSeconds": 0.4
       }
     ],
-    "Pipeline": "[{\"EstimatorType\":\"MapValueToKey\",\"Inputs\":[\"rut\"],\"Outputs\":[\"rut\"]},{\"EstimatorType\":\"MapValueToKey\",\"Inputs\":[\"idPublicacion\"],\"Outputs\":[\"idPublicacion\"]},{\"LabelColumnName\":\"ranking\",\"MatrixColumnIndexColumnName\":\"rut\",\"MatrixRowIndexColumnName\":\"idPublicacion\",\"ApproximationRank\":\"64\",\"LearningRate\":\"0,01\",\"NumberOfIterations\":\"40\",\"EstimatorType\":\"MatrixFactorization\",\"Inputs\":[\"Features\"],\"Outputs\":[\"Score\"]}]",
+    "Pipeline": "[{\"EstimatorType\":\"MapValueToKey\",\"Inputs\":[\"rut\"],\"Outputs\":[\"rut\"]},{\"EstimatorType\":\"MapValueToKey\",\"Inputs\":[\"idPublicacion\"],\"Outputs\":[\"idPublicacion\"]},{\"LabelColumnName\":\"ranking\",\"MatrixColumnIndexColumnName\":\"rut\",\"MatrixRowIndexColumnName\":\"idPublicacion\",\"EstimatorType\":\"MatrixFactorization\",\"Inputs\":[\"Features\"],\"Outputs\":[\"Score\"]}]",
     "MetricName": "RSquared"
   },
   "Type": "TrainingConfig",

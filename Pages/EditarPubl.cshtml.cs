@@ -48,12 +48,14 @@ namespace Test_Razor.Pages
         {
             if (ModelState.IsValid)
             {
+                Publicacion.actualizacion = DateTime.Now;
+                Publicacion.especie = Publicacion.especie == "1" ? ("Perro") : ("Gato");
                 db.Publicacion.Update(Publicacion);
                 await db.SaveChangesAsync();
                 return RedirectToPage("Dashboard");
             }
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
-            return RedirectToPage();
+            return Page();
         }
         public JsonResult OnGetSubCategories()
         {
