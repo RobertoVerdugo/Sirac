@@ -82,5 +82,6 @@ namespace Test_Razor.Models
 
         public double score { get; set; }
         public double scoreContenido { get; set; }
+        public string filepath { get; set; }
     }
 }

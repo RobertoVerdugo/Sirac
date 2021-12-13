@@ -50,16 +50,39 @@ namespace Test_Razor.Pages
                 Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
                 return Page();
             }
-            var file = Path.Combine(environment.WebRootPath, "img", Photo.FileName);
-            using (var fileStream = new FileStream(file, FileMode.Create))
+
+            var ruta = Path.Combine(environment.WebRootPath, "img", Photo.FileName);
+            int i = 0;
+            string NombreImg = Photo.FileName;
+            while (System.IO.File.Exists(ruta))
+            {
+                string aux = i.ToString();
+                NombreImg = aux + Photo.FileName;
+                ruta = Path.Combine(environment.WebRootPath, "img", NombreImg);
+                i++;
+            }
+            using (var fileStream = new FileStream(ruta, FileMode.Create))
             {
                 await Photo.CopyToAsync(fileStream);
             }
             Publicacion.actualizacion = Publicacion.fecha;
-            Publicacion.rutaimg = Photo.FileName;
+            Publicacion.rutaimg = NombreImg;
+            Publicacion.filepath = ruta;
             Publicacion.especie = Publicacion.especie == "1" ? ("Perro") : ("Gato");
             _db.Add(Publicacion);
-           /* for(int i = 0; i < 10; i++)
+           
+            await _db.SaveChangesAsync();
+            return RedirectToPage("Index");
+        }
+        public JsonResult OnGetSubCategories()
+        {
+            return new JsonResult(categoryService.GetSubCategories(CategoryId));
+        }
+    }
+}
+
+//Test de abuso
+/* for(int i = 0; i < 10; i++)
             {
                 _db.Add(new Publicacion() { 
                     fecha= Publicacion.fecha,
@@ -80,12 +103,3 @@ namespace Test_Razor.Pages
                 
                 });
             }*/
-            await _db.SaveChangesAsync();
-            return RedirectToPage("Index");
-        }
-        public JsonResult OnGetSubCategories()
-        {
-            return new JsonResult(categoryService.GetSubCategories(CategoryId));
-        }
-    }
-}

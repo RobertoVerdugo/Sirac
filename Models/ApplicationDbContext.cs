@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -60,11 +61,21 @@ namespace Test_Razor.Models
             if (VerificarPublicacion(id))
             {
                 var pub = Publicacion.Find(id);
+                DeleteFile(pub.filepath);
                 Publicacion.Remove(pub);
                 SaveChanges();
                 return true;
             }
             return false;
+        }
+        public void DeleteFile(string path)
+        {
+            FileInfo file = new FileInfo(path);
+            if (file.Exists)
+            {
+                //System.IO.File.Delete(path);
+                file.Delete();
+            }
         }
 
         public int getTotalVisitas(string rut)
