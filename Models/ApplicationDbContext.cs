@@ -62,7 +62,28 @@ namespace Test_Razor.Models
             {
                 var pub = Publicacion.Find(id);
                 DeleteFile(pub.filepath);
+                //Eliminar los reportes
+                IEnumerable<Reporte> Reportes = Reporte.ToList();
+                Reportes = Reportes.Where(u => u.idPublicacion == pub.id);
+                if (Reportes.Count() > 0)
+                {
+                    foreach(var rep in Reporte)
+                    {
+                        EliminarReporte(rep.id);
+                    }
+                }
                 Publicacion.Remove(pub);
+                SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool EliminarReporte(int id)
+        {
+            var rep = Reporte.Find(id);
+            if (rep!=null)
+            {
+                Reporte.Remove(rep);
                 SaveChanges();
                 return true;
             }

@@ -36,6 +36,18 @@ namespace Test_Razor.Pages
             ReportesActual = PaginarReportes(ReportesLocal, id);
         }
 
+        public IActionResult OnPostDelete(int id)
+        {
+            if (db.EliminarReporte(id))
+            {
+                return RedirectToPage("Admin");
+            }
+            else
+            {
+                return RedirectToPage("404Publicacion");
+            }
+        }
+
         public IEnumerable<Reporte> PaginarReportes(IEnumerable<Reporte> Local, int indice)
         {
             if (indice < 1 || indice > ((Local.Count() - 1) / 10) + 1)

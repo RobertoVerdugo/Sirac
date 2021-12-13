@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -14,14 +17,16 @@ namespace Test_Razor.Pages
     {
         private readonly ApplicationDbContext db;
 
-        public EditarPublModel(ApplicationDbContext db, ICategoryService categoryService, UserManager<IdentityUser> userManager)
+        public EditarPublModel(ApplicationDbContext db, ICategoryService categoryService, UserManager<IdentityUser> userManager, IWebHostEnvironment environment)
         {
             this.db = db;
             this.categoryService = categoryService;
             this.userManager = userManager;
+            this.environment = environment;
         }
         private ICategoryService categoryService;
         private readonly UserManager<IdentityUser> userManager;
+        private readonly IWebHostEnvironment environment;
 
         [BindProperty(SupportsGet = true)]
         public int CategoryId { get; set; }
@@ -30,6 +35,8 @@ namespace Test_Razor.Pages
 
         [BindProperty]
         public Publicacion Publicacion { get; set; }
+        [BindProperty]
+        public IFormFile Photo { get; set; }
         public async Task<IActionResult> OnGet(int id)
         {
             if (db.VerificarPublicacion(id))
@@ -50,6 +57,27 @@ namespace Test_Razor.Pages
             {
                 Publicacion.actualizacion = DateTime.Now;
                 Publicacion.especie = Publicacion.especie == "1" ? ("Perro") : ("Gato");
+                if (Photo != null)
+                {
+                    db.DeleteFile(Publicacion.filepath);
+                    var ruta = Path.Combine(environment.WebRootPath, "img", Photo.FileName);
+                    int i = 0;
+                    string NombreImg = Photo.FileName;
+                    while (System.IO.File.Exists(ruta))
+                    {
+                        string aux = i.ToString();
+                        NombreImg = aux + Photo.FileName;
+                        ruta = Path.Combine(environment.WebRootPath, "img", NombreImg);
+                        i++;
+                    }
+                    using (var fileStream = new FileStream(ruta, FileMode.Create))
+                    {
+                        await Photo.CopyToAsync(fileStream);
+                    }
+                    Publicacion.rutaimg = NombreImg;
+                    Publicacion.filepath = ruta;
+                }
+
                 db.Publicacion.Update(Publicacion);
                 await db.SaveChangesAsync();
                 return RedirectToPage("Dashboard");
