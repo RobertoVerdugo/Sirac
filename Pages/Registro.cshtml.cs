@@ -48,6 +48,12 @@ namespace Test_Razor.Pages
                 {
                     await signInManager.SignInAsync(user, false);
                     _db.Add(Usuario);
+                    var pref = new Preferencia
+                    {
+                        rut = Usuario.rut
+                    };
+                    _db.Preferencia.Add(pref);
+
                     await _db.SaveChangesAsync();
                     return RedirectToPage("Index");
                 }

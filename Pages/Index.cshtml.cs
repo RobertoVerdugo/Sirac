@@ -41,7 +41,7 @@ namespace Test_Razor.Pages
             rut = userManager.GetUserName(User);
             Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal,Preferencia, db.getTotalVisitas(rut));
+            ListaContenido = CrearListaContenido(ListaGlobal,Preferencia, Preferencia.getTotalPuntos());
             ListaLocal = ListaGlobal;
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
@@ -51,7 +51,7 @@ namespace Test_Razor.Pages
             rut = userManager.GetUserName(User);
             Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, db.getTotalVisitas(rut));
+            ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, Preferencia.getTotalPuntos());
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
             ListaLocal = OrdenarPublicaciones(ListaLocal, Orden, rut);
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
@@ -62,7 +62,7 @@ namespace Test_Razor.Pages
             rut = userManager.GetUserName(User);
             Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, db.getTotalVisitas(rut));
+            ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, Preferencia.getTotalPuntos());
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
             ListaLocal = OrdenarPublicaciones(ListaLocal, Orden,rut);
             ListaActual = PaginarPublicaciones(ListaLocal, id);

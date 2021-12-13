@@ -77,17 +77,5 @@ namespace Test_Razor.Models
                 file.Delete();
             }
         }
-
-        public int getTotalVisitas(string rut)
-        {
-            int total = 0;
-            IEnumerable<Visita> Visitas = Visita.ToList();
-            Visitas = Visitas.Where(u => u.rut == rut);
-            foreach (var visita in Visitas)
-            {
-                total = total + visita.ranking;
-            }
-            return total;
-        }
     }
 }
