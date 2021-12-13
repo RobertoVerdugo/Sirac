@@ -25,50 +25,50 @@
                 <div class="page-header">
                     <div class="blog">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <p><b>Nombre: </b></p>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <p>@Model.Usuario.nombre</p>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <p><b>Apellidos: </b></p>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <p>@Model.Usuario.apellidos</p>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-3">
-                                <p><b>Email: </b></p>
+                            <div class="col-md-2">
+                                <p><b>Rut: </b></p>
                             </div>
-                            <div class="col-md-3">
-                                <p>@Model.Usuario.email</p>
+                            <div class="col-md-4">
+                                <p>@Model.Usuario.rut</p>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <p><b>Teléfono: </b></p>
                             </div>
                             @if (Model.Usuario.telefono != null)
                             {
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <p>@Model.Usuario.telefono</p>
                                 </div>
                             }
                             else
                             {
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <p>Sin registrar</p>
                                 </div>
                             }
                         </div>
 
                         <div class="row">
-                            <div class="col-md-3">
-                                <p><b>Rut: </b></p>
+                            <div class="col-md-2">
+                                <p><b>Email: </b></p>
                             </div>
-                            <div class="col-md-3">
-                                <p>@Model.Usuario.rut</p>
+                            <div class="col-md-4">
+                                <p>@Model.Usuario.email</p>
                             </div>
                         </div>
                         <p class="text-right"><a asp-route-id=@Model.Usuario.rut asp-page="EditarUsr" class="btn btn-primary btn-sm">Editar</a></p>
@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 <script>
-                    $('#div').height($(window).height() - 770);
+                    $('#div').height($(window).height() - 790);
                 </script>
             }
         </form>
