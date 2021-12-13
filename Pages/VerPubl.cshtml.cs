@@ -30,11 +30,11 @@ namespace Test_Razor.Pages
         {
             if (db.VerificarPublicacion(id))
             {
-                var rut = userManager.GetUserName(User);
-
-                Publicacion =  db.Publicacion.Find(id);
+                var rut_admin = userManager.GetUserName(User);
+                Publicacion = db.Publicacion.Find(id);
+                var rut = Publicacion.rut;
                 Usuario =  db.Usuario.Find(rut);
-                admin =  await userManager.FindByNameAsync(rut);
+                admin =  await userManager.FindByNameAsync(rut_admin);
                 if (admin != null && Usuario != null && Publicacion != null)
                 {
                     await Visitar();
