@@ -69,7 +69,7 @@ namespace Test_Razor.Models
                 {
                     foreach(var rep in Reporte)
                     {
-                        EliminarReporte(rep.id);
+                        Reporte.Remove(rep);
                     }
                 }
                 Publicacion.Remove(pub);

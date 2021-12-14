@@ -69,12 +69,12 @@ namespace Test_Razor.Pages
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
 
-        public IEnumerable<Publicacion> CrearListaContenido(IEnumerable<Publicacion> Global, Preferencia preferencia, int totalVisitas)
+        public IEnumerable<Publicacion> CrearListaContenido(IEnumerable<Publicacion> Global, Preferencia preferencia, int totalPuntos)
         {
             IEnumerable<Publicacion> ListaContenido = Global;
-            if (preferencia != null && totalVisitas>=1)
+            if (preferencia != null && totalPuntos >= 1)
             {
-                preferencia = preferencia.normalizarPreferencia(preferencia, totalVisitas);
+                preferencia = preferencia.normalizarPreferencia(preferencia, totalPuntos);
                 foreach (var pub in ListaContenido)
                 {
                     pub.scoreContenido = preferencia.calcularScore(pub);
