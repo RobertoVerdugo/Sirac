@@ -14,12 +14,14 @@ namespace Test_Razor.Pages
         private readonly ApplicationDbContext db;
         private readonly ICategoryService categoryService;
         private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
 
-        public IndexModel(ApplicationDbContext db, ICategoryService categoryService, UserManager<IdentityUser> userManager)
+        public IndexModel(ApplicationDbContext db, ICategoryService categoryService, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             this.db = db;
             this.categoryService = categoryService;
             this.userManager = userManager;
+            this.signInManager = signInManager;
         }
         [BindProperty(SupportsGet = true)]
         public int CategoryId { get; set; }
@@ -38,20 +40,27 @@ namespace Test_Razor.Pages
         public IEnumerable<Publicacion> ListaContenido;
         public void OnGet()
         {
-            rut = userManager.GetUserName(User);
-            Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal,Preferencia, Preferencia.getTotalPuntos());
+            if (signInManager.IsSignedIn(User))
+            {
+                rut = userManager.GetUserName(User);
+                Preferencia = db.Preferencia.Find(rut);
+                ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, Preferencia.getTotalPuntos());
+            }
+            
             ListaLocal = ListaGlobal;
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
             Categories = new SelectList(categoryService.GetCategories(), nameof(Category.CategoryId), nameof(Category.CategoryName));
         }
         public void OnPost()
         {
-            rut = userManager.GetUserName(User);
-            Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, Preferencia.getTotalPuntos());
+            if (signInManager.IsSignedIn(User))
+            {
+                rut = userManager.GetUserName(User);
+                Preferencia = db.Preferencia.Find(rut);
+                ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, Preferencia.getTotalPuntos());
+            }
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
             ListaLocal = OrdenarPublicaciones(ListaLocal, Orden, rut);
             ListaActual = PaginarPublicaciones(ListaLocal, 1);
@@ -59,10 +68,13 @@ namespace Test_Razor.Pages
         }
         public void OnPostPaginar(int id)
         {
-            rut = userManager.GetUserName(User);
-            Preferencia = db.Preferencia.Find(rut);
             ListaGlobal = db.Publicacion.ToList();
-            ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, Preferencia.getTotalPuntos());
+            if (signInManager.IsSignedIn(User))
+            {
+                rut = userManager.GetUserName(User);
+                Preferencia = db.Preferencia.Find(rut);
+                ListaContenido = CrearListaContenido(ListaGlobal, Preferencia, Preferencia.getTotalPuntos());
+            }
             ListaLocal = FiltrarPublicaciones(ListaGlobal,Filtro);
             ListaLocal = OrdenarPublicaciones(ListaLocal, Orden,rut);
             ListaActual = PaginarPublicaciones(ListaLocal, id);
