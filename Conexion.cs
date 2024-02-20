@@ -13,7 +13,7 @@ namespace Test_Razor
     {
         public MySqlConnection conectar()
         {
-            return new MySqlConnection("Database=siracdb;Data Server =localhost; User Id=root; Password=08d351cc");
+            return new MySqlConnection("Database=siracdb;Data Server =localhost; User Id=root; Password=");
         }
     }
 }
